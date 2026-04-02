@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers | Alkymē</title>
+  <meta name="description" content="Careers at Alkymē—internal startup studio in Los Angeles. View open roles on our jobs site.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bark: #040d12;
+      --forest: #183d3d;
+      --moss: #5c8374;
+      --dew: #93b1a6;
+      --page-bg: #ffffff;
+      --eggshell-sky: #fff9f0; /* warm surfaces, glass, on-dark text */
+      --cloudy-day: #f4f4f4;
+      --text: var(--bark);
+      --muted: var(--forest);
+      --border: var(--dew);
+      --radius: 0.3em;
+      --shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
+      --page-gutter: clamp(1.25rem, 5vw, 2.75rem);
+      --content-max-width: 1120px;
+      --content-wide-max: 1240px;
+      --section-pad-y: clamp(3.75rem, 9vw, 5.5rem);
+      --page-hero-pad-top: calc(5.5rem + env(safe-area-inset-top, 0px));
+      --page-hero-pad-bottom: clamp(3rem, 9vw, 5rem);
+      --section-head-max: 38rem;
+      --section-head-center-max: 42rem;
+      --section-head-intro-max: 38rem;
+      --section-head-margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+      --section-lead-max: 42rem;
+      --scroll-margin-top: calc(5rem + env(safe-area-inset-top, 0px));
+    }
+
+    /* Breakpoints: 680px mobile; 900px tablet — match index.html */
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--page-bg);
+      line-height: 1.5;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--forest);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--content-max-width);
+      margin-inline: auto;
+      padding-inline: var(--page-gutter);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--text);
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+    }
+
+    h2, h3, h4, h5, h6 {
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+    }
+
+    h3 {
+      font-size: 1.08rem;
+    }
+
+    h4 {
+      font-size: 1.02rem;
+      line-height: 1.25;
+    }
+
+    h5 {
+      font-size: 0.98rem;
+      line-height: 1.3;
+    }
+
+    h6 {
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    #careers-heading,
+    #life-heading,
+    #roles-heading {
+      scroll-margin-top: var(--scroll-margin-top);
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      background-color: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .topbar-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(0.75rem, 2vw, 1.25rem);
+    }
+
+    .topbar-cluster {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.5rem, 5.5vw, 3.5rem);
+      min-width: 0;
+      flex: 1;
+    }
+
+    .topbar-cluster .brand {
+      flex-shrink: 0;
+    }
+
+    .topbar-contact {
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      height: 32px;
+      width: auto;
+      max-width: 200px;
+      display: block;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .topbar .nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius);
+      font-weight: 500;
+      color: var(--muted);
+      transition: background-color 0.18s ease, color 0.18s ease;
+    }
+
+    .topbar .nav a:hover {
+      background-color: var(--cloudy-day);
+      color: var(--text);
+    }
+
+    .topbar .nav a[aria-current="page"] {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .topbar .nav a:focus-visible {
+      outline: 2px solid var(--forest);
+      outline-offset: 2px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-weight: 600;
+      padding: 12px 18px;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .button-primary {
+      background: var(--bark);
+      color: var(--eggshell-sky);
+      border-color: rgba(255, 249, 240, 0.25);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+      background: #040d12;
+      color: var(--eggshell-sky);
+    }
+
+    .button-secondary {
+      background: var(--page-bg);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .button-secondary:hover {
+      background: var(--cloudy-day);
+      color: var(--text);
+    }
+
+    .topbar .topbar-contact {
+      background: var(--page-bg);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .topbar .topbar-contact:hover {
+      background: var(--cloudy-day);
+      border-color: var(--moss);
+    }
+
+    .glass {
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255, 249, 240, 0.78) 0%, rgba(255, 249, 240, 0.45) 100%);
+      border: 1px solid rgba(147, 177, 166, 0.55);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 249, 240, 0.95),
+        0 8px 32px rgba(4, 13, 18, 0.07);
+      backdrop-filter: blur(20px) saturate(170%);
+      -webkit-backdrop-filter: blur(20px) saturate(170%);
+    }
+
+    @media (prefers-reduced-transparency: reduce) {
+      .glass {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(255, 249, 240, 0.96);
+      }
+    }
+
+    .careers-hero {
+      padding: var(--page-hero-pad-top) 0 var(--page-hero-pad-bottom);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .careers-hero::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(120vw, 900px);
+      height: min(120vw, 900px);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(147, 177, 166, 0.35) 0%, transparent 62%);
+      pointer-events: none;
+    }
+
+    .careers-hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .careers-hero h1 {
+      margin-bottom: 1rem;
+    }
+
+    .careers-hero .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: var(--section-head-intro-max);
+    }
+
+    .careers-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 1.75rem;
+    }
+
+    .careers-hero__panel {
+      padding: clamp(1.35rem, 3vw, 1.75rem);
+    }
+
+    .careers-hero__panel h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .careers-hero__panel p {
+      margin: 0 0 1.1rem;
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .careers-hero__panel .button-primary {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 20px;
+    }
+
+    .careers-hero__visual {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      max-height: 420px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px rgba(4, 13, 18, 0.12);
+      border: 1px solid rgba(147, 177, 166, 0.4);
+    }
+
+    .careers-hero__visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .section {
+      padding: var(--section-pad-y) 0;
+    }
+
+    main > section:not(:last-of-type) {
+      border-bottom: 1px solid rgba(10, 19, 23, 0.12);
+    }
+
+    .section--cloud {
+      background: var(--cloudy-day);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section--cloud::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -15%;
+      width: min(55vw, 520px);
+      height: min(55vw, 520px);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(147, 177, 166, 0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .section-head {
+      max-width: var(--section-head-max);
+      margin-bottom: var(--section-head-margin-bottom);
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-head p {
+      margin: 0.65rem 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1rem, 2.5vw, 1.35rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    .value-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--eggshell-sky);
+      box-shadow: var(--shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(4, 13, 18, 0.1);
+    }
+
+    .value-card__img {
+      aspect-ratio: 16 / 10;
+      background: var(--cloudy-day);
+      overflow: hidden;
+    }
+
+    .value-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .value-card__body {
+      padding: 1.15rem 1.2rem 1.35rem;
+    }
+
+    .value-card__body p {
+      margin: 0.45rem 0 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .roles-band {
+      position: relative;
+      z-index: 1;
+    }
+
+    .roles-band .glass {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+      gap: clamp(1.25rem, 3vw, 2rem);
+      align-items: center;
+      padding: clamp(1.5rem, 3.5vw, 2rem);
+    }
+
+    .roles-band__copy h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .roles-band__copy > p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: var(--section-head-intro-max);
+    }
+
+    .roles-band__copy .fineprint {
+      margin-top: 1rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .roles-band__copy a {
+      font-weight: 600;
+      color: var(--forest);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .roles-band__copy a:hover {
+      color: var(--bark);
+    }
+
+    .roles-band__cta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .roles-band__cta .button {
+      justify-content: center;
+      padding: 14px 20px;
+    }
+
+    .eeo-note {
+      margin-top: clamp(2rem, 5vw, 2.75rem);
+      padding-top: 1.5rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      max-width: 48rem;
+    }
+
+    footer {
+      padding: 26px 0 32px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .careers-hero__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .careers-hero__visual {
+        max-height: 280px;
+        aspect-ratio: 16 / 9;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .roles-band .glass {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner { height: 64px; }
+      .topbar-cluster {
+        gap: 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent);
+        -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 20px), transparent);
+      }
+      .topbar-cluster::-webkit-scrollbar { display: none; }
+      .topbar-cluster .nav {
+        gap: 2px;
+        font-size: 0.82rem;
+        flex-shrink: 0;
+      }
+
+      .topbar .nav a {
+        padding: 0.45rem 0.65rem;
+      }
+      .topbar-contact {
+        padding: 10px 14px;
+        font-size: 0.88rem;
+      }
+      .careers-hero__actions .button,
+      .roles-band__cta .button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/site-footer.css">
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="container topbar-inner">
+      <div class="topbar-cluster">
+        <a class="brand" href="index.html" aria-label="Alkymē home">
+          <img class="brand-logo" src="assets/alkyme-logo-rt-hzt-black.svg" alt="Alkymē" width="200" height="36" decoding="async">
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="careers.html" aria-current="page">Careers</a>
+        </nav>
+      </div>
+      <a class="button button-secondary topbar-contact" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="careers-hero" aria-labelledby="careers-heading">
+      <div class="container careers-hero__grid">
+        <div>
+          <div class="eyebrow">Careers</div>
+          <h1 id="careers-heading">Do the most meaningful work of your next chapter</h1>
+          <p class="lead">
+            Join the studio or a venture team. Work on real products from day one.
+          </p>
+          <div class="careers-hero__actions">
+            <a class="button button-primary" href="https://alkyme.breezy.hr/" target="_blank" rel="noopener noreferrer">View open roles</a>
+            <a class="button button-secondary" href="about.html">About the studio</a>
+          </div>
+        </div>
+        <div>
+          <figure class="careers-hero__visual">
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4b59?auto=format&fit=crop&w=900&q=80"
+              alt="Colleagues having a friendly conversation in a modern office"
+              width="600"
+              height="600"
+              loading="eager"
+              decoding="async">
+          </figure>
+          <div class="glass careers-hero__panel" style="margin-top:1rem;">
+            <h2>Quick apply</h2>
+            <p>Skip the noise: one link to every open role, updated as we post.</p>
+            <a class="button button-primary" href="https://alkyme.breezy.hr/" target="_blank" rel="noopener noreferrer">Open Breezy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cloud" aria-labelledby="life-heading">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Life here</div>
+          <h2 id="life-heading">How it feels to build with us</h2>
+          <p>An internal startup studio in Los Angeles—tight feedback loops, real ownership, and room to grow as ventures spin out.</p>
+        </div>
+        <div class="value-grid">
+          <article class="value-card">
+            <div class="value-card__img">
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c54be3855833?auto=format&fit=crop&w=800&q=80"
+                alt="Focused work at a laptop in a calm space"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async">
+            </div>
+            <div class="value-card__body">
+              <h3>Depth over noise</h3>
+              <p>Strategy, product, and GTM sit together—so decisions stay grounded in users and economics.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <div class="value-card__img">
+              <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+                alt="Team workshop with notes and laptops"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async">
+            </div>
+            <div class="value-card__body">
+              <h3>Learnings that compound</h3>
+              <p>Playbooks travel across bets—you’re not reinventing the wheel every time we start something new.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <div class="value-card__img">
+              <img
+                src="https://images.unsplash.com/photo-1444723328162-873f47eae236?auto=format&fit=crop&w=800&q=80"
+                alt="Palm trees and California light"
+                width="400"
+                height="250"
+                loading="lazy"
+                decoding="async">
+            </div>
+            <div class="value-card__body">
+              <h3>LA roots, global reach</h3>
+              <p>We build where we live and ship products used well beyond the coast—see our <a href="index.html">home page</a> for the model.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="roles-heading">
+      <div class="container roles-band">
+        <div class="glass">
+          <div class="roles-band__copy">
+            <div class="eyebrow">Open positions</div>
+            <h2 id="roles-heading">Find your role on Breezy</h2>
+            <p>
+              Every application starts on our jobs site. For questions about a listing or working at the studio, use <a href="contact.html">contact</a> and we’ll route you to the right person.
+            </p>
+            <p class="fineprint">
+              Alkymē provides equal employment opportunity to all employees and applicants and prohibits discrimination and harassment of any kind.
+            </p>
+          </div>
+          <div class="roles-band__cta">
+            <a class="button button-primary" href="https://alkyme.breezy.hr/" target="_blank" rel="noopener noreferrer">Browse all roles</a>
+            <a class="button button-secondary" href="contact.html">General inquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cloud" style="padding-top:0;" aria-label="More about Alkymē">
+      <div class="container">
+        <p class="eeo-note">
+          New to Alkymē? Read <a href="about.html">About</a> for how the studio operates, or explore <a href="index.html#ventures">ventures</a> on the home page.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="site-footer__logo" href="index.html" aria-label="Alkymē home">
+          <img src="assets/alkyme-logo-rt-hzt-black.svg" alt="Alkymē" width="200" height="36" decoding="async">
+        </a>
+        <ul class="site-footer__social" aria-label="Social and email">
+          <li>
+            <a href="mailto:hello@alkyme.io" aria-label="Email hello@alkyme.io">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav class="site-footer__nav" aria-label="Site">
+        <div class="site-footer__col">
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Studio</h2>
+            <ul class="site-footer__links">
+              <li><a href="index.html">Home</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__col">
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Company</h2>
+            <ul class="site-footer__links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="careers.html" aria-current="page">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__col">
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Contact</h2>
+            <ul class="site-footer__links">
+              <li><a href="mailto:hello@alkyme.io">hello@alkyme.io</a></li>
+              <li><a href="tel:+15598255963">(559) 825-5963</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container site-footer__bottom-inner">
+        <span>© <span id="year"></span> Alkyme. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
