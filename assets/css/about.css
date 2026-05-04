@@ -1,3 +1,8 @@
+/* Utility Classes */
+.u-hidden {
+  display: none;
+}
+
 .about-intro {
   max-width: 900px;
   margin: 0 auto;
@@ -41,19 +46,19 @@
 }
 
 .phase-card {
-  background: rgba(var(--rgb-white), 0.6);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(var(--rgb-moss), 0.12);
+  background: var(--glass-marketing-gradient);
+  backdrop-filter: var(--glass-marketing-filter);
+  -webkit-backdrop-filter: var(--glass-marketing-filter);
+  border: var(--glass-marketing-border);
+  box-shadow: var(--glass-marketing-shadow);
   border-radius: var(--radius-media-lg);
   padding: var(--space-2xl);
   transition: all var(--duration-medium) var(--ease-soft);
 }
 
 .phase-card:hover {
-  border-color: rgba(var(--rgb-moss), 0.3);
-  box-shadow: 0 12px 32px rgba(var(--rgb-moss), 0.15);
-  transform: translateY(-2px);
+  box-shadow: var(--glass-marketing-shadow-hover);
+  transform: var(--lift-sm);
 }
 
 .phase-card__number {
@@ -127,6 +132,10 @@
   gap: var(--space-xl);
 }
 
+.differences-list--spaced {
+  margin-top: var(--space-4xl);
+}
+
 .difference-item__title {
   font-size: var(--type-h3-section-size);
   font-weight: var(--type-heading-ui-weight);
@@ -163,19 +172,19 @@
 }
 
 .philosophy-card {
-  background: rgba(var(--rgb-white), 0.6);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(var(--rgb-sage), 0.15);
+  background: var(--glass-marketing-gradient);
+  backdrop-filter: var(--glass-marketing-filter);
+  -webkit-backdrop-filter: var(--glass-marketing-filter);
+  border: var(--glass-marketing-border);
+  box-shadow: var(--glass-marketing-shadow);
   border-radius: var(--radius-media-lg);
   padding: var(--space-xl);
   transition: all var(--duration-medium) var(--ease-soft);
 }
 
 .philosophy-card:hover {
-  border-color: rgba(var(--rgb-sage), 0.3);
-  box-shadow: 0 8px 24px rgba(var(--rgb-sage), 0.15);
-  transform: translateY(-2px);
+  box-shadow: var(--glass-marketing-shadow-hover);
+  transform: var(--lift-sm);
 }
 
 .philosophy-card__title {
@@ -220,10 +229,11 @@
 }
 
 .focus-card {
-  background: rgba(var(--rgb-white), 0.6);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(var(--rgb-amber), 0.12);
+  background: var(--glass-marketing-gradient);
+  backdrop-filter: var(--glass-marketing-filter);
+  -webkit-backdrop-filter: var(--glass-marketing-filter);
+  border: var(--glass-marketing-border);
+  box-shadow: var(--glass-marketing-shadow);
   border-radius: var(--radius-media-lg);
   padding: var(--space-2xl);
   text-align: left;
@@ -231,9 +241,8 @@
 }
 
 .focus-card:hover {
-  border-color: rgba(var(--rgb-amber), 0.3);
-  box-shadow: 0 12px 32px rgba(var(--rgb-amber), 0.15);
-  transform: translateY(-2px);
+  box-shadow: var(--glass-marketing-shadow-hover);
+  transform: var(--lift-sm);
 }
 
 .focus-card__title {
@@ -248,17 +257,7 @@
   margin-bottom: var(--space-lg);
 }
 
-html[data-theme="dark"] .phase-card {
-  background: rgba(var(--rgb-white), 0.03);
-  border-color: rgba(var(--rgb-dew), 0.1);
-}
-
-html[data-theme="dark"] .phase-card:hover {
-  background: rgba(var(--rgb-white), 0.05);
-  border-color: rgba(var(--rgb-dew), 0.25);
-  box-shadow: 0 12px 32px rgba(var(--rgb-dew), 0.15);
-}
-
+/* Dark mode handled by design tokens */
 html[data-theme="dark"] .phase-card__number {
   color: var(--dew);
   opacity: 0.5;
@@ -270,26 +269,4 @@ html[data-theme="dark"] .phase-card:hover .phase-card__number {
 
 html[data-theme="dark"] .phase-card__list li::before {
   color: var(--dew);
-}
-
-html[data-theme="dark"] .philosophy-card {
-  background: rgba(var(--rgb-white), 0.03);
-  border-color: rgba(var(--rgb-sage), 0.12);
-}
-
-html[data-theme="dark"] .philosophy-card:hover {
-  background: rgba(var(--rgb-white), 0.05);
-  border-color: rgba(var(--rgb-sage), 0.25);
-  box-shadow: 0 8px 24px rgba(var(--rgb-sage), 0.12);
-}
-
-html[data-theme="dark"] .focus-card {
-  background: rgba(var(--rgb-white), 0.03);
-  border-color: rgba(var(--rgb-wheat), 0.1);
-}
-
-html[data-theme="dark"] .focus-card:hover {
-  background: rgba(var(--rgb-white), 0.05);
-  border-color: rgba(var(--rgb-gold), 0.25);
-  box-shadow: 0 12px 32px rgba(var(--rgb-gold), 0.12);
 }

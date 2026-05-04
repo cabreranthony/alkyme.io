@@ -5,6 +5,20 @@
 /* Navigation - Homepage uses global nav scroll states (nav--on-dark and nav--scrolled)
    No overrides needed - home-nav-scroll.js handles state switching */
 
+/* Language trigger hidden by default */
+.alkyme-lang-trigger {
+  display: none;
+}
+
+/* Enterprise eyebrow - used in CTA sections */
+.eyebrow--enterprise {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
 /* Paths Grid - 3 column card layout */
 .paths-grid {
   display: grid;

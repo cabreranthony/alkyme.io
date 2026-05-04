@@ -31,10 +31,11 @@
 }
 
 .contact-info {
-  background: rgba(var(--rgb-white), 0.6);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(var(--rgb-amber), 0.12);
+  background: var(--glass-marketing-gradient);
+  backdrop-filter: var(--glass-marketing-filter);
+  -webkit-backdrop-filter: var(--glass-marketing-filter);
+  border: var(--glass-marketing-border);
+  box-shadow: var(--glass-marketing-shadow);
   border-radius: var(--radius-media-lg);
   padding: var(--space-2xl);
   height: fit-content;
@@ -64,8 +65,8 @@
 
 .contact-method__icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   background: rgba(var(--rgb-moss), 0.12);
   border-radius: var(--radius);
   display: flex;
@@ -138,10 +139,11 @@
 }
 
 .faq-item {
-  background: rgba(var(--rgb-white), 0.6);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(var(--rgb-sage), 0.12);
+  background: var(--glass-marketing-gradient);
+  backdrop-filter: var(--glass-marketing-filter);
+  -webkit-backdrop-filter: var(--glass-marketing-filter);
+  border: var(--glass-marketing-border);
+  box-shadow: var(--glass-marketing-shadow);
   border-radius: var(--radius-media-lg);
   padding: var(--space-xl);
   transition: all var(--duration-medium) var(--ease-soft);
