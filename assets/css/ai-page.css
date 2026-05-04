@@ -642,6 +642,18 @@ html[data-theme="dark"] .ai-visual-break {
   margin-bottom: var(--space-5xl);
 }
 
+/* Philosophy Grid Mobile Responsive */
+@media (max-width: 900px) {
+  .ai-philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .ai-philosophy-card {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+}
+
 .ai-philosophy-card {
   background: var(--white);
   border: 1px solid rgba(var(--rgb-moss), 0.2);
@@ -919,6 +931,14 @@ html[data-theme="dark"] .ai-cta-hero__overlay {
   }
 }
 
+/* AI Resources Grid Responsive */
+@media (max-width: 900px) {
+  .ai-resources__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
 @media (max-width: 640px) {
   .ai-hero__actions {
     flex-direction: column;
@@ -931,8 +951,12 @@ html[data-theme="dark"] .ai-cta-hero__overlay {
   }
 
   .ai-resources__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ai-resource-item {
+    padding: var(--space-2xl) var(--space-lg);
   }
 
   .ai-feature-hero__title {

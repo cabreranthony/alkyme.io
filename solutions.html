@@ -7,8 +7,8 @@
   <!-- Theme Detection (before render) -->
   <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
 
-  <title>Proven Solutions - Alkymē</title>
-  <meta name="description" content="Technology battle-tested in real companies, customized for yours. From healthcare to logistics, we license the platforms powering our ventures—deployed in weeks, not years.">
+  <title>Solutions | Alkymē</title>
+  <meta name="description" content="Three ways we help you build: venture-backed companies, proven technology platforms, and expert marketing services. From operators who've built companies from scratch.">
 
   <!-- Styles -->
   <link rel="preload" href="dist/assets/styles.min.css" as="style">
@@ -34,13 +34,13 @@
 
         <div class="nav__menu">
           <a href="/about.html" class="nav__link">About</a>
-          <a href="/what-we-do.html#solutions" class="nav__link nav__link--active">What We Do</a>
+          <a href="/solutions.html" class="nav__link nav__link--active">Solutions</a>
           <a href="/careers.html" class="nav__link">Careers</a>
           <a href="/contact.html" class="nav__link">Contact</a>
         </div>
 
         <div class="nav__actions">
-          <button type="button" class="alkyme-lang-trigger" style="display: none;" aria-haspopup="dialog" aria-expanded="false" aria-label="Select language">
+          <button type="button" class="alkyme-lang-trigger" style="display: none;" aria-haspopup="menu" aria-expanded="false" aria-label="Select language">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <line x1="2" y1="12" x2="22" y2="12"/>
@@ -70,416 +70,226 @@
   <main id="main-content">
 
     <!-- Hero Section -->
-    <section class="hero hero-variant hero-variant-5">
+    <section class="hero hero--compact">
       <div class="container">
-        <div class="hero-variant-5__grid">
-          <!-- Left: Text Content -->
-          <div class="hero-variant-5__content">
-            <h1 class="hero-variant-5__headline">
-              Technology proven by real companies, adapted for yours
-            </h1>
-            <p class="hero-variant-5__subheadline">
-              We build companies first. Then we take what works—the platforms, the processes, the hard-won knowledge—and make it available to you. Battle-tested, customized to your workflows, deployed in weeks.
-            </p>
-            <div class="hero-variant-5__actions">
-              <a href="/contact.html?intent=demo" class="btn btn--primary btn--pill">Explore solutions</a>
-              <a href="/labs.html" class="btn btn--secondary btn--pill">View our companies</a>
-            </div>
-            <p class="hero-variant-5__trust">
-              From healthcare to logistics, serving businesses at every stage
-            </p>
-          </div>
-
-          <!-- Right: Video/Animated Element -->
-          <div class="hero-variant-5__visual">
-            <div class="animated-visual">
-              <div class="animated-visual__orbit">
-                <div class="orbit-ring orbit-ring--1"></div>
-                <div class="orbit-ring orbit-ring--2"></div>
-                <div class="orbit-ring orbit-ring--3"></div>
-                <div class="orbit-dot orbit-dot--1"></div>
-                <div class="orbit-dot orbit-dot--2"></div>
-                <div class="orbit-dot orbit-dot--3"></div>
-                <div class="orbit-dot orbit-dot--4"></div>
-              </div>
-              <div class="animated-visual__center">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                  <line x1="12" y1="22.08" x2="12" y2="12"/>
-                </svg>
-              </div>
-            </div>
-          </div>
+        <div class="hero__content">
+          <h1 class="hero__title">Three ways we help you build</h1>
+          <p class="hero__description">
+            We build venture-backed companies, deploy proven technology platforms, and offer expert marketing services. Choose how we work together.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Value Props - Full Width with Cards -->
-    <section class="solutions-value-props" id="what-we-offer">
-      <div class="solutions-value-props__inner">
-        <div class="solutions-value-props__header">
-          <h2 class="solutions-value-props__title">Built by operators, proven at scale</h2>
-          <p class="solutions-value-props__description">
-            Deploy the same technology stack running our live ventures—battle-tested, compliant, and ready to scale from day one.
+    <!-- Ventures Section -->
+    <section id="ventures" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Ventures</span>
+          <h2 class="display-title">Build venture-backed companies</h2>
+          <p class="section-intro">
+            We build companies from zero with real traction. Two ventures currently in market: a game engine in alpha and healthcare AI serving 3 clients.
           </p>
         </div>
 
-        <div class="value-props-cards">
-          <div class="value-prop-glass-card">
-            <div class="value-prop-glass-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
+        <div class="solutions-grid">
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
+              <h3 class="solution-card__title">Epoch²</h3>
             </div>
-            <h3 class="value-prop-glass-card__title">Battle-Tested Infrastructure</h3>
-            <p class="value-prop-glass-card__description">
-              SOC 2 compliant, HIPAA-ready, proven at scale with real users
+            <p class="solution-card__description">
+              Procedural narrative engine for game studios. Alpha with 2 partner studios testing dynamic storytelling systems.
             </p>
           </div>
 
-          <div class="value-prop-glass-card">
-            <div class="value-prop-glass-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
               </svg>
+              <h3 class="solution-card__title">Healthcare AI</h3>
             </div>
-            <h3 class="value-prop-glass-card__title">Weeks, Not Years</h3>
-            <p class="value-prop-glass-card__description">
-              Deploy in 4-8 weeks instead of 18-month custom builds
+            <p class="solution-card__description">
+              Multi-agent marketing automation for regional health systems. 3 paying clients, 85% cost reduction vs traditional agencies.
             </p>
           </div>
+        </div>
 
-          <div class="value-prop-glass-card">
-            <div class="value-prop-glass-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
-            </div>
-            <h3 class="value-prop-glass-card__title">Real Technology, Not Wrappers</h3>
-            <p class="value-prop-glass-card__description">
-              Custom models and production infrastructure, not just API calls
-            </p>
-          </div>
-
-          <div class="value-prop-glass-card">
-            <div class="value-prop-glass-card__icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <h3 class="value-prop-glass-card__title">Your Brand, Your Data</h3>
-            <p class="value-prop-glass-card__description">
-              Full ownership, no platform fees, no vendor lock-in
-            </p>
-          </div>
+        <div class="section-actions">
+          <a href="/contact.html?intent=ventures" class="btn btn--primary btn--pill">Learn about ventures</a>
         </div>
       </div>
     </section>
 
-    <!-- Process Section - How It Works -->
-    <section class="section solutions-process" id="process">
-      <div class="container container--wide">
-        <div class="solutions-process__header">
-          <p class="solutions-process__eyebrow">How It Works</p>
-          <h2 class="display-title display-title--md">From venture to your infrastructure</h2>
-        </div>
-
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-card__content">
-              <h3 class="process-card__title">1. Match</h3>
-              <p class="process-card__description">
-                We identify which venture-built platform solves your problem. Healthcare? Logistics? We've already built it.
-              </p>
-            </div>
-          </div>
-
-          <div class="process-card">
-            <div class="process-card__content">
-              <h3 class="process-card__title">2. Customize</h3>
-              <p class="process-card__description">
-                Adapt the core platform to your workflows, brand, and data requirements. White-label or co-branded.
-              </p>
-            </div>
-          </div>
-
-          <div class="process-card">
-            <div class="process-card__content">
-              <h3 class="process-card__title">3. Deploy</h3>
-              <p class="process-card__description">
-                Launch on your cloud infrastructure with full code ownership, or use our managed hosting. Your choice.
-              </p>
-            </div>
-          </div>
-
-          <div class="process-card">
-            <div class="process-card__content">
-              <h3 class="process-card__title">4. Scale</h3>
-              <p class="process-card__description">
-                Benefit from continuous improvements as we enhance our ventures. Updates flow to your deployment automatically.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What We Build - Accordion Section -->
-    <section class="section solutions-capabilities">
-      <div class="container container--wide">
-        <div class="capabilities-grid">
-
-          <!-- Left Column: Intro -->
-          <div class="capabilities-intro">
-            <p class="capabilities-intro__eyebrow">Industries We Serve</p>
-            <h2 class="display-title display-title--md">Venture-built tech, ready to deploy</h2>
-            <p class="capabilities-intro__description">
-              We operate in these industries and understand how AI transforms them. Sevā AI (healthcare) is public with proven metrics. Other platforms exist but aren't public yet.
-            </p>
-          </div>
-
-          <!-- Middle Column: Accordion -->
-          <div class="capabilities-accordion" role="region" aria-label="Available platform solutions">
-            <button class="capability-item capability-item--active" data-capability="healthcare" aria-expanded="true" aria-controls="healthcare-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">Healthcare Intelligence</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="healthcare-content" role="region">
-                <p class="capability-item__description">
-                  Patient engagement happens in fragments—phone calls, patient portals, EHR messages, front-desk check-ins. AI can unify these touchpoints into one intelligent system.
-                </p>
-                <p class="capability-item__description">
-                  We built Sevā AI to automate patient intake, triage, appointment scheduling, and follow-up communications. HIPAA-compliant from day one. Now serving 50,000+ patients. The same platform can power your practice, hospital network, or telehealth service.
-                </p>
-                <p class="capability-item__description">
-                  <strong>What AI enables:</strong> 24/7 patient support, automated triage, multilingual communication, seamless EHR integration, reduced admin workload.
-                </p>
-              </div>
-            </button>
-
-            <button class="capability-item" data-capability="logistics" aria-expanded="false" aria-controls="logistics-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">Supply Chain & Logistics</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="logistics-content" role="region">
-                <p class="capability-item__description">
-                  Real-time visibility is table stakes. Predictive routing is where AI earns its keep.
-                </p>
-                <p class="capability-item__description">
-                  Logistics networks generate massive data streams—GPS pings, warehouse scans, delivery confirmations, traffic patterns. AI can turn that noise into optimal routes, accurate ETAs, and early warning systems for delays.
-                </p>
-                <p class="capability-item__description">
-                  <strong>What AI enables:</strong> Predictive route optimization, demand forecasting, automated exception handling, cross-dock coordination, real-time visibility dashboards.
-                </p>
-              </div>
-            </button>
-
-            <button class="capability-item" data-capability="hospitality" aria-expanded="false" aria-controls="hospitality-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">Multi-Location Operations</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="hospitality-content" role="region">
-                <p class="capability-item__description">
-                  Operating 10+ locations means repeating the same problems at scale. Inventory variance. Scheduling chaos. Inconsistent customer experience.
-                </p>
-                <p class="capability-item__description">
-                  AI platforms can centralize operations while respecting local autonomy. Automated inventory reordering based on historical patterns. Staff scheduling that learns from traffic data. Customer feedback aggregation that surfaces real issues, not noise.
-                </p>
-                <p class="capability-item__description">
-                  <strong>What AI enables:</strong> Centralized operations dashboards, predictive inventory management, automated staff scheduling, cross-location analytics, unified customer experience.
-                </p>
-              </div>
-            </button>
-
-            <button class="capability-item" data-capability="retail" aria-expanded="false" aria-controls="retail-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">E-Commerce & Retail</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="retail-content" role="region">
-                <p class="capability-item__description">
-                  AI-powered recommendations, inventory optimization, omnichannel order management. Infrastructure proven at scale.
-                </p>
-              </div>
-            </button>
-
-            <button class="capability-item" data-capability="finance" aria-expanded="false" aria-controls="finance-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">Financial Services</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="finance-content" role="region">
-                <p class="capability-item__description">
-                  Payment processing, fraud detection, automated underwriting. SOC 2 compliant, PCI-ready infrastructure.
-                </p>
-              </div>
-            </button>
-
-            <button class="capability-item" data-capability="education" aria-expanded="false" aria-controls="education-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">Education & Training</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="education-content" role="region">
-                <p class="capability-item__description">
-                  LMS platforms, AI tutoring, progress tracking, certification systems. Built for enterprise learning at scale.
-                </p>
-              </div>
-            </button>
-
-            <button class="capability-item" data-capability="law" aria-expanded="false" aria-controls="law-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">Legal Services</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="law-content" role="region">
-                <p class="capability-item__description">
-                  Document review, contract analysis, case management, client intake automation. AI-powered legal research and compliance monitoring for law firms.
-                </p>
-              </div>
-            </button>
-
-            <button class="capability-item" data-capability="realestate" aria-expanded="false" aria-controls="realestate-content">
-              <div class="capability-item__header">
-                <div class="capability-item__text">
-                  <h3 class="capability-item__title">Real Estate & Property</h3>
-                </div>
-                <span class="capability-item__toggle" aria-hidden="true">+</span>
-              </div>
-              <div class="capability-item__content" id="realestate-content" role="region">
-                <p class="capability-item__description">
-                  Property management, tenant portals, maintenance tracking, virtual tours. Multi-property support built-in.
-                </p>
-              </div>
-            </button>
-          </div>
-
-          <!-- Right Column: Image Showcase -->
-          <div class="capabilities-showcase">
-            <div class="capabilities-showcase__images">
-              <img src="assets/images/solutions/img_person_hospital-room.jpg" alt="Healthcare Intelligence platform" class="capabilities-showcase__image capabilities-showcase__image--active" data-capability="healthcare" width="600" height="800" loading="lazy">
-              <video src="assets/images/solutions/vid_other_ship-port.mp4" alt="Supply Chain & Logistics platform" class="capabilities-showcase__image" data-capability="logistics" width="600" height="800" loop muted playsinline></video>
-              <img src="assets/images/solutions/img_person_bakery-owner.jpg" alt="Multi-Location Operations platform" class="capabilities-showcase__image" data-capability="hospitality" width="600" height="800" loading="lazy">
-              <video src="assets/images/solutions/vid_other_retail-shopping.mp4" alt="E-Commerce & Retail platform" class="capabilities-showcase__image" data-capability="retail" width="600" height="800" loop muted playsinline></video>
-              <img src="assets/images/solutions/img_other_financial-analysis.jpg" alt="Financial Services platform" class="capabilities-showcase__image" data-capability="finance" width="600" height="800" loading="lazy">
-              <img src="assets/images/solutions/img_people_learning.jpg" alt="Education & Training platform" class="capabilities-showcase__image" data-capability="education" width="600" height="800" loading="lazy">
-              <img src="assets/images/solutions/img_other_law-library.jpg" alt="Legal Services platform" class="capabilities-showcase__image" data-capability="law" width="600" height="800" loading="lazy">
-              <video src="assets/images/solutions/vid_people_house-showing.mp4" alt="Real Estate & Property platform" class="capabilities-showcase__image" data-capability="realestate" width="600" height="800" loop muted playsinline></video>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Case Studies - Light Section -->
-    <section class="section solutions-case-studies" id="case-studies">
-      <div class="container container--wide">
-        <div class="case-studies__header">
-          <p class="case-studies__eyebrow">Proven at Scale</p>
-          <h2 class="display-title display-title--xl">See what we've built</h2>
-          <p class="case-studies__description">
-            Sevā AI is our healthcare intelligence platform serving 50,000+ patients. The same infrastructure can power your business.
+    <!-- Technology Platforms Section -->
+    <section id="technology" class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Technology Platforms</span>
+          <h2 class="display-title">Deploy proven technology</h2>
+          <p class="section-intro">
+            License the same platforms running our ventures. Battle-tested, compliant, and ready to scale. Deploy in weeks, not years.
           </p>
         </div>
 
-        <!-- Sevā AI Showcase -->
-        <div class="seva-showcase">
-          <!-- Left: Media -->
-          <div class="seva-showcase__media">
-            <div class="seva-showcase__video-wrapper">
-              <video src="assets/images/solutions/vid_other_hospital-hall.mp4" autoplay muted loop playsinline>
-                Your browser does not support the video tag.
-              </video>
+        <div class="solutions-grid solutions-grid--3col">
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                <line x1="6" y1="18" x2="6.01" y2="18"/>
+              </svg>
+              <h3 class="solution-card__title">Sevā AI Platform</h3>
             </div>
+            <p class="solution-card__description">
+              HIPAA-compliant patient portals, AI-powered triage, telehealth integration, and automated medical record management. Serving 50,000+ patients.
+            </p>
+            <ul class="solution-card__features">
+              <li>Deploy in 4-6 weeks with white-label branding</li>
+              <li>Full source code access and data ownership</li>
+              <li>SOC 2 compliant infrastructure</li>
+            </ul>
           </div>
 
-          <!-- Right: Content & Metrics -->
-          <div class="seva-showcase__content">
-            <div class="seva-showcase__text">
-              <h3 class="seva-showcase__title">Sevā AI: Healthcare Intelligence Platform</h3>
-              <p class="seva-showcase__description">
-                HIPAA-compliant patient portals, AI-powered triage, telehealth integration, and automated medical record management. Serving 50,000+ patients across regional health systems.
-              </p>
-              <p class="seva-showcase__description">
-                Deploy the same platform for your practice, hospital network, or telehealth service. White-label or co-branded.
-              </p>
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v6m0 6v6"/>
+                <path d="M1 12h6m6 0h6"/>
+              </svg>
+              <h3 class="solution-card__title">AI Campaign Platform</h3>
             </div>
-
-            <div class="seva-showcase__metrics">
-              <div class="seva-metric-card">
-                <div class="seva-metric-card__value">85%</div>
-                <div class="seva-metric-card__label">Reduced Admin Time</div>
-              </div>
-              <div class="seva-metric-card">
-                <div class="seva-metric-card__value">3</div>
-                <div class="seva-metric-card__label">Paying Clients</div>
-              </div>
-              <div class="seva-metric-card">
-                <div class="seva-metric-card__value">50,000+</div>
-                <div class="seva-metric-card__label">Patients Served</div>
-              </div>
-              <div class="seva-metric-card">
-                <div class="seva-metric-card__value">Live</div>
-                <div class="seva-metric-card__label">Production Status</div>
-              </div>
-            </div>
-
-            <div class="seva-showcase__actions">
-              <a href="/contact.html?intent=licensing" class="btn btn--primary btn--pill">Explore Sevā AI</a>
-              <a href="/labs.html" class="btn btn--secondary btn--pill">View all ventures</a>
-            </div>
+            <p class="solution-card__description">
+              6-agent system handling campaign research, compliance, content creation, and orchestration. Live with 3 healthcare clients, 85% cost reduction.
+            </p>
           </div>
+
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+              <h3 class="solution-card__title">Custom Development</h3>
+            </div>
+            <p class="solution-card__description">
+              Need something custom? We adapt our technology stack to your specific requirements. Real platforms, not thin API wrappers.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-actions">
+          <a href="/contact.html?intent=licensing" class="btn btn--primary btn--pill">Explore platforms</a>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section - Full Width Hero Style -->
-    <section class="solutions-cta">
-      <div class="solutions-cta__inner">
-        <!-- Left: Content with background image -->
-        <div class="solutions-cta__content">
-          <div class="solutions-cta__text">
-            <h2 class="solutions-cta__title">Deploy venture-grade technology in your business</h2>
-            <p class="solutions-cta__description">
-              Tell us your challenge. We'll show you which venture-built platform solves it, and provide a deployment proposal within 48 hours.
-            </p>
-            <div class="solutions-cta__actions">
-              <a href="/contact.html" class="btn btn--primary btn--pill">Explore Solutions</a>
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Services</span>
+          <h2 class="display-title">Expert marketing & design</h2>
+          <p class="section-intro">
+            Full-service digital marketing, web design, and brand strategy from operators who've launched ventures, not just projects.
+          </p>
+        </div>
+
+        <div class="solutions-grid solutions-grid--4col">
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              <h3 class="solution-card__title">Digital Foundation</h3>
             </div>
+            <ul class="solution-card__list">
+              <li>Website design & development</li>
+              <li>E-commerce platforms</li>
+              <li>SEO & site performance</li>
+              <li>Hosting & security</li>
+            </ul>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <polyline points="19 12 12 19 5 12"/>
+              </svg>
+              <h3 class="solution-card__title">Growth Marketing</h3>
+            </div>
+            <ul class="solution-card__list">
+              <li>Growth strategy & planning</li>
+              <li>Paid advertising (Google, Meta, LinkedIn)</li>
+              <li>Social media marketing</li>
+              <li>Email & SMS campaigns</li>
+              <li>Analytics & reporting</li>
+            </ul>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+              </svg>
+              <h3 class="solution-card__title">Brand & Creative</h3>
+            </div>
+            <ul class="solution-card__list">
+              <li>Brand strategy & positioning</li>
+              <li>Visual identity & logo design</li>
+              <li>Content writing & copywriting</li>
+              <li>Photography & video production</li>
+            </ul>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card__header">
+              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+              <h3 class="solution-card__title">Business Operations</h3>
+            </div>
+            <ul class="solution-card__list">
+              <li>Business strategy & planning</li>
+              <li>Financial modeling & forecasting</li>
+              <li>Operations & process optimization</li>
+              <li>Systems integration & automation</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Right: Floating image card -->
-        <div class="solutions-cta__image">
-          <div class="solutions-cta__image-card">
-            <img src="assets/images/solutions/img_person_working-computer.jpg" alt="Person working on computer" loading="lazy">
+        <div class="section-actions">
+          <a href="/contact.html?intent=services" class="btn btn--primary btn--pill">Start a project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-box__title">Ready to work together?</h2>
+          <p class="cta-box__description">
+            Whether you need venture capital, proven technology, or marketing services—we bring operator experience to every project.
+          </p>
+          <div class="cta-box__actions">
+            <a href="/contact.html" class="btn btn--primary btn--pill">Get in touch</a>
+            <a href="/about.html" class="btn btn--secondary btn--pill">Learn about us</a>
           </div>
         </div>
       </div>
@@ -503,18 +313,17 @@
         <!-- Navigation Sections (Right Side) -->
         <nav class="site-footer-columns">
 
-          <!-- Support - Column 1, Row 1 -->
+          <!-- Support -->
           <div class="site-footer-column footer-col-support">
             <h4 class="site-footer-heading">Support</h4>
             <ul class="site-footer-list">
               <li><a href="/contact.html">Contact Us</a></li>
               <li><a href="mailto:hello@alkyme.io">Email Support</a></li>
               <li><a href="tel:+15598255963">Call Us</a></li>
-              <li><a href="/solutions.html#case-studies">Case Studies</a></li>
             </ul>
           </div>
 
-          <!-- Legal - Column 2, Row 1 -->
+          <!-- Legal -->
           <div class="site-footer-column footer-col-legal">
             <h4 class="site-footer-heading">Legal</h4>
             <ul class="site-footer-list">
@@ -523,25 +332,24 @@
             </ul>
           </div>
 
-          <!-- Company - Column 3, Row 1 (stacked above Support visually) -->
+          <!-- Company -->
           <div class="site-footer-column footer-col-company">
             <h4 class="site-footer-heading">Company</h4>
             <ul class="site-footer-list">
               <li><a href="/about.html">About</a></li>
-              <li><a href="/labs.html">Labs</a></li>
+              <li><a href="/solutions.html">Solutions</a></li>
               <li><a href="/careers.html">Careers</a></li>
               <li><a href="/contact.html">Contact</a></li>
             </ul>
           </div>
 
-          <!-- Solutions - Column 4, Row 1 (stacked above Legal visually) -->
+          <!-- Solutions -->
           <div class="site-footer-column footer-col-solutions">
             <h4 class="site-footer-heading">Solutions</h4>
             <ul class="site-footer-list">
-              <li><a href="/solutions.html">Platform Licensing</a></li>
-              <li><a href="/solutions.html#healthcare">Healthcare AI</a></li>
-              <li><a href="/solutions.html#logistics">Supply Chain</a></li>
-              <li><a href="/solutions.html#retail">E-Commerce</a></li>
+              <li><a href="/solutions.html#ventures">Ventures</a></li>
+              <li><a href="/solutions.html#technology">Technology</a></li>
+              <li><a href="/solutions.html#services">Services</a></li>
             </ul>
           </div>
 
@@ -563,9 +371,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/site-theme.js"></script>
-  <script src="assets/js/site-lang.js"></script>
-  <script src="assets/js/solutions-accordion.js"></script>
+  <script src="assets/site-theme.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>

@@ -512,9 +512,193 @@ html[data-theme="dark"] .nav--scrolled .nav__logo-img--dark {
   gap: var(--space-md);
 }
 
+/* Mobile Hamburger Menu Button */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+  transition: transform var(--duration-fast) var(--ease-soft);
+}
+
+.nav__hamburger:hover {
+  transform: scale(1.05);
+}
+
+.nav__hamburger:active {
+  transform: scale(0.95);
+}
+
+.nav__hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: var(--bark);
+  border-radius: 2px;
+  transition: all var(--duration-medium) var(--ease-soft);
+  transform-origin: center;
+}
+
+.nav__hamburger-line:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+/* Hamburger animation when menu is open */
+.nav__hamburger[aria-expanded="true"] .nav__hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__hamburger[aria-expanded="true"] .nav__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__hamburger[aria-expanded="true"] .nav__hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Hamburger on dark section */
+.nav--on-dark .nav__hamburger-line {
+  background: #ffffff;
+}
+
+/* Hamburger when scrolled */
+.nav--scrolled .nav__hamburger-line {
+  background: var(--text);
+}
+
+/* Mobile overlay menu */
+.nav__mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--rgb-bark), 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  transition: opacity var(--duration-medium) var(--ease-soft),
+              visibility var(--duration-medium) var(--ease-soft);
+}
+
+.nav__mobile-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav__mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(85vw, 400px);
+  background: var(--glass-marketing-gradient);
+  backdrop-filter: var(--glass-marketing-filter);
+  -webkit-backdrop-filter: var(--glass-marketing-filter);
+  border-left: var(--glass-marketing-border);
+  box-shadow: var(--glass-marketing-shadow-hover);
+  transform: translateX(100%);
+  visibility: hidden;
+  z-index: 1000;
+  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-2xl) var(--space-2xl);
+  overflow-y: auto;
+  transition: transform var(--duration-medium) var(--ease-soft),
+              visibility var(--duration-medium) var(--ease-soft);
+}
+
+.nav__mobile-menu.is-active {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.nav__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xl);
+}
+
+.nav__mobile-link {
+  font-size: var(--type-h3-size);
+  font-weight: 600;
+  color: var(--text);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  transition: background var(--duration-fast) var(--ease-soft),
+              color var(--duration-fast) var(--ease-soft);
+  display: block;
+  position: relative;
+}
+
+.nav__mobile-link:hover {
+  background: var(--hover-overlay);
+  color: var(--moss);
+}
+
+.nav__mobile-link:active {
+  background: var(--press-overlay);
+}
+
+.nav__mobile-link--active {
+  color: var(--moss);
+  background: rgba(var(--rgb-moss), 0.08);
+}
+
+.nav__mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+  border-top: var(--border-subtle);
+}
+
+.nav__mobile-action-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: rgba(var(--rgb-dew), 0.05);
+  transition: background var(--duration-fast) var(--ease-soft);
+}
+
+.nav__mobile-action-item:hover {
+  background: var(--hover-overlay);
+}
+
+.nav__mobile-action-label {
+  font-size: var(--type-body-size);
+  font-weight: 500;
+  color: var(--text);
+}
+
 @media (max-width: 768px) {
   .nav__menu {
-    gap: var(--space-lg);
+    display: none;
+  }
+
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__actions {
+    gap: var(--space-sm);
+  }
+
+  /* Hide theme toggle and language selector on mobile - they'll be in the mobile menu */
+  .nav__actions .theme-toggle,
+  .nav__actions .alkyme-lang-trigger {
+    display: none;
   }
 }
 

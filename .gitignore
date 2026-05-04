@@ -31,6 +31,10 @@ yarn-error.log*
 *.bak
 *.backup
 *.deprecated
+*.broken
+
+# Old "What We Do" files (renamed to Solutions)
+what-we-do.*
 
 # Documentation (keep essential docs)
 AUDIT*.md
