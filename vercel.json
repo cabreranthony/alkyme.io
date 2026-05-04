@@ -1,6 +1,8 @@
 {
   "buildCommand": "npm run build:css",
   "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/",
