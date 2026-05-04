@@ -2598,7 +2598,7 @@ html[data-theme="dark"] .texture-overlay::before {
   background: rgba(var(--rgb-white), 0.5);
   backdrop-filter: blur(8px) saturate(120%);
   -webkit-backdrop-filter: blur(8px) saturate(120%);
-  border: 1px solid rgba(var(--rgb-forest), 0.25);
+  border: 1.5px solid rgba(var(--rgb-forest), 0.5);
   border-radius: var(--radius);
   color: var(--text);
   transition: all var(--duration-fast) var(--ease-soft);
@@ -2608,7 +2608,7 @@ html[data-theme="dark"] .texture-overlay::before {
 .form__textarea:hover,
 .form__select:hover {
   background: rgba(var(--rgb-white), 0.7);
-  border-color: rgba(var(--rgb-moss), 0.4);
+  border-color: rgba(var(--rgb-moss), 0.6);
   box-shadow: 0 2px 8px rgba(var(--rgb-moss), 0.08);
 }
 
@@ -2711,14 +2711,14 @@ html[data-theme="dark"] .form__input,
 html[data-theme="dark"] .form__textarea,
 html[data-theme="dark"] .form__select {
   background: rgba(var(--rgb-white), 0.05);
-  border-color: rgba(var(--rgb-dew), 0.25);
+  border-color: rgba(var(--rgb-dew), 0.45);
 }
 
 html[data-theme="dark"] .form__input:hover,
 html[data-theme="dark"] .form__textarea:hover,
 html[data-theme="dark"] .form__select:hover {
   background: rgba(var(--rgb-white), 0.08);
-  border-color: rgba(var(--rgb-dew), 0.4);
+  border-color: rgba(var(--rgb-dew), 0.65);
   box-shadow: 0 2px 8px rgba(var(--rgb-dew), 0.1);
 }
 
