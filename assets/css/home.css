@@ -21,29 +21,28 @@
 }
 
 .process-card {
-  background: var(--white);
-  border: var(--border-width) solid rgba(var(--rgb-moss), 0.2);
+  background: var(--glass-marketing-gradient);
+  backdrop-filter: var(--glass-marketing-filter);
+  -webkit-backdrop-filter: var(--glass-marketing-filter);
+  border: var(--glass-marketing-border);
   border-radius: var(--radius-card);
   padding: var(--space-3xl) var(--space-2xl);
-  transition: all var(--duration-medium) var(--ease-soft);
-  box-shadow: var(--shadow-xs);
+  transition: var(--transition-card);
+  box-shadow: var(--glass-marketing-shadow);
 }
 
 .process-card:hover {
-  background: var(--white);
-  border-color: var(--moss);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(calc(var(--space-xs) * -0.5));
+  box-shadow: var(--glass-marketing-shadow-hover);
+  transform: translateY(-4px);
 }
 
 html[data-theme="dark"] .process-card {
-  background: rgba(var(--rgb-white), 0.03);
-  border-color: rgba(var(--rgb-dew), 0.2);
+  background: var(--glass-marketing-gradient);
+  border: var(--glass-marketing-border);
 }
 
 html[data-theme="dark"] .process-card:hover {
-  background: rgba(var(--rgb-white), 0.05);
-  border-color: var(--dew);
+  box-shadow: var(--glass-marketing-shadow-hover);
 }
 
 .process-card__number {
