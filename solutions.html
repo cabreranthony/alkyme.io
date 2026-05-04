@@ -7,7 +7,7 @@
   <!-- Theme Detection (before render) -->
   <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
 
-  <title>Solutions | Alkymē</title>
+  <title>Solutions | Alkyme</title>
   <meta name="description" content="Three ways we help you build: venture-backed companies, proven technology platforms, and expert marketing services. From operators who've built companies from scratch.">
 
   <!-- Styles -->
@@ -28,8 +28,8 @@
     <div class="container">
       <div class="nav__inner">
         <a href="/" class="nav__logo">
-          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--light">
-          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--dark">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkyme" class="nav__logo-img nav__logo-img--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkyme" class="nav__logo-img nav__logo-img--dark">
         </a>
 
         <div class="nav__menu">
@@ -38,6 +38,12 @@
           <a href="/careers.html" class="nav__link">Careers</a>
           <a href="/contact.html" class="nav__link">Contact</a>
         </div>
+
+        <button type="button" class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
         <div class="nav__actions">
           <button type="button" class="alkyme-lang-trigger" style="display: none;" aria-haspopup="menu" aria-expanded="false" aria-label="Select language">
@@ -63,6 +69,12 @@
           </button>
         </div>
       </div>
+      <div class="nav__mobile-menu">
+        <a href="/about.html" class="nav__link">About</a>
+        <a href="/solutions.html" class="nav__link">Solutions</a>
+        <a href="/careers.html" class="nav__link">Careers</a>
+        <a href="/contact.html" class="nav__link">Contact</a>
+      </div>
     </div>
   </nav>
 
@@ -85,36 +97,40 @@
     <section id="ventures" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Ventures</span>
+          <span class="eyebrow">ALKYME VENTURES</span>
           <h2 class="display-title">Build venture-backed companies</h2>
           <p class="section-intro">
             We build companies from zero with real traction. Two ventures currently in market: a game engine in alpha and healthcare AI serving 3 clients.
           </p>
         </div>
 
-        <div class="solutions-grid">
+        <div class="solutions-grid solutions-grid--2col">
+          <!-- Epoch2 Card -->
           <div class="solution-card">
-            <div class="solution-card__header">
-              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-              </svg>
-              <h3 class="solution-card__title">Epoch²</h3>
+            <div class="solution-card__media">
+              <img src="assets/labs/dominion-eternal-poster.jpg" alt="Epoch2 - Dominion Eternal" class="solution-card__image">
             </div>
-            <p class="solution-card__description">
-              Procedural narrative engine for game studios. Alpha with 2 partner studios testing dynamic storytelling systems.
-            </p>
+            <div class="solution-card__content">
+              <h3 class="solution-card__title">Epoch2</h3>
+              <p class="solution-card__description">
+                Procedural narrative engine for game studios. Alpha with 2 partner studios testing dynamic storytelling systems.
+              </p>
+            </div>
           </div>
 
+          <!-- Healthcare AI Card -->
           <div class="solution-card">
-            <div class="solution-card__header">
-              <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-              </svg>
-              <h3 class="solution-card__title">Healthcare AI</h3>
+            <div class="solution-card__media">
+              <video class="solution-card__video" autoplay muted loop playsinline>
+                <source src="assets/images/solutions/vid_other_hospital-hall.mp4" type="video/mp4">
+              </video>
             </div>
-            <p class="solution-card__description">
-              Multi-agent marketing automation for regional health systems. 3 paying clients, 85% cost reduction vs traditional agencies.
-            </p>
+            <div class="solution-card__content">
+              <h3 class="solution-card__title">Healthcare AI</h3>
+              <p class="solution-card__description">
+                Multi-agent marketing automation for regional health systems. 3 paying clients, 85% cost reduction vs traditional agencies.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -124,11 +140,11 @@
       </div>
     </section>
 
-    <!-- Technology Platforms Section -->
+    <!-- Technology Section -->
     <section id="technology" class="section section--alt">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Technology Platforms</span>
+          <span class="eyebrow">PROVEN TECHNOLOGY</span>
           <h2 class="display-title">Deploy proven technology</h2>
           <p class="section-intro">
             License the same platforms running our ventures. Battle-tested, compliant, and ready to scale. Deploy in weeks, not years.
@@ -136,6 +152,7 @@
         </div>
 
         <div class="solutions-grid solutions-grid--3col">
+          <!-- Seva AI Platform -->
           <div class="solution-card">
             <div class="solution-card__header">
               <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -144,7 +161,7 @@
                 <line x1="6" y1="6" x2="6.01" y2="6"/>
                 <line x1="6" y1="18" x2="6.01" y2="18"/>
               </svg>
-              <h3 class="solution-card__title">Sevā AI Platform</h3>
+              <h3 class="solution-card__title">Seva AI Platform</h3>
             </div>
             <p class="solution-card__description">
               HIPAA-compliant patient portals, AI-powered triage, telehealth integration, and automated medical record management. Serving 50,000+ patients.
@@ -156,6 +173,7 @@
             </ul>
           </div>
 
+          <!-- AI Campaign Platform -->
           <div class="solution-card">
             <div class="solution-card__header">
               <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -168,8 +186,14 @@
             <p class="solution-card__description">
               6-agent system handling campaign research, compliance, content creation, and orchestration. Live with 3 healthcare clients, 85% cost reduction.
             </p>
+            <ul class="solution-card__features">
+              <li>Multi-agent AI workflow automation</li>
+              <li>Industry-specific compliance built in</li>
+              <li>White-label ready for agencies</li>
+            </ul>
           </div>
 
+          <!-- Custom Development -->
           <div class="solution-card">
             <div class="solution-card__header">
               <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -181,6 +205,11 @@
             <p class="solution-card__description">
               Need something custom? We adapt our technology stack to your specific requirements. Real platforms, not thin API wrappers.
             </p>
+            <ul class="solution-card__features">
+              <li>Built on proven venture technology</li>
+              <li>Production-ready from day one</li>
+              <li>Operator-grade architecture</li>
+            </ul>
           </div>
         </div>
 
@@ -194,7 +223,7 @@
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Services</span>
+          <span class="eyebrow">EXPERT SERVICES</span>
           <h2 class="display-title">Expert marketing & design</h2>
           <p class="section-intro">
             Full-service digital marketing, web design, and brand strategy from operators who've launched ventures, not just projects.
@@ -202,6 +231,7 @@
         </div>
 
         <div class="solutions-grid solutions-grid--4col">
+          <!-- Digital Foundation -->
           <div class="solution-card">
             <div class="solution-card__header">
               <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -219,11 +249,13 @@
             </ul>
           </div>
 
+          <!-- Growth Marketing -->
           <div class="solution-card">
             <div class="solution-card__header">
               <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"/>
-                <polyline points="19 12 12 19 5 12"/>
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
               </svg>
               <h3 class="solution-card__title">Growth Marketing</h3>
             </div>
@@ -236,12 +268,11 @@
             </ul>
           </div>
 
+          <!-- Brand & Creative -->
           <div class="solution-card">
             <div class="solution-card__header">
               <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                <path d="M2 2l7.586 7.586"/>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
               <h3 class="solution-card__title">Brand & Creative</h3>
             </div>
@@ -253,14 +284,14 @@
             </ul>
           </div>
 
+          <!-- Business Operations -->
           <div class="solution-card">
             <div class="solution-card__header">
               <svg class="solution-card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="16" y1="13" x2="8" y2="13"/>
-                <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
               </svg>
               <h3 class="solution-card__title">Business Operations</h3>
             </div>
@@ -306,8 +337,8 @@
 
         <!-- Logo Area (Left Side) -->
         <div class="site-footer-logo-area">
-          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--light">
-          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--dark">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkyme" class="site-footer-logo site-footer-logo--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkyme" class="site-footer-logo site-footer-logo--dark">
         </div>
 
         <!-- Navigation Sections (Right Side) -->
@@ -360,7 +391,7 @@
       <!-- Bottom Copyright Bar -->
       <div class="site-footer-legal">
         <div class="site-footer-legal-left">
-          <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
+          <span>&copy; <span id="year"></span> Alkyme. All rights reserved.</span>
         </div>
         <div class="site-footer-legal-right">
           <span>Los Angeles, California</span>
@@ -371,7 +402,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/site-theme.js"></script>
+  <script src="assets/js/mobile-nav.js"></script>
+  <script src="assets/js/site-theme.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>

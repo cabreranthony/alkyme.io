@@ -3254,3 +3254,95 @@ html[data-theme="dark"] .feature-card--amber .feature-card__icon {
     transform: none;
   }
 }
+
+/* ============================================================
+   MOBILE HAMBURGER MENU
+   ============================================================ */
+
+/* Hamburger Button */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  z-index: calc(var(--z-nav) + 10);
+}
+
+.nav__hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--bark);
+  transition: all var(--duration-fast) var(--ease-soft);
+  border-radius: 2px;
+}
+
+.nav__hamburger--active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav__hamburger--active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__hamburger--active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+.nav__mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(var(--rgb-white), 0.98) 0%,
+    rgba(var(--rgb-white), 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: var(--z-nav-menu);
+  padding: var(--space-2xl) var(--space-xl);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity var(--duration-medium) var(--ease-soft),
+              transform var(--duration-medium) var(--ease-soft);
+}
+
+.nav__mobile-menu--active {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav__mobile-menu .nav__link {
+  padding: var(--space-lg);
+  font-size: var(--type-h3-size);
+  border-bottom: 1px solid rgba(var(--rgb-bark), 0.08);
+}
+
+/* Mobile Menu Breakpoint */
+@media (max-width: 768px) {
+  .nav__hamburger {
+    display: flex;
+  }
+  
+  .nav__menu {
+    display: none;
+  }
+}
+
+/* Dark Mode */
+html[data-theme="dark"] .nav__hamburger span {
+  background: var(--eggshell-sky);
+}
+
+html[data-theme="dark"] .nav__mobile-menu {
+  background: linear-gradient(135deg,
+    rgba(var(--rgb-bark), 0.98) 0%,
+    rgba(var(--rgb-bark), 0.95) 100%);
+}

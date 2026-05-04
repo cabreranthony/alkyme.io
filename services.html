@@ -39,6 +39,12 @@
           <a href="/contact.html" class="nav__link">Contact</a>
         </div>
 
+        <button type="button" class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <div class="nav__actions">
           <button type="button" class="alkyme-lang-trigger" style="display: none;" aria-haspopup="dialog" aria-expanded="false" aria-label="Select language">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -62,6 +68,12 @@
             </svg>
           </button>
         </div>
+      </div>
+      <div class="nav__mobile-menu">
+        <a href="/about.html" class="nav__link">About</a>
+        <a href="/solutions.html" class="nav__link">Solutions</a>
+        <a href="/careers.html" class="nav__link">Careers</a>
+        <a href="/contact.html" class="nav__link">Contact</a>
       </div>
     </div>
   </nav>
@@ -353,8 +365,9 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/site-theme.js"></script>
-  <script src="assets/site-lang.js"></script>
+  <script src="assets/js/mobile-nav.js"></script>
+  <script src="assets/js/site-theme.js"></script>
+  <script src="assets/js/site-lang.js"></script>
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
