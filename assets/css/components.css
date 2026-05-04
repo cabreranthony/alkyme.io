@@ -2595,7 +2595,7 @@ html[data-theme="dark"] .texture-overlay::before {
   padding: var(--space-sm) var(--space-md);
   font-family: var(--font-ui);
   font-size: var(--type-body-size);
-  border: 1px solid rgba(var(--rgb-bark), 0.15);
+  border: 2px solid var(--accent-pink);
   border-radius: var(--radius);
   background: var(--white);
   color: var(--text);
@@ -2605,7 +2605,8 @@ html[data-theme="dark"] .texture-overlay::before {
 .form__input:hover,
 .form__textarea:hover,
 .form__select:hover {
-  border-color: rgba(var(--rgb-moss), 0.3);
+  border-color: var(--accent-pink);
+  border-width: 3px;
 }
 
 .form__input:focus,
