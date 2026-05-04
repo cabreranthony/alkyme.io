@@ -1,0 +1,295 @@
+.about-intro {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-intro__title {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.about-intro__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.about-intro__lead {
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  color: var(--text);
+  font-weight: var(--type-strong-weight);
+}
+
+.about-intro__body {
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  color: var(--muted);
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
+}
+
+@media (max-width: 900px) {
+  .phases-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.phase-card {
+  background: rgba(var(--rgb-white), 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(var(--rgb-moss), 0.12);
+  border-radius: var(--radius-media-lg);
+  padding: var(--space-2xl);
+  transition: all var(--duration-medium) var(--ease-soft);
+}
+
+.phase-card:hover {
+  border-color: rgba(var(--rgb-moss), 0.3);
+  box-shadow: 0 12px 32px rgba(var(--rgb-moss), 0.15);
+  transform: translateY(-2px);
+}
+
+.phase-card__number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--moss);
+  opacity: 0.4;
+  margin-bottom: var(--space-md);
+  font-weight: var(--type-weight-light);
+  line-height: 1;
+  transition: opacity var(--duration-medium) var(--ease-soft);
+}
+
+.phase-card:hover .phase-card__number {
+  opacity: 0.7;
+}
+
+.phase-card__title {
+  margin-bottom: var(--space-sm);
+}
+
+.phase-card__description {
+  color: var(--muted);
+  line-height: var(--type-lead-line);
+  margin-bottom: var(--space-lg);
+}
+
+.phase-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.phase-card__list li {
+  padding-left: var(--space-lg);
+  position: relative;
+  color: var(--muted);
+  font-size: var(--type-body-size);
+  line-height: var(--type-lead-line);
+}
+
+.phase-card__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--moss);
+  font-weight: var(--type-weight-black);
+}
+
+.split__title {
+  margin-bottom: var(--space-2xl);
+}
+
+.split__description {
+  color: var(--muted);
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  margin-bottom: var(--space-lg);
+}
+
+.split__description:last-of-type {
+  margin-bottom: 0;
+}
+
+.differences-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.difference-item__title {
+  font-size: var(--type-h3-section-size);
+  font-weight: var(--type-heading-ui-weight);
+  margin-bottom: var(--space-xs);
+  color: var(--text);
+}
+
+.difference-item__description {
+  color: var(--muted);
+  line-height: var(--type-lead-line);
+}
+
+.philosophy-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.philosophy-section__title {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.philosophy-card {
+  background: rgba(var(--rgb-white), 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(var(--rgb-sage), 0.15);
+  border-radius: var(--radius-media-lg);
+  padding: var(--space-xl);
+  transition: all var(--duration-medium) var(--ease-soft);
+}
+
+.philosophy-card:hover {
+  border-color: rgba(var(--rgb-sage), 0.3);
+  box-shadow: 0 8px 24px rgba(var(--rgb-sage), 0.15);
+  transform: translateY(-2px);
+}
+
+.philosophy-card__title {
+  margin-bottom: var(--space-sm);
+  font-size: var(--type-h3-section-size);
+  font-weight: var(--type-heading-ui-weight);
+}
+
+.philosophy-card__description {
+  color: var(--muted);
+  line-height: var(--type-lead-line);
+}
+
+.focus-section {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.focus-section__title {
+  margin-bottom: var(--space-xl);
+}
+
+.focus-section__description {
+  color: var(--muted);
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  margin-bottom: var(--space-3xl);
+}
+
+.focus-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+  .focus-cards {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.focus-card {
+  background: rgba(var(--rgb-white), 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(var(--rgb-amber), 0.12);
+  border-radius: var(--radius-media-lg);
+  padding: var(--space-2xl);
+  text-align: left;
+  transition: all var(--duration-medium) var(--ease-soft);
+}
+
+.focus-card:hover {
+  border-color: rgba(var(--rgb-amber), 0.3);
+  box-shadow: 0 12px 32px rgba(var(--rgb-amber), 0.15);
+  transform: translateY(-2px);
+}
+
+.focus-card__title {
+  margin-bottom: var(--space-sm);
+  font-size: var(--type-h3-section-size);
+  font-weight: var(--type-heading-ui-weight);
+}
+
+.focus-card__description {
+  color: var(--muted);
+  line-height: var(--type-lead-line);
+  margin-bottom: var(--space-lg);
+}
+
+html[data-theme="dark"] .phase-card {
+  background: rgba(var(--rgb-white), 0.03);
+  border-color: rgba(var(--rgb-dew), 0.1);
+}
+
+html[data-theme="dark"] .phase-card:hover {
+  background: rgba(var(--rgb-white), 0.05);
+  border-color: rgba(var(--rgb-dew), 0.25);
+  box-shadow: 0 12px 32px rgba(var(--rgb-dew), 0.15);
+}
+
+html[data-theme="dark"] .phase-card__number {
+  color: var(--dew);
+  opacity: 0.5;
+}
+
+html[data-theme="dark"] .phase-card:hover .phase-card__number {
+  opacity: 0.8;
+}
+
+html[data-theme="dark"] .phase-card__list li::before {
+  color: var(--dew);
+}
+
+html[data-theme="dark"] .philosophy-card {
+  background: rgba(var(--rgb-white), 0.03);
+  border-color: rgba(var(--rgb-sage), 0.12);
+}
+
+html[data-theme="dark"] .philosophy-card:hover {
+  background: rgba(var(--rgb-white), 0.05);
+  border-color: rgba(var(--rgb-sage), 0.25);
+  box-shadow: 0 8px 24px rgba(var(--rgb-sage), 0.12);
+}
+
+html[data-theme="dark"] .focus-card {
+  background: rgba(var(--rgb-white), 0.03);
+  border-color: rgba(var(--rgb-wheat), 0.1);
+}
+
+html[data-theme="dark"] .focus-card:hover {
+  background: rgba(var(--rgb-white), 0.05);
+  border-color: rgba(var(--rgb-gold), 0.25);
+  box-shadow: 0 12px 32px rgba(var(--rgb-gold), 0.12);
+}

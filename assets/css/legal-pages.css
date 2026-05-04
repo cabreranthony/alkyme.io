@@ -1,0 +1,104 @@
+.legal-hero {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+  background: var(--cloudy-day);
+  border-bottom: 1px solid rgba(var(--rgb-forest), 0.08);
+}
+
+.legal-hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.legal-hero__title {
+  margin-bottom: var(--space-md);
+}
+
+.legal-hero__description {
+  color: var(--muted);
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  margin-bottom: var(--space-sm);
+}
+
+.legal-hero__updated {
+  color: var(--muted);
+  font-size: var(--type-caption-size);
+  font-style: italic;
+}
+
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal-section {
+  margin-bottom: var(--space-4xl);
+}
+
+.legal-section:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section h2 {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid rgba(var(--rgb-forest), 0.08);
+}
+
+.legal-section h3 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+  font-size: var(--type-h3-section-size);
+  font-weight: var(--type-heading-ui-weight);
+}
+
+.legal-section p {
+  color: var(--muted);
+  font-size: var(--type-body-size);
+  line-height: var(--type-lead-line);
+  margin-bottom: var(--space-md);
+}
+
+.legal-section p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section ul,
+.legal-section ol {
+  margin: var(--space-md) 0 var(--space-lg) var(--space-lg);
+  padding-left: var(--space-md);
+  color: var(--muted);
+  line-height: var(--type-lead-line);
+}
+
+.legal-section li {
+  margin-bottom: var(--space-sm);
+}
+
+.legal-section li:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section a {
+  color: var(--moss);
+  font-weight: var(--type-strong-weight);
+  text-decoration: underline;
+}
+
+.legal-section a:hover {
+  color: var(--forest);
+}
+
+.legal-section strong {
+  color: var(--text);
+  font-weight: var(--type-strong-weight);
+}
+
+html[data-theme="dark"] .legal-hero {
+  border-color: rgba(var(--rgb-dew), 0.1);
+}
+
+html[data-theme="dark"] .legal-section h2 {
+  border-color: rgba(var(--rgb-dew), 0.1);
+}

@@ -1,0 +1,36 @@
+# Documentation
+*.md
+!README.md
+docs/
+.claude/
+
+# Development files
+*.bak
+*.backup
+*.deprecated
+archive/
+ops/
+
+# Node modules
+node_modules/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+
+# IDE
+.cursor/
+.vscode/
+.idea/
+
+# Build artifacts (we want dist/ to be deployed)
+# dist/
+
+# Python
+.venv-pdf/
+__pycache__/
+*.py[cod]

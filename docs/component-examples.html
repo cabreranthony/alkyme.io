@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alkymē Component Library - Examples</title>
+
+  <!-- Component Styles -->
+  <link rel="stylesheet" href="../assets/components/core.css">
+  <link rel="stylesheet" href="../assets/components/layout.css">
+  <link rel="stylesheet" href="../assets/components/carousel.css">
+  <link rel="stylesheet" href="../assets/components/accordion.css">
+  <link rel="stylesheet" href="../assets/components/modal.css">
+  <link rel="stylesheet" href="../assets/components/media.css">
+  <link rel="stylesheet" href="../assets/components/forms.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--alk-font-sans);
+      background-color: var(--alk-bg-primary);
+      color: var(--alk-text-primary);
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--alk-forest) 0%, var(--alk-moss) 100%);
+      color: var(--alk-cream);
+      padding: var(--alk-space-3xl) 0;
+      text-align: center;
+    }
+
+    .example-section {
+      border-bottom: 2px solid var(--alk-border);
+      padding-bottom: var(--alk-space-3xl);
+    }
+
+    .example-heading {
+      font-size: var(--alk-text-3xl);
+      font-weight: var(--alk-weight-bold);
+      margin: var(--alk-space-2xl) 0 var(--alk-space-lg);
+      color: var(--alk-forest);
+    }
+
+    .example-demo {
+      background-color: var(--alk-bg-secondary);
+      border: 1px solid var(--alk-border);
+      border-radius: var(--alk-radius-lg);
+      padding: var(--alk-space-xl);
+      margin-bottom: var(--alk-space-lg);
+    }
+
+    .code-block {
+      background-color: var(--alk-charcoal);
+      color: var(--alk-cream);
+      padding: var(--alk-space-md);
+      border-radius: var(--alk-radius-md);
+      overflow-x: auto;
+      font-family: var(--alk-font-mono);
+      font-size: var(--alk-text-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="alk-container alk-container--lg">
+      <h1 style="font-size: var(--alk-text-6xl); margin: 0 0 var(--alk-space-md);">Alkymē Component Library</h1>
+      <p style="font-size: var(--alk-text-xl); margin: 0; opacity: 0.9;">Live examples and usage patterns</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================
+         LAYOUT COMPONENTS
+         ====================================== -->
+    <section class="alk-section">
+      <div class="alk-container alk-container--xl">
+        <h2 class="example-heading">Layout Components</h2>
+
+        <!-- Container Example -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-lg) 0 var(--alk-space-md);">Container</h3>
+        <div class="example-demo">
+          <div class="alk-container alk-container--md" style="background-color: rgba(122, 155, 118, 0.1); padding: var(--alk-space-lg);">
+            <p style="margin: 0;">This is a medium container (max-width: 768px)</p>
+          </div>
+        </div>
+
+        <!-- Split Screen Example -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-xl) 0 var(--alk-space-md);">Split Screen</h3>
+        <div class="example-demo">
+          <div class="alk-split alk-split--50-50">
+            <div class="alk-split__content">
+              <h3 style="font-size: var(--alk-text-xl); margin: 0 0 var(--alk-space-sm);">Content Side</h3>
+              <p style="color: var(--alk-text-secondary); margin: 0;">This is the content side of a 50/50 split layout. It automatically stacks on mobile.</p>
+            </div>
+            <div class="alk-split__media" style="background-color: rgba(122, 155, 118, 0.2); aspect-ratio: 16/9; border-radius: var(--alk-radius-lg); display: flex; align-items: center; justify-content: center;">
+              <span>Media Side</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid Example -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-xl) 0 var(--alk-space-md);">Grid</h3>
+        <div class="example-demo">
+          <div class="alk-grid alk-grid--3">
+            <div style="background-color: rgba(122, 155, 118, 0.2); padding: var(--alk-space-lg); border-radius: var(--alk-radius-md); text-align: center;">Grid Item 1</div>
+            <div style="background-color: rgba(122, 155, 118, 0.2); padding: var(--alk-space-lg); border-radius: var(--alk-radius-md); text-align: center;">Grid Item 2</div>
+            <div style="background-color: rgba(122, 155, 118, 0.2); padding: var(--alk-space-lg); border-radius: var(--alk-radius-md); text-align: center;">Grid Item 3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         CAROUSEL
+         ====================================== -->
+    <section class="alk-section alk-section--cream">
+      <div class="alk-container alk-container--xl">
+        <h2 class="example-heading">Carousel</h2>
+
+        <div class="example-demo">
+          <div class="alk-carousel" data-alk-carousel data-loop="true">
+            <div class="alk-carousel__track" data-carousel-track>
+              <div class="alk-carousel__slide" data-carousel-slide>
+                <div style="background: linear-gradient(135deg, #7a9b76 0%, #2d5016 100%); aspect-ratio: 16/9; border-radius: var(--alk-radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--alk-text-2xl);">Slide 1</div>
+              </div>
+              <div class="alk-carousel__slide" data-carousel-slide>
+                <div style="background: linear-gradient(135deg, #2d5016 0%, #7a9b76 100%); aspect-ratio: 16/9; border-radius: var(--alk-radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--alk-text-2xl);">Slide 2</div>
+              </div>
+              <div class="alk-carousel__slide" data-carousel-slide>
+                <div style="background: linear-gradient(135deg, #7a9b76 0%, #2d5016 100%); aspect-ratio: 16/9; border-radius: var(--alk-radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--alk-text-2xl);">Slide 3</div>
+              </div>
+            </div>
+            <div class="alk-carousel__controls">
+              <button class="alk-carousel__btn" data-carousel-prev aria-label="Previous slide">‹</button>
+              <div class="alk-carousel__dots" data-carousel-dots></div>
+              <button class="alk-carousel__btn" data-carousel-next aria-label="Next slide">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         ACCORDION
+         ====================================== -->
+    <section class="alk-section">
+      <div class="alk-container alk-container--xl">
+        <h2 class="example-heading">Accordion</h2>
+
+        <div class="example-demo">
+          <div class="alk-accordion" data-alk-accordion data-default-open="0">
+            <div class="alk-accordion__item" data-accordion-item>
+              <button class="alk-accordion__trigger" data-accordion-trigger>
+                <span>What is the Alkymē Component Library?</span>
+                <span class="alk-accordion__icon">▼</span>
+              </button>
+              <div class="alk-accordion__panel" data-accordion-panel>
+                <div class="alk-accordion__content" data-accordion-content>
+                  The Alkymē Component Library is a comprehensive collection of reusable UI components built with accessibility, performance, and developer experience in mind.
+                </div>
+              </div>
+            </div>
+
+            <div class="alk-accordion__item" data-accordion-item>
+              <button class="alk-accordion__trigger" data-accordion-trigger>
+                <span>How do I use these components?</span>
+                <span class="alk-accordion__icon">▼</span>
+              </button>
+              <div class="alk-accordion__panel" data-accordion-panel>
+                <div class="alk-accordion__content" data-accordion-content>
+                  Simply include the CSS and JS files, then use the HTML patterns shown in this examples file. Components auto-initialize when using data attributes.
+                </div>
+              </div>
+            </div>
+
+            <div class="alk-accordion__item" data-accordion-item>
+              <button class="alk-accordion__trigger" data-accordion-trigger>
+                <span>Are the components accessible?</span>
+                <span class="alk-accordion__icon">▼</span>
+              </button>
+              <div class="alk-accordion__panel" data-accordion-panel>
+                <div class="alk-accordion__content" data-accordion-content>
+                  Yes! All components follow WCAG 2.1 AA standards with proper ARIA attributes, keyboard navigation, and screen reader support.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         MODAL
+         ====================================== -->
+    <section class="alk-section alk-section--cream">
+      <div class="alk-container alk-container--xl">
+        <h2 class="example-heading">Modal / Dialog</h2>
+
+        <div class="example-demo">
+          <button class="alk-btn alk-btn--primary" data-modal-trigger="example-modal">
+            Open Modal
+          </button>
+        </div>
+
+        <!-- Modal Structure (hidden by default) -->
+        <dialog class="alk-modal alk-modal--md" data-alk-modal id="example-modal">
+          <div class="alk-modal__container">
+            <div class="alk-modal__header">
+              <h3 class="alk-modal__title">Example Modal</h3>
+              <button class="alk-modal__close" data-modal-close aria-label="Close modal">✕</button>
+            </div>
+            <div class="alk-modal__body">
+              <p>This is an example modal dialog. It traps focus, locks body scroll, and can be closed by clicking the backdrop, pressing Escape, or clicking the close button.</p>
+              <p style="margin-bottom: 0;">The modal component uses the native HTML <code>&lt;dialog&gt;</code> element for best accessibility.</p>
+            </div>
+            <div class="alk-modal__footer">
+              <button class="alk-btn alk-btn--ghost" data-modal-close>Cancel</button>
+              <button class="alk-btn alk-btn--primary" data-modal-close>Confirm</button>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- ======================================
+         FORMS
+         ====================================== -->
+    <section class="alk-section">
+      <div class="alk-container alk-container--xl">
+        <h2 class="example-heading">Form Components</h2>
+
+        <div class="example-demo">
+          <form class="alk-form" onsubmit="event.preventDefault(); alert('Form submitted!');">
+            <!-- Text Input -->
+            <div class="alk-form-group">
+              <label class="alk-label alk-label--required" for="name">Full Name</label>
+              <input type="text" id="name" class="alk-input" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="alk-form-group">
+              <label class="alk-label alk-label--required" for="email">Email Address</label>
+              <input type="email" id="email" class="alk-input" placeholder="you@example.com" required>
+              <p class="alk-help-text">We'll never share your email with anyone else.</p>
+            </div>
+
+            <!-- Form Row (2 columns) -->
+            <div class="alk-form-row alk-form-row--2">
+              <div class="alk-form-group">
+                <label class="alk-label" for="phone">Phone</label>
+                <input type="tel" id="phone" class="alk-input" placeholder="(555) 123-4567">
+              </div>
+              <div class="alk-form-group">
+                <label class="alk-label" for="country">Country</label>
+                <select id="country" class="alk-select">
+                  <option value="">Select a country</option>
+                  <option value="us">United States</option>
+                  <option value="ca">Canada</option>
+                  <option value="uk">United Kingdom</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="alk-form-group">
+              <label class="alk-label" for="message">Message</label>
+              <textarea id="message" class="alk-textarea" placeholder="Tell us about your project..." rows="4"></textarea>
+            </div>
+
+            <!-- Checkbox -->
+            <label class="alk-checkbox">
+              <input type="checkbox" class="alk-checkbox__input">
+              <span class="alk-checkbox__label">I agree to the terms and conditions</span>
+            </label>
+
+            <!-- Switch -->
+            <label class="alk-switch">
+              <input type="checkbox" class="alk-switch__input">
+              <span class="alk-switch__label">Subscribe to newsletter</span>
+            </label>
+
+            <!-- Buttons -->
+            <div class="alk-cluster alk-cluster--gap-sm">
+              <button type="submit" class="alk-btn alk-btn--primary">Submit</button>
+              <button type="button" class="alk-btn alk-btn--secondary">Cancel</button>
+              <button type="button" class="alk-btn alk-btn--ghost">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Button Variants -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-xl) 0 var(--alk-space-md);">Button Variants</h3>
+        <div class="example-demo">
+          <div class="alk-cluster">
+            <button class="alk-btn alk-btn--primary">Primary</button>
+            <button class="alk-btn alk-btn--secondary">Secondary</button>
+            <button class="alk-btn alk-btn--ghost">Ghost</button>
+            <button class="alk-btn alk-btn--danger">Danger</button>
+            <button class="alk-btn alk-btn--link">Link Button</button>
+          </div>
+        </div>
+
+        <!-- Button Sizes -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-xl) 0 var(--alk-space-md);">Button Sizes</h3>
+        <div class="example-demo">
+          <div class="alk-cluster alk-cluster--center">
+            <button class="alk-btn alk-btn--primary alk-btn--sm">Small</button>
+            <button class="alk-btn alk-btn--primary">Default</button>
+            <button class="alk-btn alk-btn--primary alk-btn--lg">Large</button>
+            <button class="alk-btn alk-btn--primary alk-btn--xl">Extra Large</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         MEDIA COMPONENTS
+         ====================================== -->
+    <section class="alk-section alk-section--cream">
+      <div class="alk-container alk-container--xl">
+        <h2 class="example-heading">Media Components</h2>
+
+        <!-- Logo Wall -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-lg) 0 var(--alk-space-md);">Logo Wall</h3>
+        <div class="example-demo">
+          <div class="alk-logo-wall">
+            <div class="alk-logo-wall__item">
+              <div style="width: 120px; height: 40px; background-color: rgba(122, 155, 118, 0.3); border-radius: var(--alk-radius-sm); display: flex; align-items: center; justify-content: center; font-size: var(--alk-text-xs);">Logo 1</div>
+            </div>
+            <div class="alk-logo-wall__item">
+              <div style="width: 120px; height: 40px; background-color: rgba(122, 155, 118, 0.3); border-radius: var(--alk-radius-sm); display: flex; align-items: center; justify-content: center; font-size: var(--alk-text-xs);">Logo 2</div>
+            </div>
+            <div class="alk-logo-wall__item">
+              <div style="width: 120px; height: 40px; background-color: rgba(122, 155, 118, 0.3); border-radius: var(--alk-radius-sm); display: flex; align-items: center; justify-content: center; font-size: var(--alk-text-xs);">Logo 3</div>
+            </div>
+            <div class="alk-logo-wall__item">
+              <div style="width: 120px; height: 40px; background-color: rgba(122, 155, 118, 0.3); border-radius: var(--alk-radius-sm); display: flex; align-items: center; justify-content: center; font-size: var(--alk-text-xs);">Logo 4</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Object -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-xl) 0 var(--alk-space-md);">Media Object</h3>
+        <div class="example-demo">
+          <div class="alk-media">
+            <div class="alk-media__figure alk-media__figure--md alk-media__figure--round">
+              <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #7a9b76 0%, #2d5016 100%); border-radius: var(--alk-radius-full);"></div>
+            </div>
+            <div class="alk-media__content">
+              <h4 class="alk-media__title">Media Object Title</h4>
+              <p class="alk-media__description">The media object pattern is useful for items like comments, articles, or user profiles where an image sits next to text content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         UTILITY CLASSES
+         ====================================== -->
+    <section class="alk-section">
+      <div class="alk-container alk-container--xl">
+        <h2 class="example-heading">Utility Classes</h2>
+
+        <!-- Spacing -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-lg) 0 var(--alk-space-md);">Spacing</h3>
+        <div class="example-demo">
+          <div class="alk-stack alk-stack--sm">
+            <div class="alk-pt-md alk-pb-md" style="background-color: rgba(122, 155, 118, 0.2); border-radius: var(--alk-radius-sm);">
+              <code>.alk-pt-md .alk-pb-md</code>
+            </div>
+            <div class="alk-mt-lg" style="background-color: rgba(122, 155, 118, 0.2); border-radius: var(--alk-radius-sm); padding: var(--alk-space-md);">
+              <code>.alk-mt-lg</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-xl) 0 var(--alk-space-md);">Typography</h3>
+        <div class="example-demo">
+          <div class="alk-stack alk-stack--sm">
+            <p class="alk-text-xs">Extra small text (.alk-text-xs)</p>
+            <p class="alk-text-sm">Small text (.alk-text-sm)</p>
+            <p class="alk-text-base">Base text (.alk-text-base)</p>
+            <p class="alk-text-lg">Large text (.alk-text-lg)</p>
+            <p class="alk-text-xl">Extra large text (.alk-text-xl)</p>
+            <p class="alk-text-2xl alk-font-bold">2XL Bold text (.alk-text-2xl .alk-font-bold)</p>
+          </div>
+        </div>
+
+        <!-- Colors -->
+        <h3 style="font-size: var(--alk-text-2xl); margin: var(--alk-space-xl) 0 var(--alk-space-md);">Colors</h3>
+        <div class="example-demo">
+          <div class="alk-stack alk-stack--sm">
+            <div class="alk-bg-moss" style="padding: var(--alk-space-md); border-radius: var(--alk-radius-sm); color: white;">
+              <code>.alk-bg-moss</code>
+            </div>
+            <div class="alk-bg-forest" style="padding: var(--alk-space-md); border-radius: var(--alk-radius-sm); color: white;">
+              <code>.alk-bg-forest</code>
+            </div>
+            <p class="alk-text-moss alk-font-semibold">.alk-text-moss text color</p>
+            <p class="alk-text-forest alk-font-semibold">.alk-text-forest text color</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="alk-section alk-section--forest" style="padding: var(--alk-space-2xl) 0;">
+    <div class="alk-container alk-container--xl alk-text-center">
+      <p style="margin: 0; opacity: 0.9;">Alkymē Component Library v1.0.0</p>
+      <p style="margin: var(--alk-space-sm) 0 0; font-size: var(--alk-text-sm); opacity: 0.7;">
+        Built with accessibility, performance, and developer experience in mind.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Component Scripts -->
+  <script src="../assets/components/core.js"></script>
+  <script src="../assets/components/carousel.js"></script>
+  <script src="../assets/components/accordion.js"></script>
+  <script src="../assets/components/modal.js"></script>
+</body>
+</html>

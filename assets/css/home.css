@@ -1,0 +1,277 @@
+/* ============================================================================
+   Homepage Styles
+   ========================================================================== */
+
+/* Navigation - Homepage uses global nav scroll states (nav--on-dark and nav--scrolled)
+   No overrides needed - home-nav-scroll.js handles state switching */
+
+/* Paths Grid - 3 column card layout */
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-card), 1fr));
+  gap: var(--grid-gap-cards);
+}
+
+/* Process Grid - Clean 3-column cards matching AI page philosophy cards */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-5xl);
+}
+
+.process-card {
+  background: var(--white);
+  border: var(--border-width) solid rgba(var(--rgb-moss), 0.2);
+  border-radius: var(--radius-card);
+  padding: var(--space-3xl) var(--space-2xl);
+  transition: all var(--duration-medium) var(--ease-soft);
+  box-shadow: var(--shadow-xs);
+}
+
+.process-card:hover {
+  background: var(--white);
+  border-color: var(--moss);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(calc(var(--space-xs) * -0.5));
+}
+
+html[data-theme="dark"] .process-card {
+  background: rgba(var(--rgb-white), 0.03);
+  border-color: rgba(var(--rgb-dew), 0.2);
+}
+
+html[data-theme="dark"] .process-card:hover {
+  background: rgba(var(--rgb-white), 0.05);
+  border-color: var(--dew);
+}
+
+.process-card__number {
+  display: inline-block;
+  font-family: var(--type-display-family);
+  font-size: var(--type-h1-size);
+  font-weight: var(--type-weight-light);
+  line-height: var(--type-h1-line);
+  color: rgba(var(--rgb-moss), 0.3);
+  margin-bottom: var(--space-lg);
+}
+
+html[data-theme="dark"] .process-card__number {
+  color: rgba(var(--rgb-dew), 0.4);
+}
+
+.process-card__title {
+  font-size: var(--type-h4-size);
+  font-weight: var(--type-h4-weight);
+  font-family: var(--type-display-family);
+  line-height: var(--type-h4-line);
+  color: var(--text);
+  margin-bottom: var(--space-md);
+}
+
+html[data-theme="dark"] .process-card__title {
+  color: var(--eggshell-sky);
+}
+
+.process-card__description {
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  color: var(--muted);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.process-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.process-card__list li {
+  position: relative;
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  color: var(--muted);
+}
+
+.process-card__list li:last-child {
+  margin-bottom: 0;
+}
+
+.process-card__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--moss);
+  font-weight: var(--type-weight-black);
+}
+
+html[data-theme="dark"] .process-card__list li::before {
+  color: var(--dew);
+}
+
+/* Responsive */
+@media (max-width: var(--breakpoint-tablet)) {
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+/* Split Section */
+.split__content-title {
+  margin-bottom: var(--space-2xl);
+}
+
+.split__content-description {
+  color: var(--muted);
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  margin-bottom: var(--space-lg);
+  text-align: left;
+}
+
+.split__content-description:last-of-type {
+  margin-bottom: var(--space-xl);
+}
+
+/* ==========================================================================
+   THREE BUSINESS PILLARS SECTION
+   ========================================================================== */
+
+.three-pillars {
+  padding: var(--space-6xl) 0;
+  background: var(--cloudy-day);
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-5xl);
+}
+
+.section-intro__title {
+  font-size: var(--type-h2-size);
+  font-weight: var(--type-h2-weight);
+  font-family: var(--type-display-family);
+  line-height: var(--type-h2-line);
+  color: var(--bark);
+  margin: 0 0 var(--space-md) 0;
+}
+
+.section-intro__subtitle {
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  color: var(--forest);
+  margin: 0;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3xl);
+}
+
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-3xl);
+  background: var(--glass-marketing-gradient);
+  border: var(--glass-marketing-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--glass-marketing-shadow);
+  backdrop-filter: var(--glass-marketing-filter);
+  transition: var(--transition-card);
+}
+
+.pillar-card:hover {
+  box-shadow: var(--glass-marketing-shadow-hover);
+  transform: translateY(-4px);
+}
+
+.pillar-card__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: var(--moss);
+  color: var(--white);
+}
+
+.pillar-card__title {
+  font-size: var(--type-h4-size);
+  font-weight: var(--type-h4-weight);
+  font-family: var(--type-display-family);
+  line-height: var(--type-h4-line);
+  color: var(--bark);
+  margin: 0;
+}
+
+.pillar-card__description {
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  color: var(--forest);
+  margin: 0;
+  flex: 1;
+}
+
+.pillar-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--type-small-size);
+  font-weight: var(--type-weight-medium);
+  color: var(--moss);
+  text-decoration: none;
+  transition: var(--transition-micro);
+  margin-top: var(--space-md);
+}
+
+.pillar-card__link:hover {
+  color: var(--forest);
+  gap: var(--space-sm);
+}
+
+.pillar-card__link svg {
+  transition: var(--transition-micro);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+/* Dark Mode */
+html[data-theme="dark"] .three-pillars {
+  background: var(--bark-deep);
+}
+
+html[data-theme="dark"] .section-intro__title,
+html[data-theme="dark"] .pillar-card__title {
+  color: var(--eggshell-sky);
+}
+
+html[data-theme="dark"] .section-intro__subtitle,
+html[data-theme="dark"] .pillar-card__description {
+  color: var(--dew);
+}
+
+html[data-theme="dark"] .pillar-card__icon {
+  background: var(--dew);
+  color: var(--bark);
+}
+
+html[data-theme="dark"] .pillar-card__link {
+  color: var(--dew);
+}
+
+html[data-theme="dark"] .pillar-card__link:hover {
+  color: var(--eggshell-sky);
+}

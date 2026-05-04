@@ -3,3904 +3,479 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alkymē | Startup Studio</title>
-  <meta name="description" content="Alkyme is a Los Angeles startup studio. We originate, test, and build companies, then spin out the ones that earn traction.">
-  <!-- Editorial: content draft → content/content-deck.md | Tokens & patterns → docs/style-guide.md -->
-  <!-- Brand files: put assets/logo.svg (nav) and assets/logo-mark.svg (favicon); add assets/favicon.ico for legacy browsers if you want -->
-  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      /* Site variables — Bark, Forest, Moss, Dew, Eggshell Sky, Cloudy Day */
-      --bark: #040d12;
-      --forest: #183d3d;
-      --moss: #5c8374;
-      --dew: #93b1a6;
-      --page-bg: #ffffff;
-      --eggshell-sky: #fff9f0; /* warm surfaces, glass tints, text on dark — not default canvas */
-      --cloudy-day: #f4f4f4;
-      --bg: var(--page-bg);
-      --surface: var(--dew);
-      --text: var(--bark);
-      --muted: var(--forest);
-      --border: var(--dew);
-      --primary: var(--bark);
-      --primary-text: var(--eggshell-sky);
-      --accent: var(--forest);
-      --accent-secondary: var(--moss);
-      --highlight: var(--dew);
-      --radius: 0.3em;
-      --radius-sm: 0.3em;
-      --shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
-      /* Single content width + gutters: hero, sections, nav, footer */
-      --page-gutter: clamp(1.25rem, 5vw, 2.75rem);
-      --content-max-width: 1120px;
-      /* Layout rhythm — keep in sync across index, about, careers, contact */
-      --content-wide-max: 1240px;
-      --section-pad-y: clamp(3.75rem, 9vw, 5.5rem);
-      --page-hero-pad-top: calc(5.5rem + env(safe-area-inset-top, 0px));
-      --page-hero-pad-bottom: clamp(3rem, 9vw, 5rem);
-      --section-head-max: 38rem;
-      --section-head-center-max: 42rem;
-      --section-head-intro-max: 38rem;
-      --section-head-margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
-      --section-lead-max: 42rem;
-      --scroll-margin-top: calc(5rem + env(safe-area-inset-top, 0px));
-    }
 
-    .container--wide {
-      max-width: min(var(--content-wide-max), 100%);
-    }
+  <!-- Theme Detection (before render) -->
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
 
-    /* Breakpoints: 680px mobile nav / tight layouts; 900px tablet (stack grids); 1100px index why-grid 2-col */
+  <title>Alkymē | AI Venture Studio</title>
+  <meta name="description" content="Los Angeles AI venture studio. We've built 2 companies from zero: a procedural narrative game engine in alpha and a healthcare marketing platform serving 3 regional health systems.">
 
-    * {
-      box-sizing: border-box;
-    }
+  <!-- Styles -->
+  <link rel="preload" href="dist/assets/styles.min.css" as="style">
+  <link rel="stylesheet" href="dist/assets/styles.min.css">
+  <link rel="stylesheet" href="assets/css/ai-page.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/home-product-showcase.css">
 
-    html,
-    body {
-      margin: 0;
-      font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
+  <link rel="icon" type="image/svg+xml" href="assets/logos/alkyme-logo-black.svg">
+  <meta name="theme-color" content="#fff9f0">
 
-    input,
-    textarea,
-    select,
-    button {
-      font-family: inherit;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--content-max-width);
-      margin-inline: auto;
-      padding-inline: var(--page-gutter);
-      box-sizing: border-box;
-    }
-
-    .section {
-      padding: var(--section-pad-y) 0;
-    }
-
-    main > section:not(:last-of-type) {
-      border-bottom: 1px solid rgba(10, 19, 23, 0.12);
-    }
-
-    .section--cloud {
-      background: var(--cloudy-day);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section--cloud::before {
-      content: "";
-      position: absolute;
-      top: -20%;
-      right: -15%;
-      width: min(55vw, 520px);
-      height: min(55vw, 520px);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(147, 177, 166, 0.35) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .section--ventures {
-      background: var(--bg);
-    }
-
-    /* Meta-style ventures band: centered intro + circle-arrow link, 3-up cards, footer CTA */
-    .ventures-band__intro {
-      text-align: center;
-      max-width: min(42rem, 100%);
-      margin-inline: auto;
-      margin-bottom: clamp(2.5rem, 6vw, 4rem);
-    }
-
-    .ventures-band__eyebrow {
-      margin: 0 0 0.85rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--forest);
-    }
-
-    .ventures-band__title {
-      margin: 0 0 clamp(0.85rem, 2vw, 1.15rem);
-      font-size: clamp(1.65rem, 3.5vw, 2.65rem);
-      font-weight: 700;
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      color: var(--text);
-    }
-
-    .ventures-band__lede {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--muted);
-    }
-
-    .ventures-band__circle-link {
-      margin-top: clamp(1.15rem, 2.5vw, 1.5rem);
-      display: inline-flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      max-width: 100%;
-      text-align: left;
-      font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--forest);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .ventures-band__circle-link:hover {
-      color: var(--bark);
-    }
-
-    .ventures-band__circle-link:focus-visible {
-      outline: 2px solid var(--forest);
-      outline-offset: 4px;
-      border-radius: 4px;
-    }
-
-    .ventures-band__circle-icon {
-      flex-shrink: 0;
-      width: 2.25rem;
-      height: 2.25rem;
-      border-radius: 50%;
-      border: 1px solid currentColor;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .ventures-band__circle-link:hover .ventures-band__circle-icon {
-      transform: translateX(2px);
-    }
-
-    .ventures-band__circle-icon svg {
-      display: block;
-      width: 11px;
-      height: 11px;
-    }
-
-    .ventures-band__grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(1.35rem, 3.5vw, 2.25rem);
-      margin-bottom: clamp(2.5rem, 6vw, 4rem);
-    }
-
-    .ventures-card {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .ventures-card__media {
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 16 / 10;
-      background: var(--cloudy-day);
-      margin-bottom: clamp(1rem, 2vw, 1.25rem);
-    }
-
-    .ventures-card__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.45s ease;
-    }
-
-    .ventures-card:hover .ventures-card__media img {
-      transform: scale(1.03);
-    }
-
-    .ventures-card__title {
-      margin: 0 0 0.5rem;
-      font-size: 1.125rem;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .ventures-card__text {
-      margin: 0 0 1rem;
-      font-size: 0.98rem;
-      line-height: 1.5;
-      color: var(--muted);
-      flex: 1;
-    }
-
-    .ventures-card .ventures-band__circle-link {
-      margin-top: 0;
-      align-self: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .ventures-band__grid {
-        grid-template-columns: 1fr;
-        gap: clamp(1.75rem, 4vw, 2.25rem);
-      }
-    }
-
-    /* Meta-style split band: copy + large rounded image; lower block aligned under image */
-    .studio-approach-band {
-      background: var(--bg);
-      padding-top: var(--section-pad-y);
-      padding-bottom: var(--section-pad-y);
-    }
-
-    .studio-approach-band__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.22fr);
-      gap: clamp(1.75rem, 4vw, 3rem);
-      align-items: start;
-    }
-
-    .studio-approach-band__intro {
-      padding-top: clamp(0.25rem, 1vw, 0.75rem);
-    }
-
-    .studio-approach-band__eyebrow {
-      margin: 0 0 1rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--forest);
-    }
-
-    .studio-approach-band__title {
-      margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
-      font-size: clamp(1.85rem, 4.2vw, 2.85rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      max-width: 20ch;
-    }
-
-    .studio-approach-band__lede {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 38ch;
-    }
-
-    .studio-approach-band__figure {
-      margin: 0;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--cloudy-day);
-      box-shadow: 0 20px 60px rgba(4, 13, 18, 0.08);
-    }
-
-    .studio-approach-band__figure img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-    }
-
-    .studio-approach-band__spacer {
-      display: block;
-    }
-
-    .studio-approach-band__lower {
-      min-width: 0;
-    }
-
-    .studio-approach-band__subhead {
-      margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
-      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      max-width: 36ch;
-    }
-
-    .studio-approach-band__columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(1.25rem, 3vw, 2rem);
-      margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
-    }
-
-    .studio-approach-band__columns p {
-      margin: 0;
-      font-size: 0.98rem;
-      line-height: 1.6;
-      color: var(--muted);
-    }
-
-    .studio-approach-band__columns p + p {
-      margin-top: 0.85rem;
-    }
-
-    .studio-approach-band__list {
-      margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
-      padding-left: 1.15rem;
-      font-size: 0.98rem;
-      line-height: 1.55;
-      color: var(--muted);
-    }
-
-    .studio-approach-band__list li {
-      margin-bottom: 0.45rem;
-    }
-
-    .studio-approach-band__list li:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 900px) {
-      .studio-approach-band__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .studio-approach-band__title {
-        max-width: none;
-      }
-
-      .studio-approach-band__lede {
-        max-width: none;
-      }
-
-      .studio-approach-band__spacer {
-        display: none;
-      }
-
-      .studio-approach-band__columns {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Meta “People & culture”–style careers strip: header row + full-width image */
-    .careers-band {
-      padding-top: clamp(3rem, 8vw, 4.75rem);
-      padding-bottom: clamp(3rem, 8vw, 4.75rem);
-    }
-
-    .careers-band__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: clamp(1.25rem, 3vw, 2.5rem);
-      margin-bottom: clamp(1.5rem, 3.5vw, 2.25rem);
-    }
-
-    .careers-band__header-text {
-      flex: 1;
-      min-width: 0;
-      max-width: min(40rem, 100%);
-    }
-
-    .careers-band__eyebrow {
-      margin: 0 0 0.85rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--forest);
-    }
-
-    .careers-band__title {
-      margin: 0;
-      font-size: clamp(1.65rem, 3.5vw, 2.65rem);
-      font-weight: 700;
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      color: var(--text);
-    }
-
-    .careers-band__intro {
-      margin: clamp(0.65rem, 1.5vw, 0.9rem) 0 0;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 38rem;
-    }
-
-    .careers-band__header-cta {
-      flex-shrink: 0;
-      padding-top: 0.12rem;
-    }
-
-    .button--pill {
-      border-radius: 999px;
-      padding: 12px 24px;
-    }
-
-    .careers-band__figure {
-      margin: 0;
-      border-radius: clamp(1.15rem, 2.2vw, 1.85rem);
-      overflow: hidden;
-      border: 1px solid rgba(147, 177, 166, 0.4);
-      box-shadow: var(--shadow);
-      background: var(--cloudy-day);
-    }
-
-    .careers-band__figure img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 21 / 10;
-      object-fit: cover;
-      display: block;
-    }
-
-    @media (max-width: 680px) {
-      .careers-band__header {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .careers-band__header-cta {
-        padding-top: 0;
-      }
-
-      .careers-band__header-cta .button {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .careers-band__figure img {
-        aspect-ratio: 4 / 3;
-      }
-    }
-
-    .section-head {
-      max-width: var(--section-head-max);
-      margin-bottom: var(--section-head-margin-bottom);
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-head--center {
-      max-width: var(--section-head-center-max);
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    .section-head p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .section-head--center p {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: var(--section-head-intro-max);
-    }
-
-    /* #why — header row + 4-up: rounded media block only; title + description float below */
-    .why-band__header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: clamp(2.25rem, 5vw, 3.25rem);
-    }
-
-    .why-band__header-text {
-      max-width: min(42rem, 100%);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .why-band__eyebrow {
-      margin: 0 0 0.85rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--forest);
-    }
-
-    .why-band__title {
-      margin: 0 0 0.35rem;
-      font-size: clamp(1.75rem, 3.8vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
-    }
-
-    .why-band__lede {
-      margin: 0.5rem 0 0;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 38rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: clamp(1.35rem, 3vw, 2rem);
-    }
-
-    /* Image / mock panel is the only “card”; copy sits on the section surface below */
-    .why-card {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(0.95rem, 2vw, 1.2rem);
-      margin: 0;
-      padding: 0;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-      overflow: visible;
-    }
-
-    .why-card__visual {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      margin: 0;
-      overflow: hidden;
-      background: var(--cloudy-day);
-      border-radius: clamp(1.35rem, 2.8vw, 2rem);
-      box-shadow: 0 14px 42px rgba(4, 13, 18, 0.08);
-      transition: box-shadow 0.25s ease, transform 0.25s ease;
-    }
-
-    .why-card:hover .why-card__visual {
-      box-shadow: 0 22px 52px rgba(4, 13, 18, 0.11);
-      transform: translateY(-2px);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .why-card:hover .why-card__visual {
-        transform: none;
-      }
-    }
-
-    .why-card__visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .why-card__body {
-      padding: 0;
-      margin: 0;
-      max-width: 36ch;
-    }
-
-    .why-card__body h3 {
-      font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
-      font-size: clamp(1.02rem, 1.9vw, 1.14rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin: 0 0 0.4rem;
-      color: var(--text);
-    }
-
-    .why-card__body p {
-      font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 0.94rem;
-      line-height: 1.55;
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .reveal {
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-
-    html.js .reveal:not(.is-visible) {
-      opacity: 0;
-      transform: translateY(0.75rem);
-    }
-
-    html.js .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html.js .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-
-    /* Studio: full-bleed image cards, scrim + copy overlaid at bottom (Meta-style single surface) */
-    .studio-box-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(1.15rem, 2.5vw, 1.65rem);
-      margin-top: clamp(2rem, 5vw, 3rem);
-    }
-
-    .studio-box {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      border-radius: var(--radius);
-      overflow: hidden;
-      min-height: min(88vw, 520px);
-      box-shadow: 0 20px 50px rgba(4, 13, 18, 0.12);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .studio-box:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 28px 60px rgba(4, 13, 18, 0.16);
-    }
-
-    .studio-box--wide {
-      grid-column: 1 / -1;
-      min-height: min(42vw, 380px);
-    }
-
-    .studio-box__bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .studio-box__scrim {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(
-        to top,
-        rgba(4, 13, 18, 0.94) 0%,
-        rgba(4, 13, 18, 0.72) 28%,
-        rgba(4, 13, 18, 0.35) 55%,
-        rgba(4, 13, 18, 0.12) 100%
-      );
-    }
-
-    .studio-box__inner {
-      position: relative;
-      z-index: 1;
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(1.35rem, 3.5vw, 1.85rem) clamp(1.25rem, 3vw, 1.75rem) clamp(1.6rem, 4vw, 2.1rem);
-      text-align: center;
-    }
-
-    .studio-box__label {
-      margin: 0 0 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255, 249, 240, 0.62);
-    }
-
-    .studio-box__inner h3 {
-      font-weight: 700;
-      font-size: clamp(1.35rem, 2.8vw, 1.75rem);
-      letter-spacing: -0.02em;
-      color: #fff9f0;
-      margin: 0 0 0.65rem;
-      line-height: 1.15;
-    }
-
-    .studio-box__desc {
-      margin: 0 auto;
-      max-width: 36ch;
-      font-size: 0.98rem;
-      line-height: 1.5;
-      color: rgba(255, 249, 240, 0.85);
-    }
-
-    .studio-box__actions {
-      margin-top: 1.35rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .studio-box__actions .button {
-      border-radius: var(--radius);
-      padding: 11px 22px;
-      font-size: 0.94rem;
-      font-weight: 600;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .studio-box {
-        transition: none;
-      }
-
-      .studio-box:hover {
-        transform: none;
-      }
-    }
-
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--forest);
-      margin-top: 1.1rem;
-    }
-
-    .text-link::after {
-      content: "→";
-      transition: transform 0.2s ease;
-    }
-
-    .text-link:hover::after {
-      transform: translateX(4px);
-    }
-
-    /* #model — three columns: intro, accordion, visual stage */
-    .model-trio {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) minmax(0, 1fr);
-      gap: clamp(1.75rem, 4vw, 3rem);
-      align-items: start;
-    }
-
-    .model-trio__intro {
-      padding-top: clamp(0.15rem, 0.8vw, 0.5rem);
-    }
-
-    .model-trio__eyebrow {
-      margin: 0 0 0.85rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--forest);
-    }
-
-    .model-trio__title {
-      margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
-      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
-      font-weight: 700;
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      max-width: 16ch;
-    }
-
-    .model-trio__lede {
-      margin: 0 0 1.35rem;
-      font-size: 1.02rem;
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 36ch;
-    }
-
-    .model-accordion {
-      border-top: 1px solid rgba(24, 61, 61, 0.14);
-    }
-
-    .model-accordion__item {
-      border-bottom: 1px solid rgba(24, 61, 61, 0.14);
-    }
-
-    .model-accordion__trigger {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0;
-      margin: 0;
-      font: inherit;
-      font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-align: left;
-      color: rgba(4, 13, 18, 0.72);
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-
-    .model-accordion__trigger:hover {
-      color: var(--bark);
-    }
-
-    .model-accordion__trigger:focus-visible {
-      outline: 2px solid var(--forest);
-      outline-offset: 4px;
-      border-radius: 4px;
-    }
-
-    .model-accordion__trigger[aria-expanded="true"] {
-      color: var(--bark);
-    }
-
-    .model-accordion__icon {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      font-weight: 400;
-      line-height: 1;
-      color: var(--forest);
-      opacity: 0.75;
-    }
-
-    .model-accordion__panel {
-      padding: 0 0 1.15rem;
-    }
-
-    .model-accordion__panel[hidden] {
-      display: none;
-    }
-
-    .model-accordion__panel p {
-      margin: 0;
-      font-size: 1.02rem;
-      line-height: 1.55;
-      color: var(--text);
-      max-width: 42ch;
-    }
-
-    .model-trio__stage {
-      position: relative;
-      border-radius: var(--radius);
-      background: var(--bark);
-      min-height: min(52vw, 420px);
-      padding: clamp(1.5rem, 4vw, 2.25rem);
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(4, 13, 18, 0.18);
-    }
-
-    .model-trio__stage-panels {
-      position: relative;
-      width: 100%;
-      min-height: 300px;
-      height: 100%;
-    }
-
-    .model-trio__stage-panel {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.55s ease-in-out, visibility 0s linear 0.55s;
-      pointer-events: none;
-    }
-
-    .model-trio__stage-panel.is-active {
-      opacity: 1;
-      visibility: visible;
-      z-index: 2;
-      transition: opacity 0.55s ease-in-out, visibility 0s linear 0s;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .model-trio__stage-panel,
-      .model-trio__stage-panel.is-active {
-        transition: none;
-      }
-    }
-
-    .model-trio__stage-panel__bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      z-index: 0;
-    }
-
-    .model-trio__stage-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(
-        165deg,
-        rgba(4, 13, 18, 0.5) 0%,
-        rgba(4, 13, 18, 0.08) 42%,
-        rgba(4, 13, 18, 0.45) 100%
-      );
-    }
-
-    .model-trio__stack {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .model-trio__float {
-      position: absolute;
-      width: min(100%, 240px);
-      padding: 1rem 1.1rem;
-      border-radius: calc(var(--radius) * 1.25);
-      background: rgba(255, 249, 240, 0.12);
-      border: 1px solid rgba(147, 177, 166, 0.25);
-      color: rgba(255, 249, 240, 0.88);
-      font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      backdrop-filter: blur(6px);
-    }
-
-    .model-trio__float--back {
-      transform: translate(-38%, -32%) rotate(-6deg);
-      opacity: 0.55;
-    }
-
-    .model-trio__float--mid {
-      transform: translate(36%, -18%) rotate(5deg);
-      opacity: 0.45;
-    }
-
-    .model-trio__float--front {
-      position: relative;
-      width: min(100%, 260px);
-      padding: 1.15rem 1.2rem 1.25rem;
-      background: var(--eggshell-sky);
-      border: 1px solid rgba(147, 177, 166, 0.4);
-      color: var(--bark);
-      text-transform: none;
-      letter-spacing: 0;
-      font-size: inherit;
-      font-weight: inherit;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
-      transform: translate(8%, 4%);
-      z-index: 2;
-    }
-
-    .model-trio__float-kicker {
-      margin: 0 0 0.4rem;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .model-trio__float-title {
-      margin: 0 0 0.5rem;
-      font-family: "Libre Baskerville", Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      color: var(--bark);
-    }
-
-    .model-trio__float-meta {
-      margin: 0;
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .eyebrow {
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    /* Headings: Libre Baskerville (400 + 700 only). Body copy inherits Source Sans from html/body. */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
-      line-height: 1.1;
-      margin: 0;
-      letter-spacing: -0.02em;
-    }
-
-    h1 {
-      font-weight: 400;
-      font-size: clamp(2.35rem, 5.5vw, 3.75rem);
-      max-width: 18ch;
-      line-height: 1.08;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      margin-bottom: 14px;
-    }
-
-    h3 {
-      font-size: clamp(1.12rem, 2vw, 1.28rem);
-      line-height: 1.2;
-    }
-
-    h4 {
-      font-size: 1.08rem;
-      line-height: 1.25;
-    }
-
-    h5 {
-      font-size: 1rem;
-      line-height: 1.3;
-    }
-
-    h6 {
-      font-size: 0.95rem;
-      line-height: 1.35;
-    }
-
-    p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
-      background: transparent;
-      backdrop-filter: blur(0);
-      -webkit-backdrop-filter: blur(0);
-      border-bottom: none;
-      transition:
-        background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-        backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-        -webkit-backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Past hero: solid bar (Meta-style threshold, not gradual) */
-    .topbar.topbar--solid {
-      background-color: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    .topbar .brand {
-      color: #fff9f0;
-      transition: color 0.35s ease;
-    }
-
-    .topbar.topbar--solid .brand {
-      color: var(--text);
-    }
-
-    .brand-logo {
-      height: 32px;
-      width: auto;
-      max-width: 200px;
-      display: block;
-      object-fit: contain;
-      object-position: left center;
-    }
-
-    .topbar .nav {
-      color: rgba(255, 249, 240, 0.88);
-      transition: color 0.35s ease;
-    }
-
-    .topbar.topbar--solid .nav {
-      color: var(--muted);
-    }
-
-    /* Meta Careers–style nav: compact row of padded chips + hover background */
-    .topbar .nav a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem 0.9rem;
-      border-radius: var(--radius);
-      font-weight: 500;
-      color: inherit;
-      transition: background-color 0.18s ease, color 0.18s ease;
-    }
-
-    .topbar .nav a:hover {
-      background-color: rgba(255, 249, 240, 0.14);
-      color: #fff9f0;
-    }
-
-    .topbar .nav a[aria-current="page"] {
-      font-weight: 700;
-    }
-
-    .topbar.topbar--solid .nav a:hover {
-      background-color: var(--cloudy-day);
-      color: var(--text);
-    }
-
-    .topbar.topbar--solid .nav a[aria-current="page"] {
-      font-weight: 700;
-    }
-
-    .topbar .nav a:focus-visible {
-      outline: 2px solid rgba(255, 249, 240, 0.9);
-      outline-offset: 2px;
-    }
-
-    .topbar.topbar--solid .nav a:focus-visible {
-      outline-color: var(--forest);
-    }
-
-    .topbar .topbar-contact {
-      background: transparent;
-      color: #fff9f0;
-      border-color: rgba(255, 249, 240, 0.45);
-      transition:
-        background-color 0.35s ease,
-        color 0.35s ease,
-        border-color 0.35s ease;
-    }
-
-    .topbar .topbar-contact:hover {
-      background: rgba(255, 249, 240, 0.12);
-      border-color: rgba(255, 249, 240, 0.85);
-    }
-
-    /* Liquid glass over hero video — brand radius */
-    .topbar:not(.topbar--solid) .topbar-contact {
-      background: linear-gradient(145deg, rgba(255, 249, 240, 0.2) 0%, rgba(255, 249, 240, 0.05) 55%, rgba(147, 177, 166, 0.1) 100%);
-      background-color: rgba(4, 13, 18, 0.22);
-      backdrop-filter: blur(20px) saturate(170%);
-      -webkit-backdrop-filter: blur(20px) saturate(170%);
-      border-color: rgba(255, 249, 240, 0.42);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 249, 240, 0.28),
-        0 8px 32px rgba(4, 13, 18, 0.22);
-    }
-
-    .topbar:not(.topbar--solid) .topbar-contact:hover {
-      background-color: rgba(4, 13, 18, 0.34);
-      border-color: rgba(255, 249, 240, 0.72);
-    }
-
-    .topbar.topbar--solid .topbar-contact {
-      background: var(--page-bg);
-      color: var(--text);
-      border-color: var(--border);
-    }
-
-    .topbar.topbar--solid .topbar-contact:hover {
-      background: var(--cloudy-day);
-      border-color: var(--moss);
-    }
-
-    .topbar-inner {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: clamp(0.75rem, 2vw, 1.25rem);
-    }
-
-    /* Logo + text nav grouped on the left (Meta-style); Contact stays right */
-    .topbar-cluster {
-      display: flex;
-      align-items: center;
-      gap: clamp(1.5rem, 5.5vw, 3.5rem);
-      min-width: 0;
-      flex: 1;
-    }
-
-    .topbar-cluster .brand {
-      flex-shrink: 0;
-    }
-
-    .topbar-cluster .nav {
-      min-width: 0;
-    }
-
-    .topbar-contact {
-      flex-shrink: 0;
-    }
-
-    .brand {
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: -0.01em;
-      font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      font-size: 0.95rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border-radius: 0.3em;
-      border: 1px solid transparent;
-      font: inherit;
-      font-weight: 600;
-      padding: 12px 18px;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .button-primary {
-      background: var(--primary);
-      color: var(--primary-text);
-      border-color: rgba(255, 249, 240, 0.25);
-    }
-
-    .button-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-      background: #040d12;
-    }
-
-    .button-secondary {
-      background: var(--page-bg);
-      color: var(--text);
-      border-color: var(--border);
-    }
-
-    .button-secondary:hover {
-      background: var(--cloudy-day);
-    }
-
-    /* Bark canvas: video fades into --bark, then Meta-style bridge + studio panel */
-    .hero {
-      box-sizing: border-box;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      background-color: var(--bark);
-      overflow: visible;
-    }
-
-    .hero-media {
-      position: relative;
-      /* Taller filmstrip so bark fade ends closer to the “Create and connect” band */
-      min-height: min(84vh, 920px);
-      width: 100%;
-      overflow: hidden;
-      padding-top: calc(4.5rem + 1.75rem + env(safe-area-inset-top, 0px));
-      /* Extra lower padding = quiet bark band before hero-bark-body */
-      padding-bottom: clamp(2.5rem, 8vh, 5rem);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-
-    .hero-bg video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      /* Video resolves to solid bark at bottom — seamless handoff to bark body */
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(4, 13, 18, 0.18) 0%,
-          rgba(4, 13, 18, 0.42) 42%,
-          rgba(4, 13, 18, 0.88) 72%,
-          #040d12 100%
-        ),
-        linear-gradient(105deg, rgba(4, 13, 18, 0.45) 0%, transparent 52%);
-    }
-
-    .hero-bottom {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding-inline: var(--page-gutter);
-      /* Copy sits near vertical center of video (was bottom-anchored with large top padding) */
-      padding-top: clamp(0.25rem, 1.5vh, 1rem);
-      padding-bottom: clamp(1rem, 2.5vh, 1.75rem);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-bark-body {
-      position: relative;
-      z-index: 2;
-      padding: clamp(2.5rem, 7vw, 4.25rem) 0 clamp(3rem, 8vw, 5.25rem);
-    }
-
-    .hero-bark-body .container--wide {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(2.25rem, 5vw, 3.5rem);
-    }
-
-    /* Meta AI–style band: centered intro + CTA + three visual cards on bark */
-    .hero-bridge {
-      width: 100%;
-      max-width: none;
-      margin-inline: 0;
-      padding-bottom: clamp(2rem, 5vw, 3rem);
-    }
-
-    .hero-bridge__intro {
-      text-align: center;
-      max-width: 52rem;
-      margin-inline: auto;
-    }
-
-    .hero-bridge__eyebrow {
-      margin: 0 0 1rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(147, 177, 166, 0.95);
-    }
-
-    .hero-bridge__heading {
-      margin: 0;
-      font-size: clamp(1.85rem, 4.2vw, 3rem);
-      font-weight: 700;
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      color: var(--eggshell-sky);
-    }
-
-    .hero-bridge__sub {
-      margin: 1.15rem auto 0;
-      max-width: 38rem;
-      font-size: clamp(1.02rem, 1.9vw, 1.2rem);
-      line-height: 1.55;
-      color: rgba(255, 249, 240, 0.82);
-    }
-
-    .hero-bridge-cards {
-      margin-top: clamp(2.5rem, 5.5vw, 3.75rem);
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(1.35rem, 3vw, 2.25rem);
-      text-align: left;
-    }
-
-    .hero-bridge-card__media {
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: rgba(255, 249, 240, 0.06);
-      border: 1px solid rgba(255, 249, 240, 0.12);
-      margin-bottom: clamp(1.1rem, 2.2vw, 1.45rem);
-    }
-
-    .hero-bridge-card__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.45s ease;
-    }
-
-    .hero-bridge-card:hover .hero-bridge-card__media img {
-      transform: scale(1.03);
-    }
-
-    .hero-bridge-card__title {
-      margin: 0 0 0.65rem;
-      font-size: clamp(1.06rem, 1.55vw, 1.22rem);
-      font-weight: 700;
-      line-height: 1.28;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-
-    .hero-bridge-card__text {
-      margin: 0;
-      font-size: 0.96rem;
-      line-height: 1.55;
-      color: rgba(255, 249, 240, 0.52);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-bridge-card:hover .hero-bridge-card__media img {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .hero-bridge-cards {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hero-copy {
-      max-width: min(40rem, 100%);
-      margin-inline: auto;
-      text-align: center;
-    }
-
-    /* Hero headline uses brand serif (global h1 — Libre Baskerville); slightly wider measure for this line */
-    .hero-copy h1 {
-      max-width: min(30ch, 100%);
-      margin-inline: auto;
-    }
-
-    .hero-copy p {
-      margin-top: 16px;
-      max-width: 42rem;
-      margin-inline: auto;
-      color: rgba(255, 249, 240, 0.92);
-      font-size: 1.05rem;
-      line-height: 1.55;
-    }
-
-    .hero-copy h1,
-    .hero-copy .eyebrow {
-      color: #fff9f0;
-    }
-
-    .hero-actions {
-      margin-top: 28px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* Hero CTAs: liquid glass over video — brand radius */
-    .hero .hero-actions .button {
-      border-radius: var(--radius);
-      padding: 14px 26px;
-      font-size: 0.98rem;
-      isolation: isolate;
-      backdrop-filter: blur(22px) saturate(170%);
-      -webkit-backdrop-filter: blur(22px) saturate(170%);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 249, 240, 0.3),
-        0 8px 36px rgba(4, 13, 18, 0.28);
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background-color 0.2s ease;
-    }
-
-    .hero .hero-actions .button-primary {
-      background: linear-gradient(155deg, rgba(255, 249, 240, 0.14) 0%, transparent 52%);
-      background-color: rgba(4, 13, 18, 0.38);
-      border-color: rgba(255, 249, 240, 0.36);
-      color: #fff9f0;
-    }
-
-    .hero .hero-actions .button-primary:hover {
-      transform: translateY(-1px);
-      background-color: rgba(4, 13, 18, 0.52);
-      border-color: rgba(255, 249, 240, 0.48);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 249, 240, 0.38),
-        0 14px 44px rgba(4, 13, 18, 0.35);
-    }
-
-    .hero .hero-actions .button-secondary {
-      background: linear-gradient(145deg, rgba(255, 249, 240, 0.28) 0%, rgba(255, 249, 240, 0.06) 100%);
-      background-color: rgba(255, 249, 240, 0.12);
-      border-color: rgba(255, 249, 240, 0.48);
-      color: #fff9f0;
-    }
-
-    .hero .hero-actions .button-secondary:hover {
-      background-color: rgba(255, 249, 240, 0.22);
-      border-color: rgba(255, 249, 240, 0.65);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 249, 240, 0.45),
-        0 12px 40px rgba(4, 13, 18, 0.22);
-    }
-
-    .hero-video-toggle {
-      position: absolute;
-      right: max(1rem, var(--page-gutter));
-      bottom: max(1rem, env(safe-area-inset-bottom, 0px));
-      z-index: 4;
-      width: 34px;
-      height: 34px;
-      border: 1px solid rgba(255, 249, 240, 0.14);
-      border-radius: var(--radius);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 249, 240, 0.55);
-      /* More opaque frost — quieter control */
-      background: linear-gradient(145deg, rgba(255, 249, 240, 0.06) 0%, rgba(147, 177, 166, 0.04) 100%);
-      background-color: rgba(4, 13, 18, 0.62);
-      backdrop-filter: blur(14px) saturate(140%);
-      -webkit-backdrop-filter: blur(14px) saturate(140%);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 249, 240, 0.1),
-        0 2px 12px rgba(4, 13, 18, 0.35);
-      opacity: 0.72;
-      transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        opacity 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .hero-video-toggle:hover {
-      opacity: 0.95;
-      color: rgba(255, 249, 240, 0.85);
-      background-color: rgba(4, 13, 18, 0.75);
-      border-color: rgba(255, 249, 240, 0.22);
-    }
-
-    .hero-video-toggle:focus-visible {
-      outline: 2px solid #fff9f0;
-      outline-offset: 2px;
-    }
-
-    .hero-video-toggle svg {
-      width: 12px;
-      height: 12px;
-      display: block;
-    }
-
-    .hero-video-toggle .hero-video-toggle__play {
-      display: none;
-    }
-
-    .hero-video-toggle.is-paused .hero-video-toggle__pause {
-      display: none;
-    }
-
-    .hero-video-toggle.is-paused .hero-video-toggle__play {
-      display: block;
-      margin-left: 2px;
-    }
-
-    @media (prefers-reduced-transparency: reduce) {
-      .hero .hero-actions .button,
-      .hero-video-toggle,
-      .topbar:not(.topbar--solid) .topbar-contact {
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-      }
-    }
-
-    /* Meta opensourceai-style: left copy + carousel cards + bottom CTA (white band) */
-    .studio-carousel-band {
-      background: var(--page-bg);
-      overflow-x: clip;
-    }
-
-    /* Full viewport width — carousel rail bleeds to the right edge (not capped by container--wide) */
-    .studio-carousel-band__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-      column-gap: clamp(1.75rem, 4vw, 3rem);
-      align-items: start;
-      width: 100%;
-    }
-
-    .studio-carousel-band__copy {
-      justify-self: start;
-      width: 100%;
-      max-width: min(38rem, 100%);
-      padding-left: calc(var(--page-gutter) + max(0px, (100vw - var(--content-wide-max)) / 2));
-      padding-right: clamp(0.5rem, 2vw, 1.25rem);
-      box-sizing: border-box;
-    }
-
-    .studio-carousel-band__eyebrow {
-      margin: 0 0 0.85rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .studio-carousel-band__heading {
-      margin: 0 0 1rem;
-      font-size: clamp(1.45rem, 3.2vw, 2.35rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      color: var(--text);
-    }
-
-    .studio-carousel-band__lede {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 38rem;
-    }
-
-    .studio-carousel-band__detail {
-      margin-top: 1.1rem;
-      min-height: 3.1em;
-      font-size: 0.98rem;
-      line-height: 1.5;
-      color: var(--forest);
-      font-weight: 500;
-    }
-
-    .studio-carousel-band__nav {
-      margin-top: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    /* Same carousel chrome as about.html — prev | dot pill | next */
-    .studio-carousel-band__nav .about-carousel-controls {
-      margin-left: 0;
-      margin-right: 0;
-      align-self: flex-start;
-    }
-
-    .about-carousel-controls {
-      flex: 0 0 auto;
-      align-self: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(1.1rem, 4vw, 1.65rem);
-      margin: clamp(0.65rem, 2vw, 1rem) auto clamp(0.75rem, 2.25vw, 1.15rem);
-      padding: 0 clamp(0.75rem, 3vw, 1.25rem);
-      width: fit-content;
-      max-width: calc(100vw - 2rem);
-      background: transparent;
-      border: none;
-    }
-
-    .about-carousel-nav-btn {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      margin: 0;
-      padding: 0;
-      border: none;
-      border-radius: 50%;
-      background: transparent;
-      color: rgba(100, 103, 107, 0.92);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: color 0.2s ease, opacity 0.2s ease;
-    }
-
-    .about-carousel-nav-btn:hover {
-      color: rgba(40, 43, 46, 0.95);
-    }
-
-    .about-carousel-nav-btn:focus-visible {
-      outline: 2px solid var(--forest);
-      outline-offset: 3px;
-    }
-
-    .about-carousel-nav-btn svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .about-carousel-progress-pill {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem 1.05rem;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.055);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .about-carousel-progress {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .about-carousel-dot {
-      width: 7px;
-      height: 7px;
-      padding: 0;
-      border: none;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.14);
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .about-carousel-dot:hover {
-      background: rgba(0, 0, 0, 0.26);
-    }
-
-    .about-carousel-dot.is-active {
-      background: rgba(30, 32, 35, 0.92);
-      transform: scale(1.08);
-    }
-
-    .about-carousel-dot:focus-visible {
-      outline: 2px solid var(--forest);
-      outline-offset: 3px;
-    }
-
-    .studio-carousel-band__rail-wrap {
-      min-width: 0;
-    }
-
-    /* Transform-based infinite carousel (viewport clips; track slides on X) */
-    .studio-carousel-band__viewport {
-      overflow: hidden;
-      padding-bottom: 6px;
-      padding-right: var(--page-gutter);
-    }
-
-    .studio-carousel-band__viewport:focus-visible {
-      outline: 2px solid var(--forest);
-      outline-offset: 4px;
-    }
-
-    .studio-carousel-band__track {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      gap: clamp(1rem, 2.5vw, 1.35rem);
-      will-change: transform;
-      transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
-    }
-
-    .studio-carousel-band__track.is-instant {
-      transition: none;
-    }
-
-    .studio-carousel-card {
-      flex: 0 0 min(100%, 300px);
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .studio-carousel-card[data-carousel-clone] {
-      pointer-events: none;
-      user-select: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .studio-carousel-band__track {
-        transition: none;
-      }
-
-      .about-carousel-dot.is-active {
-        transform: none;
-      }
-    }
-
-    .studio-carousel-card__media {
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 16 / 10;
-      background: var(--cloudy-day);
-      margin-bottom: 1rem;
-      border: 1px solid rgba(147, 177, 166, 0.35);
-    }
-
-    .studio-carousel-card__media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .studio-carousel-card__kicker {
-      margin: 0 0 0.4rem;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .studio-carousel-card__title {
-      margin: 0 0 0.55rem;
-      font-size: 1.08rem;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .studio-carousel-card__text {
-      margin: 0 0 1rem;
-      font-size: 0.94rem;
-      line-height: 1.5;
-      color: var(--muted);
-      flex: 1;
-    }
-
-    .studio-carousel-card__cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--forest);
-      text-decoration: none;
-      margin-top: auto;
-    }
-
-    .studio-carousel-card__cta:hover {
-      color: var(--bark);
-    }
-
-    .studio-carousel-card__cta-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      border-radius: 50%;
-      border: 1.5px solid currentColor;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .studio-carousel-card__cta-icon svg {
-      width: 0.5rem;
-      height: 0.5rem;
-      display: block;
-    }
-
-    @media (max-width: 900px) {
-      .studio-carousel-band__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .studio-carousel-band__copy {
-        max-width: none;
-        padding-left: var(--page-gutter);
-        padding-right: var(--page-gutter);
-      }
-
-      .studio-carousel-band__viewport {
-        padding-left: var(--page-gutter);
-        padding-right: var(--page-gutter);
-      }
-    }
-
-    .grid-3 {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      background: var(--eggshell-sky);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      min-height: 190px;
-    }
-
-    .card h3 {
-      font-size: 1.14rem;
-      margin-bottom: 12px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 10px;
-      border-radius: 0.3em;
-      font-size: 0.78rem;
-      letter-spacing: 0.02em;
-      font-weight: 600;
-      background: rgba(147, 177, 166, 0.25);
-      color: #183d3d;
-      margin-bottom: 14px;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .checklist {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .checklist li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      color: var(--muted);
-    }
-
-    .checklist li::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-top: 8px;
-      background: var(--accent);
-      flex: 0 0 8px;
-    }
-
-    #hero,
-    #how-studio-runs,
-    #studio-approach,
-    #what-we-do,
-    #ventures,
-    #why,
-    #model,
-    #careers {
-      scroll-margin-top: var(--scroll-margin-top);
-    }
-
-    .section-lead {
-      margin-top: 10px;
-      max-width: var(--section-lead-max);
-    }
-
-    .section-head--center .section-lead {
-      max-width: var(--section-lead-max);
-    }
-
-    footer {
-      padding: 26px 0 32px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .split,
-      .grid-3,
-      .why-grid,
-      .studio-box-grid,
-      .studio-box--wide {
-        min-height: min(52vw, 340px);
-      }
-
-      .model-trio {
-        grid-template-columns: 1fr;
-      }
-
-      .model-trio__visual {
-        order: 3;
-      }
-
-      .model-trio__accordion {
-        order: 2;
-      }
-
-      .model-trio__intro {
-        order: 1;
-      }
-
-      .hero-media {
-        min-height: min(68vh, 660px);
-        padding-top: calc(4.5rem + 1.5rem + env(safe-area-inset-top, 0px));
-      }
-
-      .hero-bottom {
-        padding-bottom: clamp(1.25rem, 3vh, 2rem);
-      }
-    }
-
-    @media (max-width: 1100px) and (min-width: 681px) {
-      .why-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 680px) {
-      .topbar-inner {
-        height: 64px;
-      }
-
-      .hero-media {
-        min-height: min(64vh, 600px);
-        padding-top: calc(4rem + 1.35rem + env(safe-area-inset-top, 0px));
-      }
-
-      .topbar-cluster {
-        gap: 1rem;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
-        -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
-      }
-
-      .topbar-cluster::-webkit-scrollbar {
-        display: none;
-      }
-
-      .topbar-cluster .nav {
-        gap: 2px;
-        font-size: 0.82rem;
-        flex-shrink: 0;
-      }
-
-      .topbar .nav a {
-        padding: 0.45rem 0.65rem;
-      }
-
-      .topbar-contact {
-        padding: 10px 14px;
-        font-size: 0.88rem;
-      }
-
-      .section {
-        padding: var(--section-pad-y) 0;
-      }
-
-      .hero-actions .button {
-        width: 100%;
-      }
-
-      .studio-box__actions .button {
-        flex: 1 1 calc(50% - 6px);
-        min-width: min(100%, 200px);
-      }
-    }
-
-    /* Meta-style detail modal (Learn more triggers outside #what-we-do) */
-    .detail-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(0.75rem, 3vw, 1.75rem);
-      box-sizing: border-box;
-    }
-
-    .detail-modal[hidden] {
-      display: none;
-    }
-
-    .detail-modal__backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(4, 13, 18, 0.45);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .detail-modal__dialog {
-      position: relative;
-      z-index: 1;
-      width: min(920px, 100%);
-      max-height: min(92vh, 880px);
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-      border-radius: clamp(1.15rem, 2.5vw, 1.75rem);
-      box-shadow: 0 24px 80px rgba(4, 13, 18, 0.18);
-      font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    .detail-modal__header {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: clamp(1rem, 2.5vw, 1.35rem) clamp(1.15rem, 2.5vw, 1.5rem);
-      border-bottom: 1px solid rgba(147, 177, 166, 0.35);
-    }
-
-    .detail-modal__title {
-      margin: 0;
-      font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
-      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--bark);
-      line-height: 1.25;
-    }
-
-    .detail-modal__close {
-      flex-shrink: 0;
-      width: 2.5rem;
-      height: 2.5rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      border-radius: 50%;
-      background: transparent;
-      color: var(--forest);
-      cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .detail-modal__close:hover {
-      background: var(--cloudy-day);
-      color: var(--bark);
-    }
-
-    .detail-modal__close svg {
-      width: 1.15rem;
-      height: 1.15rem;
-    }
-
-    .detail-modal__scroll {
-      flex: 1;
-      min-height: 0;
-      overflow-y: auto;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .detail-modal__hero {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      background: var(--cloudy-day);
-    }
-
-    .detail-modal__hero img,
-    .detail-modal__hero video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .detail-modal__hero video {
-      background: #000;
-    }
-
-    .detail-modal__video-toggle {
-      position: absolute;
-      bottom: clamp(0.65rem, 2vw, 1rem);
-      right: clamp(0.65rem, 2vw, 1rem);
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      background: rgba(4, 13, 18, 0.45);
-      color: #fff;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s ease;
-    }
-
-    .detail-modal__video-toggle:hover {
-      background: rgba(4, 13, 18, 0.65);
-    }
-
-    .detail-modal__video-toggle[hidden] {
-      display: none;
-    }
-
-    .detail-modal__video-toggle .icon-pause,
-    .detail-modal__video-toggle.is-paused .icon-play {
-      display: block;
-    }
-
-    .detail-modal__video-toggle .icon-play,
-    .detail-modal__video-toggle.is-paused .icon-pause {
-      display: none;
-    }
-
-    .detail-modal__split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(1.15rem, 3vw, 1.75rem);
-      padding: clamp(1.15rem, 2.5vw, 1.5rem);
-      align-items: start;
-    }
-
-    .detail-modal__copy {
-      font-size: 0.98rem;
-      line-height: 1.6;
-      color: var(--muted);
-    }
-
-    .detail-modal__copy p {
-      margin: 0 0 0.85rem;
-      font-size: inherit;
-      color: inherit;
-    }
-
-    .detail-modal__copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .detail-modal__side {
-      border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
-      overflow: hidden;
-      background: var(--cloudy-day);
-      aspect-ratio: 4 / 3;
-    }
-
-    .detail-modal__side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .detail-modal__footer {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(0.85rem, 2vw, 1.25rem);
-      padding: clamp(0.85rem, 2vw, 1.1rem) clamp(1rem, 2vw, 1.25rem);
-      border-top: 1px solid rgba(147, 177, 166, 0.35);
-    }
-
-    .detail-modal__footer[hidden] {
-      display: none;
-    }
-
-    .detail-modal__nav-btn {
-      width: 2.5rem;
-      height: 2.5rem;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      background: #fff;
-      color: var(--forest);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .detail-modal__nav-btn:hover {
-      border-color: var(--moss);
-      background: var(--eggshell-sky);
-    }
-
-    .detail-modal__nav-btn svg {
-      width: 1.1rem;
-      height: 1.1rem;
-    }
-
-    .detail-modal__dots {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .detail-modal__dot {
-      width: 8px;
-      height: 8px;
-      padding: 0;
-      border: none;
-      border-radius: 50%;
-      background: rgba(24, 61, 61, 0.25);
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .detail-modal__dot.is-active {
-      background: var(--forest);
-      transform: scale(1.35);
-    }
-
-    .detail-modal__dot:focus-visible {
-      outline: 2px solid var(--forest);
-      outline-offset: 2px;
-    }
-
-    button.studio-carousel-card__cta {
-      font: inherit;
-      text-align: left;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    button.studio-carousel-card__cta:focus-visible {
-      outline: 2px solid var(--forest);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    button.ventures-band__circle-link {
-      font: inherit;
-      font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    @media (max-width: 680px) {
-      .detail-modal__split {
-        grid-template-columns: 1fr;
-      }
-
-      .detail-modal__side {
-        max-height: 220px;
-        aspect-ratio: auto;
-        min-height: 160px;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="assets/site-footer.css">
 </head>
-<body>
-  <header class="topbar" role="banner">
-    <div class="container topbar-inner">
-      <div class="topbar-cluster">
-        <a class="brand" href="#hero" aria-label="Alkymē home">
-          <img id="brand-logo" class="brand-logo" src="assets/alkyme-logo-rt-hzt-cream.svg" alt="Alkymē" width="200" height="36" decoding="async">
+<body class="page-home">
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--dark">
         </a>
-        <nav class="nav" aria-label="Main navigation">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="about.html">About</a>
-          <a href="careers.html">Careers</a>
-        </nav>
+
+        <div class="nav__menu">
+          <a href="/about.html" class="nav__link">About</a>
+          <a href="/what-we-do.html" class="nav__link">What We Do</a>
+          <a href="/careers.html" class="nav__link">Careers</a>
+          <a href="/contact.html" class="nav__link">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+          <button type="button" class="alkyme-lang-trigger" style="display: none;" aria-haspopup="menu" aria-expanded="false" aria-label="Select language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span data-alkyme-lang-code>EN</span>
+          </button>
+          <button type="button" class="theme-toggle" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      <a class="button button-secondary topbar-contact" href="contact.html">Contact</a>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section class="hero" id="hero" aria-label="Introduction">
-      <div class="hero-media">
-        <div class="hero-bg" aria-hidden="true">
-          <video id="hero-video" autoplay muted loop playsinline poster="https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-poster-00001.jpg">
-            <source src="https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-transcode.mp4" type="video/mp4">
-            <source src="https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-transcode.webm" type="video/webm">
-          </video>
-        </div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-bottom">
-          <div class="hero-copy">
-            <div class="eyebrow">Startup Incubator</div>
-            <h1>We build companies from ideas we start ourselves.</h1>
-            <p>
-              Based in Los Angeles. We originate ideas, test them in market, and build the ones that show traction into standalone companies.
-            </p>
-            <p>
-              A direct view into how we work and what comes out of the studio.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#ventures">View ventures</a>
-              <a class="button button-secondary" href="contact.html">Contact</a>
-            </div>
-          </div>
-        </div>
-        <button type="button" class="hero-video-toggle" id="hero-video-toggle" aria-label="Pause background video">
-          <svg class="hero-video-toggle__pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>
-          <svg class="hero-video-toggle__play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5z"/></svg>
-        </button>
-      </div>
-      <div class="hero-bark-body">
-        <div class="container container--wide">
-          <div class="hero-bridge reveal" data-reveal>
-            <div class="hero-bridge__intro">
-              <p class="hero-bridge__eyebrow">Studio model</p>
-              <h2 class="hero-bridge__heading">Ideas are tested, not pitched</h2>
-              <p class="hero-bridge__sub">
-                Everything moves through the same system. Find a real problem, test it quickly, and invest only when there is signal.
-              </p>
-            </div>
-            <div class="hero-bridge-cards">
-              <article class="hero-bridge-card">
-                <div class="hero-bridge-card__media">
-                  <img
-                    src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&amp;w=1932&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Team collaborating in an open office"
-                    width="900"
-                    height="675"
-                    loading="lazy"
-                    decoding="async">
-                </div>
-                <h3 class="hero-bridge-card__title">Start with real problems</h3>
-                <p class="hero-bridge-card__text">We focus on problems that are clear, repeatable, and worth solving.</p>
-              </article>
-              <article class="hero-bridge-card">
-                <div class="hero-bridge-card__media">
-                  <img
-                    src="https://images.unsplash.com/photo-1585624882829-f92c2d4cd89d?q=80&amp;w=1932&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Person in a blue shirt working on a laptop"
-                    width="900"
-                    height="675"
-                    loading="lazy"
-                    decoding="async">
-                </div>
-                <h3 class="hero-bridge-card__title">Test in market</h3>
-                <p class="hero-bridge-card__text">We validate with real behavior. Not opinions, not internal feedback.</p>
-              </article>
-              <article class="hero-bridge-card">
-                <div class="hero-bridge-card__media">
-                  <img
-                    src="https://images.unsplash.com/photo-1758691736407-02406d18df6c?q=80&amp;w=1932&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Product analytics and dashboards on a laptop"
-                    width="900"
-                    height="675"
-                    loading="lazy"
-                    decoding="async">
-                </div>
-                <h3 class="hero-bridge-card__title">Build what works</h3>
-                <p class="hero-bridge-card__text">Only ideas that show traction get more time, capital, and team.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Main Content -->
+  <main id="main-content">
 
-    <section id="how-studio-runs" class="section studio-carousel-band" aria-labelledby="studio-carousel-heading">
-      <div class="studio-carousel-band__grid reveal" data-reveal>
-          <div class="studio-carousel-band__copy">
-            <p class="studio-carousel-band__eyebrow">Operating model</p>
-            <h2 id="studio-carousel-heading" class="studio-carousel-band__heading">How the studio actually runs</h2>
-            <p class="studio-carousel-band__lede">
-              One team running multiple ideas. Most stop early. The ones that work move forward.
-            </p>
-            <p class="studio-carousel-band__detail" id="studio-carousel-detail" aria-live="polite">
-              Define the problem and economics before building anything.
-            </p>
-            <div class="studio-carousel-band__nav">
-              <div class="about-carousel-controls" role="group" aria-label="Carousel controls">
-                <button type="button" class="about-carousel-nav-btn" id="studio-carousel-prev" aria-label="Previous highlight">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-                </button>
-                <div class="about-carousel-progress-pill">
-                  <div class="about-carousel-progress" id="studio-carousel-progress" aria-label="Studio highlights">
-                    <button type="button" class="about-carousel-dot is-active" data-studio-dot aria-label="Design" aria-current="true"></button>
-                    <button type="button" class="about-carousel-dot" data-studio-dot aria-label="Build" aria-current="false"></button>
-                    <button type="button" class="about-carousel-dot" data-studio-dot aria-label="Portfolio" aria-current="false"></button>
-                    <button type="button" class="about-carousel-dot" data-studio-dot aria-label="Decide with evidence" aria-current="false"></button>
-                  </div>
-                </div>
-                <button type="button" class="about-carousel-nav-btn" id="studio-carousel-next" aria-label="Next highlight">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="studio-carousel-band__rail-wrap">
-            <div
-              class="studio-carousel-band__viewport"
-              id="studio-carousel-viewport"
-              tabindex="0"
-              role="region"
-              aria-roledescription="carousel"
-              aria-label="How the studio runs—highlights"
-            >
-              <div class="studio-carousel-band__track" id="studio-carousel-track">
-              <article class="studio-carousel-card" data-studio-slide data-detail="Define the problem and economics before building anything.">
-                <div class="studio-carousel-card__media">
-                  <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="800" height="500" fetchpriority="high" decoding="async">
-                </div>
-                <p class="studio-carousel-card__kicker">Design</p>
-                <h3 class="studio-carousel-card__title">Opportunity first</h3>
-                <p class="studio-carousel-card__text">Define the problem and economics before building anything.</p>
-                <button type="button" class="studio-carousel-card__cta" data-detail-modal="studio-loop" data-detail-slide="0">
-                  <span class="studio-carousel-card__cta-icon" aria-hidden="true">
-                    <svg viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6 6l-4.5 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                  Learn more
-                </button>
-              </article>
-              <article class="studio-carousel-card" data-studio-slide data-detail="Product, operations, and go to market stay tightly connected.">
-                <div class="studio-carousel-card__media">
-                  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&amp;w=1740&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="800" height="500" loading="eager" decoding="async">
-                </div>
-                <p class="studio-carousel-card__kicker">Build</p>
-                <h3 class="studio-carousel-card__title">Build in one loop</h3>
-                <p class="studio-carousel-card__text">Product, operations, and go to market stay tightly connected.</p>
-                <button type="button" class="studio-carousel-card__cta" data-detail-modal="studio-loop" data-detail-slide="1">
-                  <span class="studio-carousel-card__cta-icon" aria-hidden="true">
-                    <svg viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6 6l-4.5 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                  Learn more
-                </button>
-              </article>
-              <article class="studio-carousel-card" data-studio-slide data-detail="Each venture benefits from shared tools, data, and lessons.">
-                <div class="studio-carousel-card__media">
-                  <img src="https://images.unsplash.com/photo-1720962158924-6b1d12429ffd?q=80&amp;w=1740&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="800" height="500" loading="eager" decoding="async">
-                </div>
-                <p class="studio-carousel-card__kicker">Portfolio</p>
-                <h3 class="studio-carousel-card__title">Shared systems</h3>
-                <p class="studio-carousel-card__text">Each venture benefits from shared tools, data, and lessons.</p>
-                <button type="button" class="studio-carousel-card__cta" data-detail-modal="studio-loop" data-detail-slide="2">
-                  <span class="studio-carousel-card__cta-icon" aria-hidden="true">
-                    <svg viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6 6l-4.5 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                  Learn more
-                </button>
-              </article>
-              <article class="studio-carousel-card" data-studio-slide data-detail="We invest more, spin out, or shut down based on performance.">
-                <div class="studio-carousel-card__media">
-                  <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&amp;w=1740&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="800" height="500" loading="eager" decoding="async">
-                </div>
-                <p class="studio-carousel-card__kicker">Decide</p>
-                <h3 class="studio-carousel-card__title">Decide with evidence</h3>
-                <p class="studio-carousel-card__text">We invest more, spin out, or shut down based on performance.</p>
-                <button type="button" class="studio-carousel-card__cta" data-detail-modal="studio-loop" data-detail-slide="3">
-                  <span class="studio-carousel-card__cta-icon" aria-hidden="true">
-                    <svg viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 1.5L6 6l-4.5 4.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                  Learn more
-                </button>
-              </article>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <section
-      id="studio-approach"
-      class="section studio-approach-band"
-      aria-labelledby="studio-approach-heading"
-    >
+    <!-- Hero Section -->
+    <section class="ai-hero">
+      <video class="ai-hero__bg" autoplay muted loop playsinline id="hero-video">
+        <source src="assets/videos/homepage-4347878.mp4" type="video/mp4">
+      </video>
+      <button class="hero-video-toggle" aria-label="Pause video" id="video-toggle">
+        <svg class="hero-video-toggle__icon hero-video-toggle__icon--pause" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+        <svg class="hero-video-toggle__icon hero-video-toggle__icon--play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" hidden>
+          <polygon points="8 5 19 12 8 19"></polygon>
+        </svg>
+      </button>
       <div class="container container--wide">
-        <div class="studio-approach-band__grid reveal" data-reveal>
-          <div class="studio-approach-band__intro">
-            <p class="studio-approach-band__eyebrow">Approach</p>
-            <h2 id="studio-approach-heading" class="studio-approach-band__title">
-              We build with constraints, not assumptions
-            </h2>
-            <p class="studio-approach-band__lede">
-              Most ideas sound good in theory. We focus on what holds up under real conditions.
-            </p>
+        <div class="ai-hero__content">
+          <h1 class="ai-hero__title">Build companies<br>at venture speed</h1>
+          <p class="ai-hero__lead">
+            Los Angeles venture studio turning ideas into real businesses with paying customers. We combine shared teams, proven operators, and systematic processes to reduce risk and accelerate growth.
+          </p>
+          <div class="ai-hero__actions">
+            <a href="/labs.html" class="btn btn--primary btn--pill">View Ventures</a>
+            <a href="/about.html" class="btn btn--secondary btn--pill">How We Build</a>
           </div>
-          <figure class="studio-approach-band__figure">
-            <img
-              src="https://images.unsplash.com/photo-1632923946203-d532feecf8d3?q=80&amp;w=1740&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Two colleagues talking in a bright office"
-              width="1200"
-              height="900"
-              loading="lazy"
-              decoding="async">
-          </figure>
-          <span class="studio-approach-band__spacer" aria-hidden="true"></span>
-          <div class="studio-approach-band__lower">
-            <div class="studio-approach-band__columns">
-              <div>
-                <p>
-                  Every idea starts with constraints. Who actually needs this, how often, and why now.
-                </p>
-                <p>
-                  We look for problems that are clear, repeatable, and tied to real behavior. If it only works in a pitch, it does not move forward.
-                </p>
-              </div>
-              <div>
-                <p>
-                  As we test ideas, we prioritize signal over certainty. Early traction matters more than polished strategy.
-                </p>
-                <p>
-                  When something works, we invest quickly. When it does not, we stop just as quickly.
-                </p>
-              </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Stats -->
+    <section class="section">
+      <div class="container container--wide">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-item__number" data-count="4">0</span>
+            <span class="stat-item__label">Active Ventures</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item__number" data-count="10">0</span>
+            <span class="stat-item__label">Team Members</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item__number" data-count="2020">0</span>
+            <span class="stat-item__label">Founded</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item__number" data-count="100" data-suffix="%">0%</span>
+            <span class="stat-item__label">Bootstrapped</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Business Pillars -->
+    <section class="section three-pillars">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="section-intro__title">Three ways to work with us</h2>
+          <p class="section-intro__subtitle">
+            We build companies, offer proven services, and license battle-tested technology
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Pillar 1: Ventures -->
+          <div class="pillar-card">
+            <div class="pillar-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
             </div>
-            <h3 class="studio-approach-band__subhead">
-              What this means in practice
-            </h3>
-            <ul class="studio-approach-band__list">
-              <li>We do not build without a clear user and use case</li>
-              <li>We test before committing resources</li>
-              <li>We prioritize speed over completeness</li>
-              <li>We make decisions based on behavior, not opinions</li>
+            <h3 class="pillar-card__title">Venture Studio</h3>
+            <p class="pillar-card__description">
+              We build companies from 0→1. Partner with us to launch your venture with systematic validation, shared resources, and operator expertise.
+            </p>
+            <a href="/labs.html" class="pillar-card__link">
+              View our companies
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Pillar 2: Services -->
+          <div class="pillar-card">
+            <div class="pillar-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="pillar-card__title">Marketing & Digital</h3>
+            <p class="pillar-card__description">
+              Full-service marketing, web design, and brand strategy from operators who've built companies—not just campaigns.
+            </p>
+            <a href="/services.html" class="pillar-card__link">
+              Explore services
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Pillar 3: Solutions -->
+          <div class="pillar-card">
+            <div class="pillar-card__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="pillar-card__title">Proven Solutions</h3>
+            <p class="pillar-card__description">
+              License the platforms powering our ventures. Battle-tested technology, customized for your business, deployed in weeks.
+            </p>
+            <a href="/solutions.html" class="pillar-card__link">
+              View solutions
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Build -->
+    <section class="section">
+      <div class="container container--wide">
+        <h2 class="ai-section-title display-title display-title--lg">How we build companies</h2>
+
+        <div class="paths-grid">
+
+          <div class="card">
+            <h3 class="card__title">Shared Infrastructure</h3>
+            <p class="card__description">
+              Centralized engineering, design, and operations teams support multiple ventures simultaneously. Shared learnings accelerate each company while reducing overhead and technical debt.
+            </p>
+            <a href="/about.html" class="btn btn--secondary">How We Operate</a>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">Proven Operators</h3>
+            <p class="card__description">
+              Deep domain expertise from previous ventures. We concentrate resources on select opportunities, backing each with hands-on operational support and strategic guidance.
+            </p>
+            <a href="/careers.html" class="btn btn--secondary">Join Our Team</a>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">Active Portfolio</h3>
+            <p class="card__description">
+              Building companies across healthcare AI and enterprise automation. Each venture benefits from our studio's compounded knowledge and systematic validation approach.
+            </p>
+            <a href="/labs.html" class="btn btn--secondary">View Ventures</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Systematic Approach -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div>
+            <img src="assets/images/home/img_team-working.jpg" alt="Studio workspace" class="img-rounded">
+          </div>
+          <div>
+            <h2 class="split__content-title">Systematic company building</h2>
+            <p class="split__content-description">
+              Concentrating resources on select opportunities. Each venture receives dedicated funding, shared infrastructure, and hands-on operational expertise from day one.
+            </p>
+            <p class="split__content-description">
+              Insights from previous companies compound with each new venture, accelerating time to market and improving success rates through systematic validation.
+            </p>
+            <a href="/about.html" class="btn btn--primary">Our Process</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section">
+      <div class="container">
+        <h2 class="ai-section-title display-title display-title--lg">From idea to market</h2>
+
+        <div class="process-grid">
+
+          <!-- Step 01: Identify -->
+          <div class="process-card">
+            <span class="process-card__number">01</span>
+            <h3 class="process-card__title">Identify</h3>
+            <p class="process-card__description">We identify high-potential opportunities through market analysis, domain expertise, and systematic validation of customer needs.</p>
+            <ul class="process-card__list">
+              <li>Analyze market gaps and emerging opportunities</li>
+              <li>Conduct deep customer discovery and validation</li>
+              <li>Leverage domain expertise from previous ventures</li>
+              <li>Build rapid prototypes to test core hypotheses</li>
             </ul>
           </div>
+
+          <!-- Step 02: Build -->
+          <div class="process-card">
+            <span class="process-card__number">02</span>
+            <h3 class="process-card__title">Build</h3>
+            <p class="process-card__description">Shared teams across engineering, product, and design build systematically. Early customer feedback drives rapid iteration and refinement.</p>
+            <ul class="process-card__list">
+              <li>Dedicated cross-functional teams for each venture</li>
+              <li>Continuous customer engagement and user testing</li>
+              <li>Comprehensive data instrumentation and analytics</li>
+              <li>Shared infrastructure and technical resources</li>
+            </ul>
+          </div>
+
+          <!-- Step 03: Scale -->
+          <div class="process-card">
+            <span class="process-card__number">03</span>
+            <h3 class="process-card__title">Scale</h3>
+            <p class="process-card__description">Proven ventures transition to standalone companies with dedicated teams, strategic guidance, and continued operational support from the studio.</p>
+            <ul class="process-card__list">
+              <li>Transition when key metrics demonstrate product-market fit</li>
+              <li>Core team continues with equity and leadership roles</li>
+              <li>Strategic capital partnerships or path to profitability</li>
+              <li>Ongoing strategic guidance and board participation</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="what-we-do" class="section section--cloud">
+    <!-- Product Showcase: Epoch² -->
+    <section class="product-showcase section--atmosphere-earth">
+      <div class="product-showcase__background"></div>
       <div class="container container--wide">
-        <div class="section-head section-head--center reveal" data-reveal>
-          <div class="eyebrow">Studio</div>
-          <h2>From thesis to traction</h2>
-          <p>Every idea follows the same path. No exceptions.</p>
-        </div>
-        <div class="studio-box-grid reveal" data-reveal>
-          <article class="studio-box">
-            <img class="studio-box__bg" src="https://images.unsplash.com/photo-1521737711867-e3b9733502a9?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=80" alt="People working together at laptops in an open studio" width="1200" height="800" loading="lazy" decoding="async">
-            <div class="studio-box__scrim" aria-hidden="true"></div>
-            <div class="studio-box__inner">
-              <p class="studio-box__label">Define</p>
-              <h3>Define</h3>
-              <p class="studio-box__desc">Identify the problem, market, and why it matters. Kill weak ideas early.</p>
-              <div class="studio-box__actions">
-                <a class="button button-primary" href="#ventures">View ventures</a>
-                <a class="button button-secondary" href="#why">Learn more</a>
-              </div>
+        <div class="product-showcase__grid">
+          <div class="product-showcase__media">
+            <img src="assets/labs/dominion-eternal-poster.jpg" alt="Epoch² procedural game engine">
+          </div>
+          <div class="product-showcase__content">
+            <div class="badge badge--amber">Gaming</div>
+            <h2 class="product-showcase__title">Epoch²</h2>
+            <p class="product-showcase__description">
+              Procedural game engine generating infinite replayability. Every session creates unique narratives through adaptive AI systems that respond to player choices in real-time.
+            </p>
+            <ul class="product-showcase__features">
+              <li>Infinite procedural narratives</li>
+              <li>Adaptive AI storytelling</li>
+              <li>Alpha testing with indie studios</li>
+            </ul>
+            <div class="product-showcase__actions">
+              <a href="/labs/epoch2/" class="btn btn--primary">View Case Study</a>
             </div>
-          </article>
-          <article class="studio-box">
-            <img class="studio-box__bg" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=80" alt="Team reviewing strategy on a whiteboard" width="1200" height="800" loading="lazy" decoding="async">
-            <div class="studio-box__scrim" aria-hidden="true"></div>
-            <div class="studio-box__inner">
-              <p class="studio-box__label">Validate</p>
-              <h3>Validate</h3>
-              <p class="studio-box__desc">Test demand with real users and real behavior.</p>
-              <div class="studio-box__actions">
-                <a class="button button-primary" href="#why">Why Alkymē</a>
-                <a class="button button-secondary" href="#ventures">Our focus</a>
-              </div>
-            </div>
-          </article>
-          <article class="studio-box studio-box--wide">
-            <img class="studio-box__bg" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1600&amp;h=700&amp;q=80" alt="Analytics and product work on a laptop screen" width="1600" height="700" loading="lazy" decoding="async">
-            <div class="studio-box__scrim" aria-hidden="true"></div>
-            <div class="studio-box__inner">
-              <p class="studio-box__label">Build</p>
-              <h3>Build</h3>
-              <p class="studio-box__desc">Turn traction into a product, then into a business.</p>
-              <div class="studio-box__actions">
-                <a class="button button-primary" href="#model">Studio model</a>
-                <a class="button button-secondary" href="contact.html">Contact</a>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="ventures" class="section section--ventures ventures-band" aria-labelledby="ventures-heading">
+    <!-- Product Showcase: Sevā AI -->
+    <section class="product-showcase">
+      <div class="product-showcase__background"></div>
       <div class="container container--wide">
-        <header class="ventures-band__intro reveal" data-reveal>
-          <p class="ventures-band__eyebrow">Ventures</p>
-          <h2 id="ventures-heading" class="ventures-band__title">Where we build</h2>
-          <p class="ventures-band__lede">
-            We focus on areas where strong execution compounds over time.
+        <div class="product-showcase__grid product-showcase__grid--reverse">
+          <div class="product-showcase__media">
+            <img src="assets/images/labs/img-hospital-campus.jpg" alt="Sevā AI healthcare platform">
+          </div>
+          <div class="product-showcase__content">
+            <div class="badge badge--sage">Healthcare AI</div>
+            <h2 class="product-showcase__title">Sevā<sup>AI</sup></h2>
+            <p class="product-showcase__description">
+              Multi-agent system automating regional healthcare marketing. Reduces costs 85% while maintaining strict compliance and quality standards across 3 regional health systems.
+            </p>
+            <ul class="product-showcase__features">
+              <li>85% cost reduction vs. traditional agencies</li>
+              <li>HIPAA-compliant multi-agent workflows</li>
+              <li>Serving 3 regional health systems</li>
+            </ul>
+            <div class="product-showcase__actions">
+              <a href="/labs/healthcare-ai/" class="btn btn--primary">View Case Study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B CTA Section -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="cta-section">
+          <p style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem; color: var(--color-text-muted, #666); margin-bottom: 1rem;">FOR ENTERPRISES</p>
+          <h2 class="cta-section__title">This infrastructure is available for your business</h2>
+          <p class="cta-section__description">
+            The same battle-tested platforms running our ventures—packaged for enterprise deployment. HIPAA-compliant, SOC 2 ready, proven at scale.
           </p>
-          <button type="button" class="ventures-band__circle-link" data-detail-modal="studio-loop" data-detail-slide="0">
-            <span class="ventures-band__circle-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" width="12" height="12">
-                <path d="M4.5 2.5 8.5 6 4.5 9.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            How we run the studio
-          </button>
-        </header>
-        <div class="ventures-band__grid reveal" data-reveal>
-          <article class="ventures-card">
-            <div class="ventures-card__media">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=900&amp;h=560&amp;q=80" alt="" width="900" height="560" loading="lazy" decoding="async">
-            </div>
-            <h3 class="ventures-card__title">Operational systems</h3>
-            <p class="ventures-card__text">Tools for industries still running on outdated processes.</p>
-            <button type="button" class="ventures-band__circle-link" data-detail-modal="venture-service" data-detail-slide="0">
-              <span class="ventures-band__circle-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" width="12" height="12">
-                  <path d="M4.5 2.5 8.5 6 4.5 9.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              Learn more
-            </button>
-          </article>
-          <article class="ventures-card">
-            <div class="ventures-card__media">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=900&amp;h=560&amp;q=80" alt="" width="900" height="560" loading="lazy" decoding="async">
-            </div>
-            <h3 class="ventures-card__title">Workflow software</h3>
-            <p class="ventures-card__text">Products that improve how teams operate and scale output.</p>
-            <button type="button" class="ventures-band__circle-link" data-detail-modal="venture-workflow" data-detail-slide="0">
-              <span class="ventures-band__circle-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" width="12" height="12">
-                  <path d="M4.5 2.5 8.5 6 4.5 9.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              Learn more
-            </button>
-          </article>
-          <article class="ventures-card">
-            <div class="ventures-card__media">
-              <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&amp;fit=crop&amp;w=900&amp;h=560&amp;q=80" alt="" width="900" height="560" loading="lazy" decoding="async">
-            </div>
-            <h3 class="ventures-card__title">Commerce tools</h3>
-            <p class="ventures-card__text">Solutions that increase conversion, retention, and efficiency.</p>
-            <button type="button" class="ventures-band__circle-link" data-detail-modal="venture-commerce" data-detail-slide="0">
-              <span class="ventures-band__circle-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none" width="12" height="12">
-                  <path d="M4.5 2.5 8.5 6 4.5 9.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              See how we choose what to build
-            </button>
-          </article>
+          <div class="cta-section__actions">
+            <a href="/solutions.html" class="btn btn--primary btn--pill">Explore Solutions</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="why" class="section section--cloud why-band" aria-labelledby="why-heading">
+    <!-- Ventures CTA Section -->
+    <section class="section">
       <div class="container container--wide">
-        <header class="why-band__header reveal" data-reveal>
-          <div class="why-band__header-text">
-            <p class="why-band__eyebrow">How we work</p>
-            <h2 id="why-heading" class="why-band__title">Principles</h2>
-            <p class="why-band__lede">
-              A few shared habits for how we test ideas, move quickly, and compound what works across every venture.
-            </p>
-          </div>
-        </header>
-        <div class="why-grid reveal" data-reveal>
-          <article class="why-card">
-            <div class="why-card__visual">
-              <img
-                src="https://images.unsplash.com/photo-1600267147646-33cf514b5f3e?q=80&amp;w=1694&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Bright open-plan office with desks and indoor plants"
-                width="1694"
-                height="1270"
-                loading="lazy"
-                decoding="async">
-            </div>
-            <div class="why-card__body">
-              <h3>Test before committing</h3>
-              <p>We validate before we invest.</p>
-            </div>
-          </article>
-          <article class="why-card">
-            <div class="why-card__visual">
-              <img
-                src="https://images.unsplash.com/photo-1536148935331-408321065b18?q=80&amp;w=1287&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Team members collaborating at a conference table"
-                width="1287"
-                height="858"
-                loading="lazy"
-                decoding="async">
-            </div>
-            <div class="why-card__body">
-              <h3>Move quickly</h3>
-              <p>Fast cycles beat perfect plans.</p>
-            </div>
-          </article>
-          <article class="why-card">
-            <div class="why-card__visual">
-              <img
-                src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&amp;w=1612&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="People working together in a modern creative space"
-                width="1612"
-                height="1075"
-                loading="lazy"
-                decoding="async">
-            </div>
-            <div class="why-card__body">
-              <h3>Reuse what works</h3>
-              <p>What we learn once applies across every venture.</p>
-            </div>
-          </article>
-          <article class="why-card">
-            <div class="why-card__visual">
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&amp;w=1740&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Team collaborating over a laptop in an open workspace"
-                width="1740"
-                height="1160"
-                loading="lazy"
-                decoding="async">
-            </div>
-            <div class="why-card__body">
-              <h3>Build for durability</h3>
-              <p>Long term value over short term metrics.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="model" class="section" aria-labelledby="model-heading">
-      <div class="container container--wide">
-        <div class="model-trio reveal" data-reveal>
-          <div class="model-trio__intro">
-            <p class="model-trio__eyebrow">Our model</p>
-            <h2 id="model-heading" class="model-trio__title">How we decide what to build</h2>
-            <p class="model-trio__lede">
-              Most bets never leave thesis. The ones that do earn their next stage with proof, not paperwork.
-            </p>
-          </div>
-          <div class="model-trio__accordion">
-            <div class="model-accordion" id="model-accordion">
-              <div class="model-accordion__item">
-                <button
-                  type="button"
-                  class="model-accordion__trigger"
-                  id="model-acc-btn-0"
-                  aria-expanded="false"
-                  aria-controls="model-acc-panel-0"
-                >
-                  <span>Originate</span>
-                  <span class="model-accordion__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="model-accordion__panel" id="model-acc-panel-0" role="region" aria-labelledby="model-acc-btn-0" hidden>
-                  <p>We originate our own ideas—problems we want to own, not pitches from the outside.</p>
-                </div>
-              </div>
-              <div class="model-accordion__item">
-                <button
-                  type="button"
-                  class="model-accordion__trigger"
-                  id="model-acc-btn-1"
-                  aria-expanded="true"
-                  aria-controls="model-acc-panel-1"
-                >
-                  <span>Test demand</span>
-                  <span class="model-accordion__icon" aria-hidden="true">−</span>
-                </button>
-                <div class="model-accordion__panel" id="model-acc-panel-1" role="region" aria-labelledby="model-acc-btn-1">
-                  <p>We test demand before scaling effort. Behavior in market beats internal consensus.</p>
-                </div>
-              </div>
-              <div class="model-accordion__item">
-                <button
-                  type="button"
-                  class="model-accordion__trigger"
-                  id="model-acc-btn-2"
-                  aria-expanded="false"
-                  aria-controls="model-acc-panel-2"
-                >
-                  <span>Invest in traction</span>
-                  <span class="model-accordion__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="model-accordion__panel" id="model-acc-panel-2" role="region" aria-labelledby="model-acc-btn-2" hidden>
-                  <p>We invest in what shows traction—more time, capital, and team when the numbers support it.</p>
-                </div>
-              </div>
-              <div class="model-accordion__item">
-                <button
-                  type="button"
-                  class="model-accordion__trigger"
-                  id="model-acc-btn-3"
-                  aria-expanded="false"
-                  aria-controls="model-acc-panel-3"
-                >
-                  <span>Stop</span>
-                  <span class="model-accordion__icon" aria-hidden="true">+</span>
-                </button>
-                <div class="model-accordion__panel" id="model-acc-panel-3" role="region" aria-labelledby="model-acc-btn-3" hidden>
-                  <p>We shut down what does not. No sunk-cost gravity—evidence decides.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="model-trio__visual">
-            <div class="model-trio__stage" aria-hidden="true">
-              <div class="model-trio__stage-panels" id="model-stage-panels">
-                <div class="model-trio__stage-panel" data-model-stage="default">
-                  <img
-                    class="model-trio__stage-panel__bg"
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&amp;w=1200&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0"
-                    alt=""
-                    width="1200"
-                    height="900"
-                    loading="lazy"
-                    decoding="async">
-                  <div class="model-trio__stack">
-                    <div class="model-trio__float model-trio__float--back">Gates</div>
-                    <div class="model-trio__float model-trio__float--mid">Portfolio</div>
-                    <div class="model-trio__float model-trio__float--front">
-                      <p class="model-trio__float-kicker">Our model</p>
-                      <p class="model-trio__float-title">How we decide</p>
-                      <p class="model-trio__float-meta">Open a step to see how thesis becomes traction—or tap again to return here.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="model-trio__stage-panel" data-model-stage="0">
-                  <img
-                    class="model-trio__stage-panel__bg"
-                    src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&amp;w=1200&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0"
-                    alt=""
-                    width="1200"
-                    height="800"
-                    loading="lazy"
-                    decoding="async">
-                  <div class="model-trio__stack">
-                    <div class="model-trio__float model-trio__float--back">Thesis</div>
-                    <div class="model-trio__float model-trio__float--mid">Economics</div>
-                    <div class="model-trio__float model-trio__float--front">
-                      <p class="model-trio__float-kicker">Originate</p>
-                      <p class="model-trio__float-title">Own the problem</p>
-                      <p class="model-trio__float-meta">We start with who hurts, how often, and whether we want to own it.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="model-trio__stage-panel is-active" data-model-stage="1">
-                  <img
-                    class="model-trio__stage-panel__bg"
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&amp;w=1200&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0"
-                    alt=""
-                    width="1200"
-                    height="800"
-                    loading="lazy"
-                    decoding="async">
-                  <div class="model-trio__stack">
-                    <div class="model-trio__float model-trio__float--back">Prototype</div>
-                    <div class="model-trio__float model-trio__float--mid">Acquisition</div>
-                    <div class="model-trio__float model-trio__float--front">
-                      <p class="model-trio__float-kicker">Test demand</p>
-                      <p class="model-trio__float-title">Behavior in market</p>
-                      <p class="model-trio__float-meta">Landing pages, pilots, early sales—signal over opinion.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="model-trio__stage-panel" data-model-stage="2">
-                  <img
-                    class="model-trio__stage-panel__bg"
-                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&amp;w=1200&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0"
-                    alt=""
-                    width="1200"
-                    height="800"
-                    loading="lazy"
-                    decoding="async">
-                  <div class="model-trio__stack">
-                    <div class="model-trio__float model-trio__float--back">Team</div>
-                    <div class="model-trio__float model-trio__float--mid">Capital</div>
-                    <div class="model-trio__float model-trio__float--front">
-                      <p class="model-trio__float-kicker">Invest</p>
-                      <p class="model-trio__float-title">When traction repeats</p>
-                      <p class="model-trio__float-meta">More build, more GTM, more runway—only after proof.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="model-trio__stage-panel" data-model-stage="3">
-                  <img
-                    class="model-trio__stage-panel__bg"
-                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&amp;w=1200&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0"
-                    alt=""
-                    width="1200"
-                    height="800"
-                    loading="lazy"
-                    decoding="async">
-                  <div class="model-trio__stack">
-                    <div class="model-trio__float model-trio__float--back">Cut list</div>
-                    <div class="model-trio__float model-trio__float--mid">Evidence</div>
-                    <div class="model-trio__float model-trio__float--front">
-                      <p class="model-trio__float-kicker">Stop</p>
-                      <p class="model-trio__float-title">Protect the portfolio</p>
-                      <p class="model-trio__float-meta">Shut down what does not clear the bar—no sunk-cost gravity.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="ai-cta-hero">
+          <img src="assets/images/home/img_team-working.jpg" alt="Our ventures in action" loading="lazy" class="ai-cta-hero__image">
+          <div class="ai-cta-hero__overlay">
+            <p class="ai-cta-hero__eyebrow">ALKYMĒ VENTURES</p>
+            <h2 class="ai-cta-hero__title">Real products. Real traction.</h2>
+            <p class="ai-cta-hero__description">Procedural game engine in alpha. Healthcare AI platform serving 3 regional health systems. Both tested with paying customers. Both ready to scale.</p>
+            <a href="/labs.html" class="btn btn--primary btn--pill">View Ventures</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="careers" class="section section--ventures careers-band" aria-labelledby="careers-heading">
-      <div class="container container--wide reveal" data-reveal>
-        <header class="careers-band__header">
-          <div class="careers-band__header-text">
-            <p class="careers-band__eyebrow">Careers</p>
-            <h2 id="careers-heading" class="careers-band__title">Work on ideas that are still being figured out</h2>
-            <p class="careers-band__intro">Join the studio or a venture team. Work on real products from day one.</p>
-          </div>
-          <div class="careers-band__header-cta">
-            <a class="button button-primary button--pill" href="careers.html">View open roles</a>
-          </div>
-        </header>
-        <figure class="careers-band__figure">
-          <img
-            src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&amp;w=1740&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Engineer working at a desk with multiple monitors"
-            width="1600"
-            height="762"
-            loading="lazy"
-            decoding="async">
-        </figure>
       </div>
     </section>
 
   </main>
 
-  <div id="detail-modal" class="detail-modal" hidden aria-hidden="true">
-    <div class="detail-modal__backdrop" data-detail-modal-close aria-hidden="true"></div>
-    <div
-      class="detail-modal__dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="detail-modal-title"
-    >
-      <header class="detail-modal__header">
-        <h2 id="detail-modal-title" class="detail-modal__title"></h2>
-        <button type="button" class="detail-modal__close" id="detail-modal-close" aria-label="Close">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </header>
-      <div class="detail-modal__scroll" id="detail-modal-scroll">
-        <div class="detail-modal__hero" id="detail-modal-hero"></div>
-        <div class="detail-modal__split">
-          <div class="detail-modal__copy" id="detail-modal-copy"></div>
-          <div class="detail-modal__side">
-            <img id="detail-modal-side-img" src="" alt="" width="720" height="540" loading="lazy" decoding="async" />
-          </div>
-        </div>
-      </div>
-      <footer class="detail-modal__footer" id="detail-modal-footer">
-        <button type="button" class="detail-modal__nav-btn" id="detail-modal-prev" aria-label="Previous slide">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <div class="detail-modal__dots" id="detail-modal-dots" role="tablist" aria-label="Slides"></div>
-        <button type="button" class="detail-modal__nav-btn" id="detail-modal-next" aria-label="Next slide">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </footer>
-    </div>
-  </div>
-
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container site-footer__inner">
-      <div class="site-footer__brand">
-        <a class="site-footer__logo" href="index.html" aria-label="Alkymē home">
-          <img src="assets/alkyme-logo-rt-hzt-black.svg" alt="Alkymē" width="200" height="36" decoding="async">
-        </a>
-        <ul class="site-footer__social" aria-label="Social and email">
-          <li>
-            <a href="mailto:hello@alkyme.io" aria-label="Email hello@alkyme.io">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/company/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on X">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-          </li>
-        </ul>
+    <div class="container">
+
+      <!-- Main Footer Navigation -->
+      <div class="site-footer-nav">
+
+        <!-- Logo Area (Left Side) -->
+        <div class="site-footer-logo-area">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--dark">
+        </div>
+
+        <!-- Navigation Sections (Right Side) -->
+        <nav class="site-footer-columns">
+
+          <!-- Support -->
+          <div class="site-footer-column footer-col-support">
+            <h4 class="site-footer-heading">Support</h4>
+            <ul class="site-footer-list">
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="mailto:hello@alkyme.io">Email Support</a></li>
+              <li><a href="tel:+15598255963">Call Us</a></li>
+              <li><a href="/solutions.html#case-studies">Case Studies</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div class="site-footer-column footer-col-legal">
+            <h4 class="site-footer-heading">Legal</h4>
+            <ul class="site-footer-list">
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="site-footer-column footer-col-company">
+            <h4 class="site-footer-heading">Company</h4>
+            <ul class="site-footer-list">
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/labs.html">Labs</a></li>
+              <li><a href="/careers.html">Careers</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Solutions -->
+          <div class="site-footer-column footer-col-solutions">
+            <h4 class="site-footer-heading">Solutions</h4>
+            <ul class="site-footer-list">
+              <li><a href="/solutions.html">Platform Licensing</a></li>
+              <li><a href="/solutions.html#healthcare">Healthcare AI</a></li>
+              <li><a href="/solutions.html#logistics">Supply Chain</a></li>
+              <li><a href="/solutions.html#retail">E-Commerce</a></li>
+            </ul>
+          </div>
+
+        </nav>
+
       </div>
-      <nav class="site-footer__nav" aria-label="Site">
-        <div class="site-footer__col">
-          <div class="site-footer__group">
-            <h2 class="site-footer__heading">Studio</h2>
-            <ul class="site-footer__links">
-              <li><a href="index.html" aria-current="page">Home</a></li>
-            </ul>
-          </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="site-footer-legal">
+        <div class="site-footer-legal-left">
+          <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
         </div>
-        <div class="site-footer__col">
-          <div class="site-footer__group">
-            <h2 class="site-footer__heading">Company</h2>
-            <ul class="site-footer__links">
-              <li><a href="about.html">About</a></li>
-              <li><a href="careers.html">Careers</a></li>
-            </ul>
-          </div>
+        <div class="site-footer-legal-right">
+          <span>Los Angeles, California</span>
         </div>
-        <div class="site-footer__col">
-          <div class="site-footer__group">
-            <h2 class="site-footer__heading">Contact</h2>
-            <ul class="site-footer__links">
-              <li><a href="mailto:hello@alkyme.io">hello@alkyme.io</a></li>
-              <li><a href="tel:+15598255963">(559) 825-5963</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <div class="site-footer__bottom">
-      <div class="container site-footer__bottom-inner">
-        <span>© <span id="year"></span> Alkyme. All rights reserved.</span>
       </div>
+
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- Scripts -->
+  <script src="assets/js/home-nav-scroll.js"></script>
+  <script src="assets/js/hero-video-toggle.js"></script>
+  <script src="assets/js/stat-counter.js"></script>
+  <script src="assets/js/site-theme.js"></script>
+  <script src="assets/js/site-lang.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
-    (function () {
-      var root = document.getElementById("model-accordion");
-      if (!root) return;
-      var triggers = root.querySelectorAll(".model-accordion__trigger");
-      var stageHost = document.getElementById("model-stage-panels");
-      var stagePanels = stageHost ? stageHost.querySelectorAll(".model-trio__stage-panel") : [];
-
-      function indexFromBtn(btn) {
-        var m = (btn.id || "").match(/model-acc-btn-(\d)/);
-        return m ? parseInt(m[1], 10) : 0;
-      }
-
-      function setStage(activeKey) {
-        if (!stagePanels.length) return;
-        var key = String(activeKey);
-        stagePanels.forEach(function (el) {
-          var k = el.getAttribute("data-model-stage") || "";
-          el.classList.toggle("is-active", k === key);
-        });
-      }
-
-      function syncStageFromAccordion() {
-        var openIdx = -1;
-        triggers.forEach(function (b) {
-          if (b.getAttribute("aria-expanded") === "true") {
-            openIdx = indexFromBtn(b);
-          }
-        });
-        setStage(openIdx >= 0 ? String(openIdx) : "default");
-      }
-
-      function setIcon(btn, open) {
-        var ic = btn.querySelector(".model-accordion__icon");
-        if (ic) ic.textContent = open ? "\u2212" : "+";
-      }
-
-      triggers.forEach(function (btn) {
-        setIcon(btn, btn.getAttribute("aria-expanded") === "true");
-        btn.addEventListener("click", function () {
-          var wasOpen = btn.getAttribute("aria-expanded") === "true";
-          var panelId = btn.getAttribute("aria-controls");
-          triggers.forEach(function (b) {
-            b.setAttribute("aria-expanded", "false");
-            var pid = b.getAttribute("aria-controls");
-            var p = pid ? document.getElementById(pid) : null;
-            if (p) p.hidden = true;
-            setIcon(b, false);
-          });
-          if (!wasOpen) {
-            btn.setAttribute("aria-expanded", "true");
-            var panel = panelId ? document.getElementById(panelId) : null;
-            if (panel) panel.hidden = false;
-            setIcon(btn, true);
-          }
-          syncStageFromAccordion();
-        });
-      });
-
-      syncStageFromAccordion();
-    })();
-
-    (function () {
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var revealEls = document.querySelectorAll("[data-reveal]");
-      if (reduceMotion) {
-        revealEls.forEach(function (el) {
-          el.classList.add("is-visible");
-        });
-      } else {
-        document.documentElement.classList.add("js");
-        var obs = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (e) {
-              if (e.isIntersecting) {
-                e.target.classList.add("is-visible");
-                obs.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-        );
-        revealEls.forEach(function (el) {
-          obs.observe(el);
-        });
-      }
-    })();
-
-    (function () {
-      var hero = document.getElementById("hero");
-      var topbar = document.querySelector(".topbar");
-      var heroBottom = document.querySelector(".hero-bottom");
-      var logo = document.getElementById("brand-logo");
-      if (!hero || !topbar) return;
-
-      var logoCream = "assets/alkyme-logo-rt-hzt-cream.svg";
-      var logoBlack = "assets/alkyme-logo-rt-hzt-black.svg";
-      /* Solid once .hero-bottom enters the header band; stay solid while it or any
-         following #hero content (e.g. .hero-bark-body) is in play. Do not require
-         bottom>0 — after the text block scrolls fully above the viewport, overlap
-         checks on copy/bark would fail and the bar wrongly went clear over bark. */
-      var overlapBufferPx = 28;
-
-      function topbarHeight() {
-        return topbar.getBoundingClientRect().height;
-      }
-
-      function updateTopbar() {
-        var pastHero = hero.getBoundingClientRect().bottom <= 0;
-        var limit = topbarHeight() + overlapBufferPx;
-        var rb = heroBottom ? heroBottom.getBoundingClientRect() : null;
-        var pastHeroTextBand = rb && rb.top < limit;
-        var solid = pastHero || pastHeroTextBand;
-        topbar.classList.toggle("topbar--solid", solid);
-        if (logo) {
-          logo.src = solid ? logoBlack : logoCream;
-        }
-      }
-
-      window.addEventListener("scroll", updateTopbar, { passive: true });
-      window.addEventListener("resize", updateTopbar);
-      updateTopbar();
-    })();
-
-    (function () {
-      var video = document.getElementById("hero-video");
-      var toggle = document.getElementById("hero-video-toggle");
-      if (!video || !toggle) return;
-
-      function setPaused(paused) {
-        toggle.classList.toggle("is-paused", paused);
-        toggle.setAttribute("aria-label", paused ? "Play background video" : "Pause background video");
-      }
-
-      toggle.addEventListener("click", function () {
-        if (video.paused) {
-          video.play().catch(function () {});
-          setPaused(false);
-        } else {
-          video.pause();
-          setPaused(true);
-        }
-      });
-
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        video.pause();
-        video.removeAttribute("autoplay");
-        setPaused(true);
-      }
-    })();
-
-    (function () {
-      var viewport = document.getElementById("studio-carousel-viewport");
-      var track = document.getElementById("studio-carousel-track");
-      var detail = document.getElementById("studio-carousel-detail");
-      if (!viewport || !track) return;
-
-      var prevBtn = document.getElementById("studio-carousel-prev");
-      var nextBtn = document.getElementById("studio-carousel-next");
-      var dots = document.querySelectorAll("[data-studio-dot]");
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      var n = 0;
-      var physicalIndex = 1;
-      var stepPx = 0;
-      var slideResizeTimer;
-      var touchStartX = null;
-      var sliding = false;
-
-      function realSlides() {
-        return track.querySelectorAll(".studio-carousel-card:not([data-carousel-clone])");
-      }
-
-      function logicalFromPhysical(p) {
-        if (p === 0) return n - 1;
-        if (p === n + 1) return 0;
-        return p - 1;
-      }
-
-      function measureStep() {
-        var slides = realSlides();
-        if (!slides.length) return 0;
-        var g = getComputedStyle(track).gap;
-        var gapPx = g && g !== "normal" ? parseFloat(g) || 0 : 0;
-        return slides[0].offsetWidth + gapPx;
-      }
-
-      function stripCloneSemantics(el) {
-        el.setAttribute("aria-hidden", "true");
-        el.removeAttribute("id");
-        el.querySelectorAll("[id]").forEach(function (node) {
-          node.removeAttribute("id");
-        });
-        el.querySelectorAll("button, a").forEach(function (node) {
-          node.setAttribute("tabindex", "-1");
-        });
-      }
-
-      function buildClones() {
-        track.querySelectorAll("[data-carousel-clone]").forEach(function (el) {
-          el.remove();
-        });
-        var reals = realSlides();
-        n = reals.length;
-        if (n < 2) return false;
-        var head = reals[n - 1].cloneNode(true);
-        head.setAttribute("data-carousel-clone", "head");
-        stripCloneSemantics(head);
-        var tail = reals[0].cloneNode(true);
-        tail.setAttribute("data-carousel-clone", "tail");
-        stripCloneSemantics(tail);
-        track.insertBefore(head, reals[0]);
-        track.appendChild(tail);
-        return true;
-      }
-
-      function setActive(logical) {
-        if (n < 1) return;
-        logical = ((logical % n) + n) % n;
-        var slides = realSlides();
-        var slideEl = slides[logical];
-        var msg = slideEl ? slideEl.getAttribute("data-detail") : null;
-        if (detail && msg) detail.textContent = msg;
-        dots.forEach(function (dot, j) {
-          var on = j === logical;
-          dot.classList.toggle("is-active", on);
-          dot.setAttribute("aria-current", on ? "true" : "false");
-        });
-      }
-
-      function moveToPhysical(p, animate) {
-        if (n < 2 || !stepPx) return;
-        p = Math.max(0, Math.min(n + 1, p));
-        physicalIndex = p;
-        setActive(logicalFromPhysical(p));
-        if (animate) {
-          track.classList.remove("is-instant");
-        } else {
-          track.classList.add("is-instant");
-        }
-        track.style.transform = "translate3d(" + Math.round(-p * stepPx) + "px,0,0)";
-        if (!animate) {
-          void track.offsetHeight;
-          requestAnimationFrame(function () {
-            track.classList.remove("is-instant");
-          });
-        }
-      }
-
-      function goNext() {
-        if (n < 2 || sliding) return;
-        if (reduceMotion) {
-          if (physicalIndex >= n) {
-            moveToPhysical(1, false);
-          } else {
-            moveToPhysical(physicalIndex + 1, false);
-          }
-          return;
-        }
-        sliding = true;
-        moveToPhysical(physicalIndex + 1, true);
-      }
-
-      function goPrev() {
-        if (n < 2 || sliding) return;
-        if (reduceMotion) {
-          if (physicalIndex <= 1) {
-            moveToPhysical(n, false);
-          } else {
-            moveToPhysical(physicalIndex - 1, false);
-          }
-          return;
-        }
-        sliding = true;
-        moveToPhysical(physicalIndex - 1, true);
-      }
-
-      function goToLogical(i) {
-        if (n < 2 || sliding) return;
-        var target = i + 1;
-        if (target === physicalIndex) return;
-        if (!reduceMotion) sliding = true;
-        moveToPhysical(target, !reduceMotion);
-      }
-
-      track.addEventListener("transitionend", function (e) {
-        if (e.target !== track || e.propertyName !== "transform") return;
-        if (reduceMotion) {
-          sliding = false;
-          return;
-        }
-        if (physicalIndex === n + 1) {
-          moveToPhysical(1, false);
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              sliding = false;
-            });
-          });
-          return;
-        }
-        if (physicalIndex === 0) {
-          moveToPhysical(n, false);
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              sliding = false;
-            });
-          });
-          return;
-        }
-        sliding = false;
-      });
-
-      function preloadCarouselImages() {
-        track.querySelectorAll(".studio-carousel-card__media img").forEach(function (img) {
-          if (typeof img.decode === "function") {
-            img.decode().catch(function () {});
-          }
-        });
-      }
-
-      function initLayout() {
-        if (!buildClones()) return;
-        stepPx = measureStep();
-        physicalIndex = 1;
-        moveToPhysical(1, false);
-      }
-
-      function onResize() {
-        clearTimeout(slideResizeTimer);
-        slideResizeTimer = setTimeout(function () {
-          stepPx = measureStep();
-          if (stepPx && n >= 2) {
-            moveToPhysical(physicalIndex, false);
-          }
-        }, 100);
-      }
-
-      if (prevBtn) prevBtn.addEventListener("click", goPrev);
-      if (nextBtn) nextBtn.addEventListener("click", goNext);
-      dots.forEach(function (dot, i) {
-        dot.addEventListener("click", function () {
-          goToLogical(i);
-        });
-      });
-
-      viewport.addEventListener("keydown", function (e) {
-        if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          goPrev();
-        } else if (e.key === "ArrowRight") {
-          e.preventDefault();
-          goNext();
-        }
-      });
-
-      viewport.addEventListener(
-        "touchstart",
-        function (e) {
-          if (e.touches.length !== 1) return;
-          touchStartX = e.touches[0].clientX;
-        },
-        { passive: true }
-      );
-
-      viewport.addEventListener(
-        "touchend",
-        function (e) {
-          if (touchStartX == null) return;
-          var x = e.changedTouches[0].clientX;
-          var d = x - touchStartX;
-          touchStartX = null;
-          if (Math.abs(d) < 52) return;
-          if (d > 0) goPrev();
-          else goNext();
-        },
-        { passive: true }
-      );
-
-      window.addEventListener("resize", onResize);
-
-      requestAnimationFrame(function () {
-        initLayout();
-        requestAnimationFrame(function () {
-          stepPx = measureStep();
-          if (stepPx && n >= 2) {
-            moveToPhysical(physicalIndex, false);
-          }
-          preloadCarouselImages();
-        });
-      });
-    })();
-
-    (function () {
-      var root = document.getElementById("detail-modal");
-      var titleEl = document.getElementById("detail-modal-title");
-      var scrollEl = document.getElementById("detail-modal-scroll");
-      var heroEl = document.getElementById("detail-modal-hero");
-      var copyEl = document.getElementById("detail-modal-copy");
-      var sideImg = document.getElementById("detail-modal-side-img");
-      var footerEl = document.getElementById("detail-modal-footer");
-      var dotsEl = document.getElementById("detail-modal-dots");
-      var prevBtn = document.getElementById("detail-modal-prev");
-      var nextBtn = document.getElementById("detail-modal-next");
-      var closeBtn = document.getElementById("detail-modal-close");
-      if (!root || !titleEl || !heroEl || !copyEl || !sideImg || !footerEl || !dotsEl) return;
-
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var lastTrigger = null;
-      var seriesKey = "";
-      var slides = [];
-      var index = 0;
-      var modalVideo = null;
-      var modalVideoToggle = null;
-
-      var DATA = {
-        "studio-loop": [
-          {
-            title: "Define the opportunity",
-            hero: {
-              src: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              alt: "Team working at a laptop in a meeting room"
-            },
-            video: {
-              mp4: "https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-transcode.mp4",
-              webm: "https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-transcode.webm",
-              poster: "https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-poster-00001.jpg"
-            },
-            body: [
-              "We start with the problem. Who has it, how often it happens, and whether it is worth solving.",
-              "We look at urgency of the problem, willingness to pay, and ability to reach users.",
-              "Weak ideas stop here."
-            ],
-            side: {
-              src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&h=600&q=80",
-              alt: "Strategy notes and charts on a desk"
-            }
-          },
-          {
-            title: "Test demand",
-            hero: {
-              src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              alt: "Developers collaborating at computers"
-            },
-            body: [
-              "We put ideas in front of real users as quickly as possible.",
-              "Methods include landing pages, paid acquisition tests, prototypes, and early sales.",
-              "We are looking for behavior, not feedback."
-            ],
-            side: {
-              src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&h=600&q=80",
-              alt: "Team workshop with laptops"
-            }
-          },
-          {
-            title: "Build the product",
-            hero: {
-              src: "https://images.unsplash.com/photo-1720962158924-6b1d12429ffd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              alt: "Colleagues discussing work together"
-            },
-            body: [
-              "Once something works, we invest more.",
-              "Product, operations, and go to market move together. We focus on retention, conversion, and repeat usage.",
-              "This is where ideas become real businesses."
-            ],
-            side: {
-              src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&h=600&q=80",
-              alt: "Office collaboration"
-            }
-          },
-          {
-            title: "Scale, spin out, or stop",
-            hero: {
-              src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              alt: "Analytics on a laptop screen"
-            },
-            body: [
-              "Every venture hits a decision point.",
-              "We either invest more, spin it out, or shut it down.",
-              "Decisions are based on traction, not timelines."
-            ],
-            side: {
-              src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&h=600&q=80",
-              alt: "Business meeting with documents"
-            }
-          }
-        ],
-        "venture-service": [
-          {
-            title: "Service infrastructure",
-            hero: {
-              src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&h=675&q=80",
-              alt: "Open office workspace"
-            },
-            body: [
-              "We build systems for industries still operating on outdated tools.",
-              "Focus areas: operations, data visibility, and customer workflows. These often start as service-heavy and evolve into software."
-            ],
-            side: {
-              src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&h=600&q=80",
-              alt: "Planning documents and laptop"
-            }
-          }
-        ],
-        "venture-workflow": [
-          {
-            title: "Workflow software",
-            hero: {
-              src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&h=675&q=80",
-              alt: "Students or team at shared table with laptops"
-            },
-            body: [
-              "Tools that improve how teams operate.",
-              "We focus on speed, reliability, and output. The goal is to remove friction from daily work."
-            ],
-            side: {
-              src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=600&q=80",
-              alt: "People working together at computers"
-            }
-          }
-        ],
-        "venture-commerce": [
-          {
-            title: "Commerce tools",
-            hero: {
-              src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&h=675&q=80",
-              alt: "Retail or commerce setting"
-            },
-            body: [
-              "We build products that improve how businesses acquire and retain customers.",
-              "Focus areas: conversion, retention, and operational efficiency."
-            ],
-            side: {
-              src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&h=600&q=80",
-              alt: "Payment or retail technology"
-            }
-          }
-        ]
-      };
-
-      function pauseModalVideo() {
-        if (modalVideo) {
-          modalVideo.pause();
-          modalVideo.removeAttribute("src");
-          modalVideo.load();
-        }
-        modalVideo = null;
-        modalVideoToggle = null;
-      }
-
-      function renderHero(slide) {
-        pauseModalVideo();
-        heroEl.innerHTML = "";
-        var useVideo = slide.video && !reduceMotion;
-        if (useVideo) {
-          var v = document.createElement("video");
-          v.setAttribute("playsinline", "");
-          v.muted = true;
-          v.loop = true;
-          v.autoplay = true;
-          v.poster = slide.video.poster;
-          var s1 = document.createElement("source");
-          s1.src = slide.video.mp4;
-          s1.type = "video/mp4";
-          var s2 = document.createElement("source");
-          s2.src = slide.video.webm;
-          s2.type = "video/webm";
-          v.appendChild(s1);
-          v.appendChild(s2);
-          heroEl.appendChild(v);
-          modalVideo = v;
-          v.play().catch(function () {});
-
-          var vt = document.createElement("button");
-          vt.type = "button";
-          vt.className = "detail-modal__video-toggle";
-          vt.setAttribute("aria-label", "Pause video");
-          vt.innerHTML =
-            '<svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>' +
-            '<svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5z"/></svg>';
-          heroEl.appendChild(vt);
-          modalVideoToggle = vt;
-
-          function syncToggle() {
-            var paused = v.paused;
-            vt.classList.toggle("is-paused", paused);
-            vt.setAttribute("aria-label", paused ? "Play video" : "Pause video");
-          }
-          syncToggle();
-          vt.addEventListener("click", function () {
-            if (v.paused) {
-              v.play().catch(function () {});
-            } else {
-              v.pause();
-            }
-            syncToggle();
-          });
-        } else {
-          var heroSrc = slide.hero.src;
-          if (slide.video && reduceMotion) {
-            heroSrc = slide.video.poster;
-          }
-          var img = document.createElement("img");
-          img.src = heroSrc;
-          img.alt = slide.hero.alt;
-          img.width = 1200;
-          img.height = 675;
-          img.loading = "eager";
-          img.decoding = "async";
-          heroEl.appendChild(img);
-        }
-      }
-
-      function renderSlide(i) {
-        var slide = slides[i];
-        if (!slide) return;
-        index = i;
-        titleEl.textContent = slide.title;
-        renderHero(slide);
-        copyEl.innerHTML = slide.body
-          .map(function (p) {
-            return "<p>" + p.replace(/</g, "&lt;") + "</p>";
-          })
-          .join("");
-        sideImg.src = slide.side.src;
-        sideImg.alt = slide.side.alt;
-
-        var dotBtns = dotsEl.querySelectorAll(".detail-modal__dot");
-        dotBtns.forEach(function (b, j) {
-          b.classList.toggle("is-active", j === i);
-          b.setAttribute("aria-selected", j === i ? "true" : "false");
-        });
-
-        scrollEl.scrollTop = 0;
-      }
-
-      function buildDots(n) {
-        dotsEl.innerHTML = "";
-        for (var i = 0; i < n; i++) {
-          var b = document.createElement("button");
-          b.type = "button";
-          b.className = "detail-modal__dot" + (i === 0 ? " is-active" : "");
-          b.setAttribute("role", "tab");
-          b.setAttribute("aria-selected", i === 0 ? "true" : "false");
-          b.setAttribute("aria-label", "Slide " + (i + 1) + " of " + n);
-          (function (j) {
-            b.addEventListener("click", function () {
-              renderSlide(j);
-            });
-          })(i);
-          dotsEl.appendChild(b);
-        }
-      }
-
-      function openModal(key, start) {
-        var list = DATA[key];
-        if (!list || !list.length) return;
-        lastTrigger = document.activeElement;
-        seriesKey = key;
-        slides = list;
-        index = Math.max(0, Math.min(start || 0, slides.length - 1));
-        buildDots(slides.length);
-        footerEl.hidden = slides.length <= 1;
-        renderSlide(index);
-        root.hidden = false;
-        root.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-        closeBtn.focus();
-      }
-
-      function closeModal() {
-        pauseModalVideo();
-        root.hidden = true;
-        root.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-        if (lastTrigger && typeof lastTrigger.focus === "function") {
-          lastTrigger.focus();
-        }
-        lastTrigger = null;
-      }
-
-      document.addEventListener("click", function (e) {
-        var t = e.target.closest("[data-detail-modal]");
-        if (!t || t.closest("#what-we-do")) return;
-        var key = t.getAttribute("data-detail-modal");
-        if (!key || !DATA[key]) return;
-        e.preventDefault();
-        var start = parseInt(t.getAttribute("data-detail-slide") || "0", 10) || 0;
-        openModal(key, start);
-      });
-
-      root.querySelectorAll("[data-detail-modal-close]").forEach(function (el) {
-        el.addEventListener("click", closeModal);
-      });
-      closeBtn.addEventListener("click", closeModal);
-
-      prevBtn.addEventListener("click", function () {
-        var n = slides.length;
-        if (n <= 1) return;
-        renderSlide((index - 1 + n) % n);
-      });
-      nextBtn.addEventListener("click", function () {
-        var n = slides.length;
-        if (n <= 1) return;
-        renderSlide((index + 1) % n);
-      });
-
-      document.addEventListener("keydown", function (e) {
-        if (root.hidden) return;
-        if (e.key === "Escape") {
-          e.preventDefault();
-          closeModal();
-        }
-      });
-    })();
-  </script>
 </body>
 </html>

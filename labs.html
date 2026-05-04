@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme Detection (before render) -->
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+
+  <title>Labs | Alkymē</title>
+  <meta name="description" content="Epoch² game engine: procedural narrative AI in alpha testing with 6-person team. Healthcare Marketing Platform: 6-agent AI system in production, reducing campaign costs 85% vs traditional agencies.">
+
+  <!-- Styles -->
+  <link rel="preload" href="dist/assets/styles.min.css" as="style">
+  <link rel="stylesheet" href="dist/assets/styles.min.css">
+  <link rel="stylesheet" href="assets/css/labs.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/logos/alkyme-logo-black.svg">
+  <meta name="theme-color" content="#fff9f0">
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--dark">
+        </a>
+
+        <div class="nav__menu">
+          <a href="/about.html" class="nav__link">About</a>
+          <a href="/what-we-do.html#ventures" class="nav__link nav__link--active">What We Do</a>
+          <a href="/careers.html" class="nav__link">Careers</a>
+          <a href="/contact.html" class="nav__link">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+          <button type="button" class="alkyme-lang-trigger" style="display: none;" aria-haspopup="menu" aria-expanded="false" aria-label="Select language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span data-alkyme-lang-code>EN</span>
+          </button>
+          <button type="button" class="theme-toggle" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero hero--compact">
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title">Two ventures. Real traction.</h1>
+          <p class="hero__description">
+            Game engine in alpha with 6-person team. Healthcare AI platform live with 3 paying clients, cutting costs 85% vs traditional agencies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventures Grid -->
+    <section class="section">
+      <div class="container container--wide">
+
+        <!-- Epoch² -->
+        <div class="venture-showcase">
+          <div class="venture-showcase__media">
+            <img
+              src="assets/labs/dominion-eternal-poster.jpg"
+              alt="Epoch² game engine — Dominion Eternal key art"
+              class="venture-showcase__image"
+              loading="lazy"
+            />
+          </div>
+          <div class="venture-showcase__content">
+            <div class="venture-label">Game Development Tools</div>
+            <h2 class="venture-showcase__title">Epoch²</h2>
+            <p class="venture-showcase__description">
+              Procedural narrative engine for game studios. Generates unique story branches based on player choices, extending replay value without manual scripting. Alpha tested with indie studios.
+            </p>
+            <ul class="venture-showcase__features">
+              <li>Story branching: 50+ narrative nodes per scene, context-aware decisions</li>
+              <li>Player behavior tracking: Adapts tone and pacing in real-time</li>
+              <li>Built on Unity/Unreal SDK integration for indie and mid-size teams</li>
+              <li>Alpha: 2 partner studios testing with real players</li>
+            </ul>
+            <div class="venture-showcase__meta">
+              <div class="venture-meta-item">
+                <span class="venture-meta-item__label">Status</span>
+                <span class="venture-meta-item__value">Alpha Testing</span>
+              </div>
+              <div class="venture-meta-item">
+                <span class="venture-meta-item__label">Market</span>
+                <span class="venture-meta-item__value">Game Development Tools</span>
+              </div>
+              <div class="venture-meta-item">
+                <span class="venture-meta-item__label">Team Size</span>
+                <span class="venture-meta-item__value">4 engineers, 2 designers</span>
+              </div>
+            </div>
+            <a href="/labs/epoch2/" class="btn btn--primary">View Full Case Study</a>
+          </div>
+        </div>
+
+        <!-- Healthcare AI -->
+        <div class="venture-showcase venture-showcase--reverse">
+          <div class="venture-showcase__media">
+            <img
+              src="assets/images/solutions/img_other_hospital-room.jpg"
+              alt="Healthcare AI multi-agent system for regional health systems"
+              class="venture-showcase__image"
+              loading="lazy"
+            />
+          </div>
+          <div class="venture-showcase__content">
+            <div class="venture-label">Healthcare AI</div>
+            <h2 class="venture-showcase__title">Healthcare Marketing Automation</h2>
+            <p class="venture-showcase__description">
+              AI platform automating campaign creation for regional health systems. Handles research, compliance, content, and orchestration. Live with 3 paying clients, reducing campaign costs 85% vs traditional agencies.
+            </p>
+            <ul class="venture-showcase__features">
+              <li>6-agent architecture: Researcher, Compliance, Content Creator, Editor, Orchestrator, Monitor</li>
+              <li>HIPAA-compliant: All data encrypted, human approval required for publish</li>
+              <li>Production metrics: 3 clients, 12 campaigns launched, 85% cost reduction validated</li>
+              <li>Regional coverage: 50+ US markets with local dialect adaptation</li>
+            </ul>
+            <div class="venture-showcase__meta">
+              <div class="venture-meta-item">
+                <span class="venture-meta-item__label">Status</span>
+                <span class="venture-meta-item__value">Production (3 clients)</span>
+              </div>
+              <div class="venture-meta-item">
+                <span class="venture-meta-item__label">Market</span>
+                <span class="venture-meta-item__value">Healthcare Marketing Automation</span>
+              </div>
+              <div class="venture-meta-item">
+                <span class="venture-meta-item__label">Impact</span>
+                <span class="venture-meta-item__value">85% cost reduction vs agencies</span>
+              </div>
+            </div>
+            <a href="/labs/healthcare-ai/" class="btn btn--primary">View Full Case Study</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How We Choose What to Build -->
+    <section class="section section--gray">
+      <div class="container container--wide">
+        <div class="selection-criteria">
+          <h2 class="selection-criteria__title">How we choose what to build</h2>
+          <p class="selection-criteria__description">
+            We don't build everything. We look for specific signals that an idea is worth the investment.
+          </p>
+
+          <div class="criteria-grid">
+
+            <div class="criteria-card">
+              <h3 class="criteria-card__title">Overlooked markets</h3>
+              <p class="criteria-card__description">
+                Big companies ignore regional healthcare marketing. Indie game studios can't afford narrative AI. We build for the gaps others miss.
+              </p>
+            </div>
+
+            <div class="criteria-card">
+              <h3 class="criteria-card__title">Technical leverage</h3>
+              <p class="criteria-card__description">
+                AI makes things possible that weren't five years ago. We focus on products that would be impossible without recent technical breakthroughs.
+              </p>
+            </div>
+
+            <div class="criteria-card">
+              <h3 class="criteria-card__title">Clear business model</h3>
+              <p class="criteria-card__description">
+                No moonshots. We need to see a path to revenue within 12 months and profitability within 24. SaaS, licensing, or usage-based pricing.
+              </p>
+            </div>
+
+            <div class="criteria-card">
+              <h3 class="criteria-card__title">Compounding advantages</h3>
+              <p class="criteria-card__description">
+                Every venture we build makes the next one easier. Shared infrastructure, reusable AI systems, and learnings that carry forward.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Next -->
+    <section class="section">
+      <div class="container">
+        <div class="pipeline-section">
+          <h2 class="pipeline-section__title">What's next</h2>
+          <p class="pipeline-section__description">
+            We're constantly exploring new ideas. Here's what we're researching for our next venture.
+          </p>
+
+          <div class="pipeline-cards">
+
+            <div class="pipeline-card">
+              <div class="pipeline-card__status">Research Phase</div>
+              <h3 class="pipeline-card__title">AI-Powered Legal Document Analysis</h3>
+              <p class="pipeline-card__description">
+                Contract review and compliance verification for small law firms. Most legal AI tools target enterprise—we're building for the long tail.
+              </p>
+            </div>
+
+            <div class="pipeline-card">
+              <div class="pipeline-card__status">Prototyping</div>
+              <h3 class="pipeline-card__title">Regional Supply Chain Intelligence</h3>
+              <p class="pipeline-card__description">
+                Predictive logistics for regional distributors. Current tools assume national scale—we're building for businesses moving 10-50 trucks per day.
+              </p>
+            </div>
+
+          </div>
+
+          <p class="pipeline-section__note">
+            These ideas may become ventures. Or they may not. We'll know in 90 days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- B2B CTA Section -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="cta-section">
+          <p style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem; color: var(--color-text-muted, #666); margin-bottom: 1rem;">FOR ENTERPRISES</p>
+          <h2 class="cta-section__title">This infrastructure is available for your business</h2>
+          <p class="cta-section__description">
+            The platforms running our ventures are available for enterprise deployment. Battle-tested, production-ready, deployable in weeks.
+          </p>
+          <div class="cta-section__actions">
+            <a href="/solutions.html" class="btn btn--primary btn--pill">Explore Solutions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--no-padding">
+      <div class="cta-section cta-section--gradient">
+        <h2 class="cta-section__title">Interested in partnering?</h2>
+        <p class="cta-section__description">
+          We occasionally work with strategic partners who bring domain expertise, distribution, or capital. If you're working in one of these spaces, let's talk.
+        </p>
+        <div class="cta-section__actions">
+          <a href="/contact.html" class="btn btn--primary btn--lg">Discuss Partnership</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <!-- Main Footer Navigation -->
+      <div class="site-footer-nav">
+
+        <!-- Logo Area (Left Side) -->
+        <div class="site-footer-logo-area">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--dark">
+        </div>
+
+        <!-- Navigation Sections (Right Side) -->
+        <nav class="site-footer-columns">
+
+          <!-- Support -->
+          <div class="site-footer-column footer-col-support">
+            <h4 class="site-footer-heading">Support</h4>
+            <ul class="site-footer-list">
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="mailto:hello@alkyme.io">Email Support</a></li>
+              <li><a href="tel:+15598255963">Call Us</a></li>
+              <li><a href="/solutions.html#case-studies">Case Studies</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div class="site-footer-column footer-col-legal">
+            <h4 class="site-footer-heading">Legal</h4>
+            <ul class="site-footer-list">
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="site-footer-column footer-col-company">
+            <h4 class="site-footer-heading">Company</h4>
+            <ul class="site-footer-list">
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/labs.html">Labs</a></li>
+              <li><a href="/careers.html">Careers</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Solutions -->
+          <div class="site-footer-column footer-col-solutions">
+            <h4 class="site-footer-heading">Solutions</h4>
+            <ul class="site-footer-list">
+              <li><a href="/solutions.html">Platform Licensing</a></li>
+              <li><a href="/solutions.html#healthcare">Healthcare AI</a></li>
+              <li><a href="/solutions.html#logistics">Supply Chain</a></li>
+              <li><a href="/solutions.html#retail">E-Commerce</a></li>
+            </ul>
+          </div>
+
+        </nav>
+
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="site-footer-legal">
+        <div class="site-footer-legal-left">
+          <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
+        </div>
+        <div class="site-footer-legal-right">
+          <span>Los Angeles, California</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/site-theme.js"></script>
+  <script src="assets/js/site-lang.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

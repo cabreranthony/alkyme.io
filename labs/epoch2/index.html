@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme Detection (before render) -->
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+
+  <title>Epoch² | Game Engine for Infinite Replayability | Alkymē</title>
+  <meta name="description" content="A game engine that generates unique rules for every playthrough. Built on procedural systems and adaptive AI—same seed, same game; different seed, different rules.">
+
+  <!-- Styles -->
+  <link rel="preload" href="../../dist/assets/styles.min.css" as="style">
+  <link rel="stylesheet" href="../../dist/assets/styles.min.css">
+  <link rel="stylesheet" href="../../assets/epoch2.css">
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/logos/alkyme-logo-black.svg">
+  <meta name="theme-color" content="#fff9f0">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">Alkymē</a>
+
+        <div class="nav__menu">
+          <a href="/about.html" class="nav__link">About</a>
+          <a href="/labs.html" class="nav__link">Labs</a>
+          <a href="/careers.html" class="nav__link">Careers</a>
+          <a href="/contact.html" class="nav__link">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+          <button type="button" class="alkyme-lang-trigger" aria-haspopup="dialog" aria-expanded="false" aria-label="Select language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span data-alkyme-lang-code>EN</span>
+          </button>
+          <button type="button" class="theme-toggle" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main style="padding-top: 72px;">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/" class="breadcrumb__link">Home</a>
+          <span class="breadcrumb__separator">/</span>
+          <a href="/labs.html" class="breadcrumb__link">Labs</a>
+          <span class="breadcrumb__separator">/</span>
+          <span class="breadcrumb__current">Epoch²</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="case-hero">
+      <div class="container">
+        <div class="case-hero__content">
+          <div class="case-hero__label">Entertainment Technology</div>
+          <h1 class="case-hero__title">Epoch²</h1>
+          <p class="case-hero__description">
+            A game engine that generates infinite replayability. Every session creates unique rules from a seed—deterministic, reproducible, meaningfully different.
+          </p>
+          <div class="case-hero__meta">
+            <div class="case-meta-item">
+              <span class="case-meta-item__label">Status</span>
+              <span class="case-meta-item__value">Alpha Testing</span>
+            </div>
+            <div class="case-meta-item">
+              <span class="case-meta-item__label">Market</span>
+              <span class="case-meta-item__value">Game Development Tools</span>
+            </div>
+            <div class="case-meta-item">
+              <span class="case-meta-item__label">Type</span>
+              <span class="case-meta-item__value">SDK + Engine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="section">
+      <div class="container">
+        <img src="../../assets/images/elementor-placeholder-image.png" alt="Game replayability concept" class="img-placeholder img-rounded" data-placeholder-id="IMG-06" style="margin-bottom: var(--space-4xl);">
+        <div class="case-section">
+          <h2 class="case-section__title">The replayability problem</h2>
+          <div class="case-section__content">
+            <p class="case-section__lead">
+              Most strategy games get boring once you've figured out the winning formula. Developers add new maps or tweak unit stats, but the underlying game never actually changes—you're playing the same puzzle with different decorations.
+            </p>
+            <p class="case-section__body">
+              We asked a different question: what if the <strong>rules themselves</strong> changed every session? Not just procedural maps or random item spawns—actual game mechanics. Economy systems. Combat rules. Win conditions. All different, but still balanced and playable.
+            </p>
+            <p class="case-section__body">
+              The constraint: it had to be deterministic. Same seed, same game. So players could share interesting rule combinations and compete on fair ground.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">How it works</h2>
+          <p class="section-header__description">
+            Three systems working together. Adopt incrementally or all at once.
+          </p>
+        </div>
+
+        <div class="feature-stack">
+
+          <!-- Layer 1 -->
+          <div class="feature-card">
+            <div class="feature-card__number">01</div>
+            <h3 class="feature-card__title">Rule Generation</h3>
+            <p class="feature-card__description">
+              Think of this like LEGO instructions: you start with a seed number that tells the engine which pieces fit together and which don't. The result is a complete, working rule system you can rebuild exactly by using the same seed.
+            </p>
+            <div class="feature-card__example">
+              <p class="feature-card__example-label">Example:</p>
+              <p class="feature-card__example-text">
+                Seed <code>4829</code> might generate a game where gold is scarce, military units are expensive, and diplomacy yields large bonuses. Seed <code>7721</code> creates abundant resources, cheap units, and winner-take-all combat.
+              </p>
+            </div>
+          </div>
+
+          <!-- Layer 2 -->
+          <div class="feature-card">
+            <div class="feature-card__number">02</div>
+            <h3 class="feature-card__title">Dynamic AI</h3>
+            <p class="feature-card__description">
+              Game designers write individual decision blocks ("attack nearest enemy," "retreat if health low"), and Epoch² automatically assembles them into sensible AI strategies that change every session based on the active ruleset.
+            </p>
+            <div class="feature-card__example">
+              <p class="feature-card__example-label">Example:</p>
+              <p class="feature-card__example-text">
+                In a session where diplomacy is strong, the AI assembles a behavior tree that prioritizes alliances and trade. In a combat-heavy session, it builds aggressive expansion strategies.
+              </p>
+            </div>
+          </div>
+
+          <!-- Layer 3 -->
+          <div class="feature-card">
+            <div class="feature-card__number">03</div>
+            <h3 class="feature-card__title">Safe Scripting</h3>
+            <p class="feature-card__description">
+              Custom logic runs in a sandboxed environment. Think browser extensions—you write JavaScript that can read game state and trigger events, but it can't crash the game or exploit the system.
+            </p>
+            <div class="feature-card__example">
+              <p class="feature-card__example-label">Example:</p>
+              <p class="feature-card__example-text">
+                Modders can add unique mechanics ("if player controls 3 mountains, spawn a dragon") without risking the stability of the core engine.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Reference Game -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2 class="split__title">Reference game: Dominion Eternal</h2>
+            <p class="split__description">
+              To prove the system works, we built a reference implementation—a deck-building strategy game where the card effects, resource economy, and victory conditions all change per session.
+            </p>
+            <p class="split__description">
+              Same core loop (play cards, buy upgrades, compete for victory points), but the meta shifts completely based on which rules the seed generates.
+            </p>
+            <ul class="feature-list">
+              <li>500+ unique card effects procedurally assembled</li>
+              <li>Dynamic resource types (gold, influence, mana, etc.)</li>
+              <li>Shifting win conditions (territorial control, resource accumulation, elimination)</li>
+              <li>Balanced economy regardless of seed</li>
+            </ul>
+          </div>
+          <div class="media-placeholder media-placeholder--game">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18"/>
+              <path d="M9 3v18"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Status & Metrics -->
+    <section class="section section--gray">
+      <div class="container container--wide">
+        <div class="stats-section">
+          <h2 class="stats-section__title">Current status</h2>
+          <p class="stats-section__description">
+            Active development with alpha testing underway. Here's where we are.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-card__value">12</div>
+              <div class="stat-card__label">Alpha Testers</div>
+              <div class="stat-card__note">Indie studios + solo devs</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__value">850+</div>
+              <div class="stat-card__label">Unique Seeds Tested</div>
+              <div class="stat-card__note">Reproducible rulesets generated</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__value">Q3 2026</div>
+              <div class="stat-card__label">Beta Launch</div>
+              <div class="stat-card__note">Public SDK release planned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Approach -->
+    <section class="section">
+      <div class="container">
+        <div class="case-section">
+          <h2 class="case-section__title">Technical approach</h2>
+          <div class="case-section__content">
+            <p class="case-section__lead">
+              We built this as a standalone SDK that integrates with Unity and Unreal. Game developers keep their existing workflows—Epoch² just handles procedural rule generation.
+            </p>
+
+            <div class="tech-cards">
+              <div class="tech-card">
+                <h3 class="tech-card__title">Constraint Solver</h3>
+                <p class="tech-card__description">
+                  Ensures generated rules don't contradict each other. If the seed says "gold is scarce" and "military is cheap," the solver adjusts the economy so both can coexist.
+                </p>
+              </div>
+
+              <div class="tech-card">
+                <h3 class="tech-card__title">Reproducible RNG</h3>
+                <p class="tech-card__description">
+                  Deterministic random number generation. The same seed always produces the same sequence of "random" outcomes, making sessions perfectly reproducible.
+                </p>
+              </div>
+
+              <div class="tech-card">
+                <h3 class="tech-card__title">Behavior Tree Compiler</h3>
+                <p class="tech-card__description">
+                  Assembles AI decision trees from designer-authored nodes. Validates dependencies, ensures no dead ends, and optimizes execution paths.
+                </p>
+              </div>
+
+              <div class="tech-card">
+                <h3 class="tech-card__title">Sandboxed Runtime</h3>
+                <p class="tech-card__description">
+                  Custom scripting runs in an isolated environment with strict permissions. Read game state, trigger events—but can't access file system or network.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Who this is for</h2>
+          <p class="section-header__description">
+            Built for strategy game developers who want replayability without building the entire system from scratch.
+          </p>
+        </div>
+
+        <div class="use-case-cards">
+
+          <div class="use-case-card">
+            <h3 class="use-case-card__title">Indie Studios</h3>
+            <p class="use-case-card__description">
+              Small teams building strategy or tactical games who can't afford to design hundreds of scenarios manually. Epoch² generates the variety for you.
+            </p>
+          </div>
+
+          <div class="use-case-card">
+            <h3 class="use-case-card__title">Roguelike Developers</h3>
+            <p class="use-case-card__description">
+              Already using procedural maps—now add procedural rules. Every run becomes mechanically distinct, not just visually different.
+            </p>
+          </div>
+
+          <div class="use-case-card">
+            <h3 class="use-case-card__title">Competitive Platforms</h3>
+            <p class="use-case-card__description">
+              Esports or tournament organizers who want fresh meta without manual balance patches. Generate a new ruleset per season using predetermined seeds.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-section">
+          <h2 class="cta-section__title">Interested in early access?</h2>
+          <p class="cta-section__description">
+            We're onboarding alpha testers for Q2 2026. If you're building a strategy game and want to integrate Epoch², let's talk.
+          </p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">Request Alpha Access</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Alkymē</div>
+          <p class="footer__description">An AI venture studio in Los Angeles building companies from scratch.</p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="/about.html" class="footer__link">About</a></li>
+            <li><a href="/labs.html" class="footer__link">Labs</a></li>
+            <li><a href="/careers.html" class="footer__link">Careers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="/contact.html" class="footer__link">Contact</a></li>
+            <li><a href="mailto:hello@alkyme.io" class="footer__link">hello@alkyme.io</a></li>
+            <li><a href="tel:+15598255963" class="footer__link">(559) 825-5963</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="/ai.html" class="footer__link">How We Use AI</a></li>
+            <li><a href="/privacy.html" class="footer__link">Privacy</a></li>
+            <li><a href="/terms.html" class="footer__link">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
+        <span>Los Angeles, California</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/site-theme.js"></script>
+  <script src="../../assets/site-lang.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

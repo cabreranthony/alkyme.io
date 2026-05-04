@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme Detection -->
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+
+  <title>Solutions | Alkymē</title>
+  <meta name="description" content="Custom AI products for growing businesses. Healthcare scheduling, restaurant ordering, gym management, legal workflows—enterprise capabilities at SMB prices.">
+
+  <!-- Styles -->
+  <link rel="preload" href="dist/assets/styles.min.css?v=20260429-fix" as="style">
+  <link rel="stylesheet" href="dist/assets/styles.min.css?v=20260429-fix">
+
+  <link rel="icon" type="image/svg+xml" href="assets/logos/alkyme-logo-black.svg">
+  <meta name="theme-color" content="#fff9f0">
+</head>
+<body class="page-solutions">
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/index.html" class="nav__logo">Alkymē</a>
+
+        <div class="nav__menu">
+          <a href="/about.html" class="nav__link">About</a>
+          <a href="/solutions.html" class="nav__link nav__link--active">Solutions</a>
+          <a href="/labs.html" class="nav__link">Labs</a>
+          <a href="/careers.html" class="nav__link">Careers</a>
+          <a href="/contact.html" class="nav__link">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+          <button type="button" class="alkyme-lang-trigger" aria-haspopup="menu" aria-expanded="false" aria-label="Select language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span data-alkyme-lang-code>EN</span>
+          </button>
+          <button type="button" class="theme-toggle" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="ai-hero">
+      <video class="ai-hero__bg" autoplay muted loop playsinline>
+        <source src="assets/videos/homepage-4347878.mp4" type="video/mp4">
+      </video>
+      <button class="hero-video-toggle" aria-label="Pause video" id="video-toggle">
+        <svg class="hero-video-toggle__icon hero-video-toggle__icon--pause" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+        <svg class="hero-video-toggle__icon hero-video-toggle__icon--play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" hidden>
+          <polygon points="8 5 19 12 8 19"></polygon>
+        </svg>
+      </button>
+      <div class="container container--wide">
+        <div class="ai-hero__content">
+          <h1 class="ai-hero__title">Built for businesses<br>that move fast</h1>
+          <p class="ai-hero__lead">
+            Custom products without custom timelines. Scheduling systems, booking platforms, and workflow automation for healthcare, hospitality, fitness, and professional services.
+          </p>
+          <div class="ai-hero__actions">
+            <a href="/contact.html" class="btn btn--primary btn--pill">Start a Project</a>
+            <a href="#what-we-build" class="btn btn--secondary btn--pill">See What We Build</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="section ai-resources">
+      <div class="container container--wide">
+        <div class="ai-resources__header">
+          <h2 class="ai-section-title display-title display-title--lg">Why businesses choose us</h2>
+        </div>
+
+        <div class="ai-resources__grid">
+          <div class="ai-resource-item">
+            <h3 class="ai-resource-item__title">Built for your scale</h3>
+            <p class="ai-resource-item__description">Enterprise products assume you need everything. We build what you actually use—booking without the markup, scheduling without the bloat.</p>
+          </div>
+
+          <div class="ai-resource-item">
+            <h3 class="ai-resource-item__title">Own your infrastructure</h3>
+            <p class="ai-resource-item__description">No per-transaction fees. No vendor lock-in. You own the code, control the data, deploy on your servers or ours.</p>
+          </div>
+
+          <div class="ai-resource-item">
+            <h3 class="ai-resource-item__title">Ship in weeks</h3>
+            <p class="ai-resource-item__description">We've built these systems dozens of times. Your implementation takes 4-8 weeks, not 6-12 months.</p>
+          </div>
+
+          <div class="ai-resource-item">
+            <h3 class="ai-resource-item__title">Proven patterns</h3>
+            <p class="ai-resource-item__description">Every product benefits from shared infrastructure and battle-tested architecture. No reinventing wheels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Cards -->
+    <section class="section solutions-process">
+      <div class="container container--wide">
+        <div class="solutions-process__header">
+          <p class="solutions-process__eyebrow">How It Works</p>
+          <h2 class="solutions-process__title">From conversation to launch</h2>
+          <a href="/contact.html" class="btn btn--primary btn--pill">Contact Us</a>
+        </div>
+
+        <div class="solutions-process-grid">
+          <div class="solutions-process-card">
+            <div class="solutions-process-card__image">
+              <img src="assets/images/home/img_team-working.jpg" alt="Discovery call" loading="lazy">
+            </div>
+            <h3 class="solutions-process-card__title">Start with a conversation</h3>
+            <p class="solutions-process-card__description">Tell us what you need. We map out requirements, timelines, and pricing—usually within a week.</p>
+          </div>
+
+          <div class="solutions-process-card">
+            <div class="solutions-process-card__image">
+              <img src="assets/images/careers/img_team_collaboration.jpg" alt="Design and build" loading="lazy">
+            </div>
+            <h3 class="solutions-process-card__title">Design and build</h3>
+            <p class="solutions-process-card__description">Weekly check-ins keep you in the loop. We iterate based on your feedback, not guesswork.</p>
+          </div>
+
+          <div class="solutions-process-card">
+            <div class="solutions-process-card__image">
+              <img src="assets/images/home/img_team-working.jpg" alt="Test and refine" loading="lazy">
+            </div>
+            <h3 class="solutions-process-card__title">Test and refine</h3>
+            <p class="solutions-process-card__description">You test with real users. We fix what's broken, polish what works, and prepare for launch.</p>
+          </div>
+
+          <div class="solutions-process-card">
+            <div class="solutions-process-card__image">
+              <img src="assets/images/careers/img_team_collaboration.jpg" alt="Launch and support" loading="lazy">
+            </div>
+            <h3 class="solutions-process-card__title">Launch and support</h3>
+            <p class="solutions-process-card__description">We deploy to your infrastructure or ours. You get documentation, training, and ongoing support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Build - 3 Column Accordion -->
+    <section class="section solutions-capabilities" id="what-we-build">
+      <div class="container container--wide">
+        <div class="solutions-capabilities__grid">
+
+          <!-- Left Column: Intro -->
+          <div class="capabilities-intro">
+            <p class="capabilities-intro__eyebrow">Solutions by Industry</p>
+            <h2 class="capabilities-intro__title">What we build</h2>
+            <p class="capabilities-intro__description">
+              We've built these systems across industries. Your project gets proven patterns, not experiments.
+            </p>
+          </div>
+
+          <!-- Middle Column: Accordion -->
+          <div class="capabilities-accordion">
+
+            <button class="capability-item" data-capability="healthcare" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">Healthcare</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Patient scheduling, engagement, and HIPAA-compliant workflows. Regional clinics need scheduling, reminders, and patient engagement without paying per-appointment fees.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+            <button class="capability-item" data-capability="hospitality" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">Hospitality & Food Service</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Ordering, reservations, and delivery without platform fees. Restaurants lose 15-30% to platform fees. We build white-label ordering systems you own.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+            <button class="capability-item" data-capability="fitness" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">Fitness & Wellness</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Studio management, scheduling, and member engagement. Custom platforms that handle bookings, payments, and member communication—owned outright.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+            <button class="capability-item" data-capability="legal" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">Legal Services</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Case management, client intake, and document automation. We automate document generation, deadline tracking, and client communication workflows.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+            <button class="capability-item" data-capability="realestate" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">Real Estate</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Property management, tenant portals, and leasing automation. Centralized platforms that automate maintenance requests, lease renewals, and tenant communication.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+            <button class="capability-item" data-capability="saas" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">SaaS & Software</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Product development, user onboarding, and analytics. We build authentication, billing systems, analytics dashboards, and admin panels for early-stage SaaS.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+            <button class="capability-item" data-capability="publishing" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">Publishing & Media</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Content workflows, subscriber management, and paywalls. Custom publishing systems with editorial workflows, flexible paywalls, and subscriber analytics.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+            <button class="capability-item" data-capability="professional" aria-expanded="false">
+              <div class="capability-item__header">
+                <div class="capability-item__text">
+                  <h3 class="capability-item__title">Professional Services</h3>
+                </div>
+              </div>
+              <div class="capability-item__content">
+                <p class="capability-item__description">Client portals, project tracking, and billing automation. Client-facing portals, project dashboards, and automated billing without enterprise complexity.</p>
+              </div>
+              <span class="capability-item__toggle">+</span>
+            </button>
+
+          </div>
+
+          <!-- Right Column: Image Showcase -->
+          <div class="capabilities-showcase">
+            <div class="capabilities-showcase__images">
+              <img src="assets/images/labs/img-hospital-campus.jpg" alt="Healthcare solutions" class="capabilities-showcase__image capabilities-showcase__image--active" data-capability="healthcare">
+              <img src="assets/images/home/img_team-working.jpg" alt="Hospitality solutions" class="capabilities-showcase__image" data-capability="hospitality">
+              <img src="assets/images/careers/img_team_collaboration.jpg" alt="Fitness solutions" class="capabilities-showcase__image" data-capability="fitness">
+              <img src="assets/images/home/img_team-working.jpg" alt="Legal solutions" class="capabilities-showcase__image" data-capability="legal">
+              <img src="assets/images/careers/img_team_collaboration.jpg" alt="Real estate solutions" class="capabilities-showcase__image" data-capability="realestate">
+              <img src="assets/images/home/img_team-working.jpg" alt="SaaS solutions" class="capabilities-showcase__image" data-capability="saas">
+              <img src="assets/images/careers/img_team_collaboration.jpg" alt="Publishing solutions" class="capabilities-showcase__image" data-capability="publishing">
+              <img src="assets/images/home/img_team-working.jpg" alt="Professional services" class="capabilities-showcase__image" data-capability="professional">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Tabs -->
+    <section class="section solutions-case-studies">
+      <div class="container container--wide">
+        <div class="solutions-case-studies__header">
+          <p class="solutions-case-studies__eyebrow">Proven Solutions</p>
+          <h2 class="solutions-case-studies__title">See what we've built</h2>
+        </div>
+
+        <div class="case-study-tabs">
+          <div class="case-study-tabs__nav">
+            <button class="case-study-tab case-study-tab--active" data-tab="seva">Sevā AI</button>
+            <button class="case-study-tab" data-tab="epoch2">Epoch²</button>
+            <button class="case-study-tab" data-tab="hospitality">Restaurant Ordering</button>
+          </div>
+
+          <div class="case-study-tabs__content">
+            <!-- Sevā AI Tab -->
+            <div class="case-study-panel case-study-panel--active" data-panel="seva">
+              <div class="case-study-panel__grid">
+                <div class="case-study-panel__image">
+                  <img src="assets/images/labs/img-hospital-campus.jpg" alt="Sevā AI healthcare platform" loading="lazy">
+                </div>
+                <div class="case-study-panel__content">
+                  <div class="case-study-panel__text">
+                    <div class="badge badge--sage">Healthcare AI</div>
+                    <h3 class="case-study-panel__title">Automated marketing for 3 regional health systems</h3>
+                    <p class="case-study-panel__description">
+                      Multi-agent platform handling patient acquisition campaigns, content generation, and compliance workflows. Reduced costs 85% vs. traditional agencies while maintaining strict HIPAA compliance.
+                    </p>
+                    <a href="/labs/healthcare-ai/" class="btn btn--secondary">View Case Study</a>
+                  </div>
+                  <ul class="case-study-panel__metrics">
+                    <li>
+                      <span class="metric-value">85%</span>
+                      <span class="metric-label">Cost reduction</span>
+                    </li>
+                    <li>
+                      <span class="metric-value">3</span>
+                      <span class="metric-label">Health systems</span>
+                    </li>
+                    <li>
+                      <span class="metric-value">100%</span>
+                      <span class="metric-label">HIPAA compliant</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Epoch² Tab -->
+            <div class="case-study-panel" data-panel="epoch2">
+              <div class="case-study-panel__grid">
+                <div class="case-study-panel__image">
+                  <img src="assets/labs/dominion-eternal-poster.jpg" alt="Epoch² game engine" loading="lazy">
+                </div>
+                <div class="case-study-panel__content">
+                  <div class="case-study-panel__text">
+                    <div class="badge badge--amber">Gaming</div>
+                    <h3 class="case-study-panel__title">Procedural game engine with infinite replayability</h3>
+                    <p class="case-study-panel__description">
+                      AI-driven narrative engine generating unique storylines for every playthrough. Currently in alpha testing with indie studios, proving the model works for complex creative systems.
+                    </p>
+                    <a href="/labs/epoch2/" class="btn btn--secondary">View Case Study</a>
+                  </div>
+                  <ul class="case-study-panel__metrics">
+                    <li>
+                      <span class="metric-value">∞</span>
+                      <span class="metric-label">Unique narratives</span>
+                    </li>
+                    <li>
+                      <span class="metric-value">Alpha</span>
+                      <span class="metric-label">Current stage</span>
+                    </li>
+                    <li>
+                      <span class="metric-value">5</span>
+                      <span class="metric-label">Studio partners</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hospitality Tab -->
+            <div class="case-study-panel" data-panel="hospitality">
+              <div class="case-study-panel__grid">
+                <div class="case-study-panel__image">
+                  <img src="assets/images/home/img_team-working.jpg" alt="Restaurant ordering platform" loading="lazy">
+                </div>
+                <div class="case-study-panel__content">
+                  <div class="case-study-panel__text">
+                    <div class="badge badge--moss">Hospitality</div>
+                    <h3 class="case-study-panel__title">Zero-commission ordering for restaurant groups</h3>
+                    <p class="case-study-panel__description">
+                      White-label ordering platform eliminating 15-30% platform fees. Multi-location support, kitchen display integration, and delivery coordination—all owned by the restaurant.
+                    </p>
+                    <a href="/contact.html" class="btn btn--secondary">Get Started</a>
+                  </div>
+                  <ul class="case-study-panel__metrics">
+                    <li>
+                      <span class="metric-value">0%</span>
+                      <span class="metric-label">Commission fees</span>
+                    </li>
+                    <li>
+                      <span class="metric-value">8 weeks</span>
+                      <span class="metric-label">Time to launch</span>
+                    </li>
+                    <li>
+                      <span class="metric-value">100%</span>
+                      <span class="metric-label">Data ownership</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section ai-cta">
+      <div class="container container--wide">
+        <div class="ai-cta-hero">
+          <img src="assets/images/careers/img_team_collaboration.jpg" alt="Start building" loading="lazy" class="ai-cta-hero__image">
+          <div class="ai-cta-hero__overlay">
+            <p class="ai-cta-hero__eyebrow">READY TO BUILD</p>
+            <h2 class="ai-cta-hero__title">Tell us what you need</h2>
+            <p class="ai-cta-hero__description">We'll map out a project plan and timeline—usually within a week.</p>
+            <a href="/contact.html" class="btn btn--primary btn--pill">Start a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Alkymē</div>
+          <p class="footer__description">Building products that matter—for your business and for ours.</p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="/about.html" class="footer__link">About</a></li>
+            <li><a href="/solutions.html" class="footer__link">Solutions</a></li>
+            <li><a href="/labs.html" class="footer__link">Labs</a></li>
+            <li><a href="/careers.html" class="footer__link">Careers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="/contact.html" class="footer__link">Contact</a></li>
+            <li><a href="mailto:hello@alkyme.io" class="footer__link">hello@alkyme.io</a></li>
+            <li><a href="tel:+15598255963" class="footer__link">(559) 825-5963</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="/ai.html" class="footer__link">How We Use AI</a></li>
+            <li><a href="/privacy.html" class="footer__link">Privacy</a></li>
+            <li><a href="/terms.html" class="footer__link">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
+        <span>Los Angeles, California</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/home-nav-scroll.js"></script>
+  <script src="assets/js/hero-video-toggle.js"></script>
+  <script src="assets/js/site-theme.js"></script>
+  <script src="assets/js/site-lang.js"></script>
+  <script src="assets/js/solutions-accordion.js"></script>
+  <script src="assets/js/case-study-tabs.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

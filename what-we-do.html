@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Theme Detection (before render) -->
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+
+  <title>What We Do | Alkymē</title>
+  <meta name="description" content="Venture studio building companies, deploying proven technology, and offering expert marketing services. Three ways to work with us.">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="dist/assets/styles.min.css">
+  <link rel="stylesheet" href="assets/css/what-we-do-v2.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logos/alkyme-logo-green.svg">
+</head>
+
+<body class="page-what-we-do">
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="nav__logo-img nav__logo-img--dark">
+        </a>
+
+        <div class="nav__menu">
+          <a href="/about.html" class="nav__link">About</a>
+          <a href="/what-we-do.html" class="nav__link nav__link--active">What We Do</a>
+          <a href="/careers.html" class="nav__link">Careers</a>
+          <a href="/contact.html" class="nav__link">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+          <button type="button" class="alkyme-lang-trigger" style="display: none;" aria-haspopup="menu" aria-expanded="false" aria-label="Select language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </button>
+
+          <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero hero--compact">
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title">Three ways to work with us</h1>
+          <p class="hero__description">
+            We build venture-backed companies, deploy proven technology platforms, and offer expert marketing services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-Width Visual Tabs Section -->
+    <section class="what-we-do-tabs">
+      <div class="what-we-do-tabs__nav">
+        <button class="what-tab what-tab--active" data-tab="ventures" aria-selected="true" role="tab">
+          <svg class="what-tab__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          <span class="what-tab__label">Ventures</span>
+          <span class="what-tab__sublabel">Build venture-backed companies</span>
+        </button>
+
+        <button class="what-tab" data-tab="solutions" aria-selected="false" role="tab">
+          <svg class="what-tab__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/>
+            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+          <span class="what-tab__label">Solutions</span>
+          <span class="what-tab__sublabel">Deploy proven technology</span>
+        </button>
+
+        <button class="what-tab" data-tab="services" aria-selected="false" role="tab">
+          <svg class="what-tab__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            <path d="M2 2l7.586 7.586"/>
+          </svg>
+          <span class="what-tab__label">Services</span>
+          <span class="what-tab__sublabel">Expert marketing & design</span>
+        </button>
+      </div>
+
+      <!-- Tab Panels -->
+      <div class="what-we-do-tabs__panels">
+
+        <!-- VENTURES PANEL -->
+        <div class="what-tab-panel what-tab-panel--active" data-panel="ventures" role="tabpanel">
+          <div class="what-tab-panel__inner">
+            <!-- Left Content -->
+            <div class="what-tab-panel__content">
+              <h2 class="what-tab-panel__title">Build venture-backed companies</h2>
+              <p class="what-tab-panel__description">
+                We build companies from zero with real traction. Two ventures currently in market: a game engine in alpha and healthcare AI serving 3 clients.
+              </p>
+
+              <!-- Accordion: Current Ventures -->
+              <div class="accordion-section">
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">Current Ventures</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <ul class="accordion-list">
+                      <li><strong>Epoch²:</strong> Procedural narrative engine for game studios. Alpha with 2 partner studios.</li>
+                      <li><strong>Healthcare AI:</strong> Multi-agent marketing automation for regional health systems. 3 paying clients, 85% cost reduction.</li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">How We Build</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <p class="accordion-text">
+                      We build with operators from Google, Meta, and successful startups. Each venture gets real capital, a dedicated team, and go-to-market support. We validate with real users and iterate based on data, not assumptions.
+                    </p>
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">Investment Model</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <p class="accordion-text">
+                      We provide pre-seed to seed-stage capital, operational support, and access to our infrastructure. If you're building in healthcare, gaming, or productivity tools, let's talk.
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="what-tab-panel__actions">
+                <a href="/contact.html?intent=ventures" class="btn btn--primary btn--pill">Learn more about ventures</a>
+              </div>
+            </div>
+
+            <!-- Right Showcase -->
+            <div class="what-tab-panel__showcase">
+              <div class="what-tab-showcase">
+                <img
+                  src="assets/labs/dominion-eternal-poster.jpg"
+                  alt="Epoch² game engine — Dominion Eternal key art"
+                  class="what-tab-showcase__image"
+                  loading="lazy"
+                />
+                <div class="what-tab-showcase__overlay">
+                  <div class="what-tab-showcase__label">Featured Venture</div>
+                  <h3 class="what-tab-showcase__title">Epoch²</h3>
+                  <p class="what-tab-showcase__description">Procedural narrative engine for game studios</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOLUTIONS PANEL -->
+        <div class="what-tab-panel" data-panel="solutions" role="tabpanel">
+          <div class="what-tab-panel__inner">
+            <!-- Left Content -->
+            <div class="what-tab-panel__content">
+              <h2 class="what-tab-panel__title">Deploy proven technology</h2>
+              <p class="what-tab-panel__description">
+                License the same platforms running our ventures. Battle-tested, compliant, and ready to scale. Deploy in weeks, not years.
+              </p>
+
+              <!-- Accordion: Available Solutions -->
+              <div class="accordion-section">
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">Sevā AI Platform</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <p class="accordion-text">
+                      HIPAA-compliant patient portals, AI-powered triage, telehealth integration, and automated medical record management. Serving 50,000+ patients across regional health systems.
+                    </p>
+                    <ul class="accordion-list">
+                      <li>Deploy in 4-6 weeks with white-label branding</li>
+                      <li>Full source code access and data ownership</li>
+                      <li>SOC 2 compliant infrastructure</li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">AI Marketing Automation</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <p class="accordion-text">
+                      6-agent system handling campaign research, compliance, content creation, and orchestration. Live with 3 healthcare clients, 85% cost reduction vs traditional agencies.
+                    </p>
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">Custom Platform Development</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <p class="accordion-text">
+                      Need something custom? We adapt our technology stack to your specific requirements. Real platforms, not thin API wrappers.
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div class="what-tab-panel__actions">
+                <a href="/contact.html?intent=licensing" class="btn btn--primary btn--pill">Explore solutions</a>
+              </div>
+            </div>
+
+            <!-- Right Showcase -->
+            <div class="what-tab-panel__showcase">
+              <div class="what-tab-showcase">
+                <video
+                  src="assets/images/solutions/vid_other_hospital-hall.mp4"
+                  class="what-tab-showcase__video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div class="what-tab-showcase__overlay">
+                  <div class="what-tab-showcase__label">Featured Solution</div>
+                  <h3 class="what-tab-showcase__title">Sevā AI</h3>
+                  <p class="what-tab-showcase__description">Healthcare intelligence platform</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVICES PANEL -->
+        <div class="what-tab-panel" data-panel="services" role="tabpanel">
+          <div class="what-tab-panel__inner">
+            <!-- Left Content -->
+            <div class="what-tab-panel__content">
+              <h2 class="what-tab-panel__title">Expert marketing & design</h2>
+              <p class="what-tab-panel__description">
+                Full-service digital marketing, web design, and brand strategy from operators who've launched ventures, not just projects.
+              </p>
+
+              <!-- Accordion: Service Categories -->
+              <div class="accordion-section">
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">Digital Foundation</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <ul class="accordion-list">
+                      <li>Website design & development</li>
+                      <li>E-commerce platforms</li>
+                      <li>SEO & site performance</li>
+                      <li>Hosting & security</li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">Growth Marketing</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <ul class="accordion-list">
+                      <li>Growth strategy & planning</li>
+                      <li>Paid advertising (Google, Meta, LinkedIn)</li>
+                      <li>Social media marketing</li>
+                      <li>Email & SMS campaigns</li>
+                      <li>Analytics & reporting</li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="accordion-item">
+                  <summary class="accordion-header">
+                    <span class="accordion-header__text">Brand & Creative</span>
+                    <svg class="accordion-header__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </summary>
+                  <div class="accordion-content">
+                    <ul class="accordion-list">
+                      <li>Brand strategy & positioning</li>
+                      <li>Visual identity & logo design</li>
+                      <li>Content writing & copywriting</li>
+                      <li>Photography & video production</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="what-tab-panel__actions">
+                <a href="/contact.html?intent=services" class="btn btn--primary btn--pill">Start a project</a>
+              </div>
+            </div>
+
+            <!-- Right Showcase -->
+            <div class="what-tab-panel__showcase">
+              <div class="what-tab-showcase">
+                <img
+                  src="assets/images/solutions/img_other_office.jpg"
+                  alt="Marketing and design services from experienced operators"
+                  class="what-tab-showcase__image"
+                  loading="lazy"
+                />
+                <div class="what-tab-showcase__overlay">
+                  <div class="what-tab-showcase__label">Expert Services</div>
+                  <h3 class="what-tab-showcase__title">Marketing & Design</h3>
+                  <p class="what-tab-showcase__description">From operators who've built companies</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Full-Width CTA Section -->
+    <section class="what-we-do-cta">
+      <div class="what-we-do-cta__overlay"></div>
+      <div class="what-we-do-cta__inner">
+        <!-- Left Content -->
+        <div class="what-we-do-cta__content">
+          <h2 class="what-we-do-cta__title">Ready to work together?</h2>
+          <p class="what-we-do-cta__description">
+            Whether you need venture capital, proven technology, or marketing services—we bring operator experience to every project.
+          </p>
+          <div class="what-we-do-cta__actions">
+            <a href="/contact.html" class="btn btn--primary btn--pill">Get in touch</a>
+            <a href="/about.html" class="btn btn--secondary btn--pill">Learn about us</a>
+          </div>
+        </div>
+
+        <!-- Right Nested Image -->
+        <div class="what-we-do-cta__image-wrapper">
+          <div class="what-we-do-cta__image-card">
+            <img
+              src="assets/images/solutions/img_other_office.jpg"
+              alt="Work with Alkymē"
+              class="what-we-do-cta__image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <!-- Main Footer Navigation -->
+      <div class="site-footer-nav">
+
+        <!-- Logo Area (Left Side) -->
+        <div class="site-footer-logo-area">
+          <img src="assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--light">
+          <img src="assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkymē" class="site-footer-logo site-footer-logo--dark">
+        </div>
+
+        <!-- Navigation Sections (Right Side) -->
+        <nav class="site-footer-columns">
+
+          <!-- Support -->
+          <div class="site-footer-column footer-col-support">
+            <h4 class="site-footer-heading">Support</h4>
+            <ul class="site-footer-list">
+              <li><a href="/contact.html">Contact Us</a></li>
+              <li><a href="mailto:hello@alkyme.io">Email Support</a></li>
+              <li><a href="tel:+15598255963">Call Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div class="site-footer-column footer-col-legal">
+            <h4 class="site-footer-heading">Legal</h4>
+            <ul class="site-footer-list">
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="site-footer-column footer-col-company">
+            <h4 class="site-footer-heading">Company</h4>
+            <ul class="site-footer-list">
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/what-we-do.html">What We Do</a></li>
+              <li><a href="/careers.html">Careers</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- What We Do -->
+          <div class="site-footer-column footer-col-solutions">
+            <h4 class="site-footer-heading">What We Do</h4>
+            <ul class="site-footer-list">
+              <li><a href="/what-we-do.html#ventures">Ventures</a></li>
+              <li><a href="/what-we-do.html#solutions">Solutions</a></li>
+              <li><a href="/what-we-do.html#services">Services</a></li>
+            </ul>
+          </div>
+
+        </nav>
+
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="site-footer-legal">
+        <div class="site-footer-legal-left">
+          <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
+        </div>
+        <div class="site-footer-legal-right">
+          <span>Los Angeles, California</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/site-theme.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/what-we-do-tabs.js"></script>
+
+</body>
+</html>

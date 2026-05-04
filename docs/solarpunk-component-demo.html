@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solarpunk Components Demo - Alkymē</title>
+  <link rel="stylesheet" href="../assets/css/alkyme-tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <style>
+    body {
+      padding: 80px 0;
+    }
+    .demo-section {
+      margin-bottom: 120px;
+    }
+    .demo-header {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+    .demo-header h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .demo-header p {
+      color: var(--muted);
+    }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .theme-toggle-demo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn btn--secondary theme-toggle-demo" onclick="toggleTheme()">
+    Toggle Dark Mode
+  </button>
+
+  <div class="container">
+    <div class="hero hero--compact">
+      <div class="hero__content">
+        <h1 class="hero__title">Solarpunk Component System</h1>
+        <p class="hero__description">
+          Warm minimalist components for atmospheric, Apple-inspired experiences.
+        </p>
+      </div>
+    </div>
+
+    <!-- Glass Modifiers -->
+    <section class="demo-section">
+      <div class="demo-header">
+        <h2>Warm Glass Modifiers</h2>
+        <p>Apply atmospheric glass effects to any element.</p>
+      </div>
+      <div class="demo-grid">
+        <div class="card glass--warm-amber" style="padding: 32px;">
+          <h3>Warm Amber Glass</h3>
+          <p>Subtle amber-gold gradient with backdrop blur.</p>
+        </div>
+        <div class="card glass--warm-sage" style="padding: 32px;">
+          <h3>Warm Sage Glass</h3>
+          <p>Sage-forest gradient with atmospheric depth.</p>
+        </div>
+        <div class="card glass--warm-terracotta" style="padding: 32px;">
+          <h3>Warm Terracotta Glass</h3>
+          <p>Terracotta-amber gradient for product emphasis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="demo-section">
+      <div class="demo-header">
+        <h2>Warm Button Variants</h2>
+        <p>CTA buttons with Solarpunk color accents.</p>
+      </div>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+        <button class="btn btn--terracotta">Terracotta CTA</button>
+        <button class="btn btn--amber">Amber CTA</button>
+        <button class="btn btn--sage">Sage CTA</button>
+      </div>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <button class="btn btn--terracotta btn--lg">Large Terracotta</button>
+        <button class="btn btn--primary">Primary (Default)</button>
+        <button class="btn btn--secondary">Secondary (Default)</button>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="demo-section">
+      <div class="demo-header">
+        <h2>Badge Components</h2>
+        <p>Status and category indicators with warm accents.</p>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <span class="badge badge--terracotta">Epoch²</span>
+        <span class="badge badge--amber">Premium</span>
+        <span class="badge badge--sage">Carbon Neutral</span>
+        <span class="badge badge--gold">Featured</span>
+        <span class="badge">Default</span>
+      </div>
+    </section>
+
+    <!-- Cards with Warm Accents -->
+    <section class="demo-section">
+      <div class="demo-header">
+        <h2>Card Warm Accents</h2>
+        <p>Cards with colored borders and shadows on hover.</p>
+      </div>
+      <div class="demo-grid">
+        <div class="card card--warm-accent">
+          <span class="badge badge--terracotta">New</span>
+          <h3 class="card__title">Warm Accent Card</h3>
+          <p class="card__description">
+            Terracotta border with amber shadow glow on hover.
+          </p>
+        </div>
+        <div class="card card--sage-accent">
+          <span class="badge badge--sage">Sustainable</span>
+          <h3 class="card__title">Sage Accent Card</h3>
+          <p class="card__description">
+            Sage border with green shadow glow on hover.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Default Card</h3>
+          <p class="card__description">
+            Standard moss accent for comparison.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section class="demo-section">
+      <div class="demo-header">
+        <h2>Feature Grid</h2>
+        <p>Feature cards with warm icon backgrounds.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card feature-card--warm">
+          <div class="feature-card__icon">
+            <svg width="24" height="24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">AI-Powered</h3>
+          <p class="feature-card__description">
+            Intelligent workflows with context-aware agents.
+          </p>
+        </div>
+        <div class="feature-card feature-card--sage">
+          <div class="feature-card__icon">
+            <svg width="24" height="24" fill="currentColor">
+              <rect x="2" y="2" width="20" height="20" rx="4"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Sustainable</h3>
+          <p class="feature-card__description">
+            100% renewable energy infrastructure.
+          </p>
+        </div>
+        <div class="feature-card feature-card--amber">
+          <div class="feature-card__icon">
+            <svg width="24" height="24" fill="currentColor">
+              <polygon points="12,2 15,10 24,12 15,14 12,22 9,14 0,12 9,10"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Premium Support</h3>
+          <p class="feature-card__description">
+            24/7 expert assistance for all your needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atmospheric Sections -->
+    <section class="demo-section">
+      <div class="demo-header">
+        <h2>Atmospheric Section Backgrounds</h2>
+        <p>Gradient backgrounds for visual hierarchy.</p>
+      </div>
+
+      <div style="margin-bottom: 40px;">
+        <div class="section--atmosphere-warm" style="padding: 48px 32px; border-radius: 16px;">
+          <h3>Warm Glow Atmosphere</h3>
+          <p style="color: var(--muted); max-width: 600px;">
+            Radial amber gradient perfect for hero sections and product highlights.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 40px;">
+        <div class="section--atmosphere-sunrise" style="padding: 48px 32px; border-radius: 16px;">
+          <h3>Sunrise Atmosphere</h3>
+          <p style="color: var(--muted); max-width: 600px;">
+            Gold to terracotta gradient for impact and testimonial sections.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="section--atmosphere-earth" style="padding: 48px 32px; border-radius: 16px;">
+          <h3>Earth-Sky Atmosphere</h3>
+          <p style="color: var(--muted); max-width: 600px;">
+            Wheat to white fade for environmental and sustainability messaging.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Product Showcase Full Example -->
+  <section class="product-showcase">
+    <div class="product-showcase__background"></div>
+    <div class="container">
+      <div class="demo-header" style="position: relative; z-index: 1; margin-bottom: 60px;">
+        <h2>Product Showcase Component</h2>
+        <p>Apple-inspired product highlight with stats and CTAs.</p>
+      </div>
+      <div class="product-showcase__grid">
+        <div class="product-showcase__content">
+          <div class="product-showcase__eyebrow">Epoch² Platform</div>
+          <h2 class="product-showcase__title">Build AI That Understands Context</h2>
+          <p class="product-showcase__description">
+            Transform your workflows with intelligent automation powered by
+            context-aware AI agents. Deploy in seconds, scale infinitely.
+          </p>
+
+          <ul class="product-showcase__stats">
+            <li class="product-showcase__stat">
+              <span class="product-showcase__stat-value">10x</span>
+              <span class="product-showcase__stat-label">Faster Deployment</span>
+            </li>
+            <li class="product-showcase__stat">
+              <span class="product-showcase__stat-value">99.9%</span>
+              <span class="product-showcase__stat-label">Uptime SLA</span>
+            </li>
+            <li class="product-showcase__stat">
+              <span class="product-showcase__stat-value">24/7</span>
+              <span class="product-showcase__stat-label">AI Monitoring</span>
+            </li>
+          </ul>
+
+          <div class="product-showcase__actions">
+            <a href="#" class="btn btn--terracotta">Explore Epoch²</a>
+            <a href="#" class="btn btn--secondary">Read Documentation</a>
+          </div>
+        </div>
+
+        <div class="product-showcase__media">
+          <div style="
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, var(--forest), var(--moss));
+            border-radius: var(--radius-media-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+          ">
+            Product Screenshot
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reverse Layout Example -->
+  <section class="product-showcase product-showcase--reverse" style="margin-top: 120px;">
+    <div class="product-showcase__background"></div>
+    <div class="container">
+      <div class="product-showcase__grid">
+        <div class="product-showcase__content">
+          <div class="product-showcase__eyebrow">Sevā AI</div>
+          <h2 class="product-showcase__title">Healthcare AI That Cares</h2>
+          <p class="product-showcase__description">
+            Revolutionary AI-powered healthcare solutions designed with
+            privacy, ethics, and patient outcomes at the core.
+          </p>
+
+          <ul class="product-showcase__stats">
+            <li class="product-showcase__stat">
+              <span class="product-showcase__stat-value">50K+</span>
+              <span class="product-showcase__stat-label">Patients Served</span>
+            </li>
+            <li class="product-showcase__stat">
+              <span class="product-showcase__stat-value">95%</span>
+              <span class="product-showcase__stat-label">Accuracy Rate</span>
+            </li>
+          </ul>
+
+          <div class="product-showcase__actions">
+            <a href="#" class="btn btn--sage">Learn About Sevā</a>
+            <a href="#" class="btn btn--secondary">Case Studies</a>
+          </div>
+        </div>
+
+        <div class="product-showcase__media">
+          <div style="
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, var(--sage), var(--dew));
+            border-radius: var(--radius-media-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+          ">
+            Sevā Dashboard
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="margin-top: 120px;">
+    <div class="cta-section">
+      <h2 class="cta-section__title">Ready to Build with Solarpunk?</h2>
+      <p class="cta-section__description">
+        Start using these components in your Alkymē projects today.
+      </p>
+      <div class="cta-section__actions">
+        <a href="../docs/solarpunk-component-guide.md" class="btn btn--terracotta">
+          Read Full Guide
+        </a>
+        <a href="../docs/solarpunk-quick-reference.md" class="btn btn--amber">
+          Quick Reference
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+    }
+  </script>
+</body>
+</html>

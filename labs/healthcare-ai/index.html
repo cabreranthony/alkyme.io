@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme Detection (before render) -->
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+
+  <title>Regional Healthcare Marketing with AI | Alkymē</title>
+  <meta name="description" content="How we replaced a traditional agency model with AI agents that plan, create, and measure patient-facing marketing for a multi-facility regional health system.">
+
+  <!-- Styles -->
+  <link rel="preload" href="../../dist/assets/styles.min.css" as="style">
+  <link rel="stylesheet" href="../../dist/assets/styles.min.css">
+  <link rel="stylesheet" href="../../assets/healthcare-ai.css">
+
+  <link rel="icon" type="image/svg+xml" href="../../assets/logos/alkyme-logo-black.svg">
+  <meta name="theme-color" content="#fff9f0">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo">Alkymē</a>
+
+        <div class="nav__menu">
+          <a href="/about.html" class="nav__link">About</a>
+          <a href="/labs.html" class="nav__link">Labs</a>
+          <a href="/careers.html" class="nav__link">Careers</a>
+          <a href="/contact.html" class="nav__link">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+          <button type="button" class="alkyme-lang-trigger" aria-haspopup="dialog" aria-expanded="false" aria-label="Select language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span data-alkyme-lang-code>EN</span>
+          </button>
+          <button type="button" class="theme-toggle" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main style="padding-top: 72px;">
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/" class="breadcrumb__link">Home</a>
+          <span class="breadcrumb__separator">/</span>
+          <a href="/labs.html" class="breadcrumb__link">Labs</a>
+          <span class="breadcrumb__separator">/</span>
+          <span class="breadcrumb__current">Healthcare Marketing AI</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="healthcare-hero">
+      <div class="container">
+        <div class="healthcare-hero__content">
+          <div class="healthcare-hero__label">Case Study · Healthcare</div>
+          <h1 class="healthcare-hero__title">From scattered to strategic: how a regional health system turned marketing into an always-on AI operation</h1>
+          <p class="healthcare-hero__description">
+            A multi-facility regional healthcare system had been running marketing the way most community health systems do—a small outside agency, a part-time executive sponsor, and a stack of spreadsheets. We replaced that model with AI agents that plan campaigns, produce creative, buy media, and report results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope Note -->
+    <section class="scope-note">
+      <div class="container">
+        <p class="scope-note__text">
+          This case study covers the client's patient-facing marketing program. Physician recruitment, employer-of-choice campaigns, and donor communications were handled by separate teams and are not part of the work described here.
+        </p>
+      </div>
+    </section>
+
+    <!-- Client Snapshot -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__label">The Client</div>
+          <h2 class="section-header__title">A regional system doing serious work with a small back office</h2>
+          <p class="section-header__body">
+            The client operates multiple acute-care and ambulatory facilities across a defined geographic region, with a full slate of service lines ranging from primary care to specialty surgical programs. Like many health systems at this scale, it had never stood up a dedicated internal marketing function.
+          </p>
+        </div>
+
+        <div class="client-visual">
+          <img src="../../assets/images/labs/img-hospital-campus.jpg" alt="Regional healthcare campus" class="client-visual__image">
+        </div>
+
+        <div class="snapshot-grid">
+          <div class="snapshot-card">
+            <h3 class="snapshot-card__title">Multi-site</h3>
+            <p class="snapshot-card__description">A regional footprint spanning acute-care, ambulatory, and specialty locations.</p>
+          </div>
+          <div class="snapshot-card">
+            <h3 class="snapshot-card__title">One part-time sponsor</h3>
+            <p class="snapshot-card__description">Marketing was an add-on to a senior executive's operational role.</p>
+          </div>
+          <div class="snapshot-card">
+            <h3 class="snapshot-card__title">One small agency</h3>
+            <p class="snapshot-card__description">A traditional creative-and-media shop, limited technical capability.</p>
+          </div>
+          <div class="snapshot-card">
+            <h3 class="snapshot-card__title">Zero internal marketers</h3>
+            <p class="snapshot-card__description">No CMO, no brand manager, no in-house designer or media buyer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="section section--gray" id="challenge">
+      <div class="container container--wide">
+        <div class="section-header">
+          <div class="section-header__label">The Challenge</div>
+          <h2 class="section-header__title">Marketing was a side-of-desk function pretending to be a growth engine</h2>
+          <p class="section-header__body">
+            Before we engaged, the system's marketing operation was held together by the goodwill of a senior executive who already had a full operational job, and an outside agency that was competent at traditional advertising but not equipped for the speed, targeting, and measurement modern healthcare marketing requires.
+          </p>
+        </div>
+
+        <h3 class="friction-grid-title">Where the cracks were showing</h3>
+
+        <div class="friction-grid">
+          <div class="friction-card">
+            <h4 class="friction-card__title">Invisible ROI</h4>
+            <p class="friction-card__description">Reporting was a monthly PDF of impressions and clicks with no line back to patient volume or cost per acquired patient.</p>
+          </div>
+          <div class="friction-card">
+            <h4 class="friction-card__title">Stale media mix</h4>
+            <p class="friction-card__description">Budget allocation mirrored the prior year line for line. Underperforming channels kept getting funded.</p>
+          </div>
+          <div class="friction-card">
+            <h4 class="friction-card__title">Slow creative cycles</h4>
+            <p class="friction-card__description">A single flyer or digital ad could take two to three weeks from brief to approval to publish.</p>
+          </div>
+          <div class="friction-card">
+            <h4 class="friction-card__title">No brand system</h4>
+            <p class="friction-card__description">Each campaign invented its own look. Typography, color, and voice drifted between service lines.</p>
+          </div>
+          <div class="friction-card">
+            <h4 class="friction-card__title">Service-line conflicts</h4>
+            <p class="friction-card__description">Cardiology, orthopedics, women's health, and others competed for the same channels with no central calendar.</p>
+          </div>
+          <div class="friction-card">
+            <h4 class="friction-card__title">Compliance bottlenecks</h4>
+            <p class="friction-card__description">Every asset routed through legal and clinical review manually. Turnaround measured in days, not hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="section">
+      <div class="container">
+        <div class="approach-content">
+          <div class="section-header">
+            <div class="section-header__label">Our Approach</div>
+            <h2 class="section-header__title">We didn't build a marketing team. We built a marketing system.</h2>
+          </div>
+
+          <div class="approach-text">
+            <p class="approach-paragraph">
+              Hiring a full internal marketing department would have been disproportionate to the system's scale, and replacing the agency with a bigger agency would have reproduced the same problems at a higher cost. We took a different path: design a set of narrowly-scoped AI agents, each one owning a single discipline of modern marketing, and connect them through a central orchestration layer.
+            </p>
+            <p class="approach-paragraph">
+              The goal was never to remove humans from decisions—it was to remove humans from repetition. Strategy, approvals, and clinical judgment stay with the people who own them. Drafting, routing, testing, optimizing, reporting, and the hundred small campaign chores in between are handled by agents working on a shared brief and a shared brand system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agent System -->
+    <section class="section section--gray">
+      <div class="container container--wide">
+        <div class="section-header">
+          <h2 class="section-header__title">Six agents, one orchestrator</h2>
+          <p class="section-header__description">
+            Each agent owns a single discipline. The orchestrator coordinates them around a shared brief.
+          </p>
+        </div>
+
+        <div class="agent-grid">
+
+          <div class="agent-card">
+            <div class="agent-card__icon">01</div>
+            <h3 class="agent-card__title">Research Agent</h3>
+            <p class="agent-card__description">
+              Monitors competitors, local market trends, and service-line performance. Generates quarterly competitive positioning reports.
+            </p>
+          </div>
+
+          <div class="agent-card">
+            <div class="agent-card__icon">02</div>
+            <h3 class="agent-card__title">Compliance Agent</h3>
+            <p class="agent-card__description">
+              Validates all creative against HIPAA requirements, medical claim regulations, and internal clinical review standards before routing to legal.
+            </p>
+          </div>
+
+          <div class="agent-card">
+            <div class="agent-card__icon">03</div>
+            <h3 class="agent-card__title">Content Agent</h3>
+            <p class="agent-card__description">
+              Generates ad copy, landing pages, email campaigns, and social posts. Works from approved messaging frameworks and brand guidelines.
+            </p>
+          </div>
+
+          <div class="agent-card">
+            <div class="agent-card__icon">04</div>
+            <h3 class="agent-card__title">Media Agent</h3>
+            <p class="agent-card__description">
+              Plans media mix, manages budgets across channels, and executes programmatic buys. Optimizes spend based on real-time performance data.
+            </p>
+          </div>
+
+          <div class="agent-card">
+            <div class="agent-card__icon">05</div>
+            <h3 class="agent-card__title">Reputation Agent</h3>
+            <p class="agent-card__description">
+              Manages local listings, monitors reviews, and drafts responses. Ensures accurate facility info across 50+ platforms.
+            </p>
+          </div>
+
+          <div class="agent-card">
+            <div class="agent-card__icon">06</div>
+            <h3 class="agent-card__title">Reporting Agent</h3>
+            <p class="agent-card__description">
+              Aggregates performance data, calculates attribution, and produces executive dashboards. Links marketing spend to patient volume by service line.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="orchestrator-card">
+          <h3 class="orchestrator-card__title">Campaign Orchestrator</h3>
+          <p class="orchestrator-card__description">
+            The central layer coordinating all agents. Routes briefs, manages approval workflows, and maintains the shared brand system. The executive sponsor interacts with this layer only—not individual agents.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-header__label">Results</div>
+          <h2 class="section-header__title">What changed in 12 months</h2>
+        </div>
+
+        <div class="results-grid">
+
+          <div class="result-card">
+            <div class="result-card__value">85%</div>
+            <div class="result-card__label">Cost Reduction</div>
+            <p class="result-card__note">vs traditional agency model, including platform costs</p>
+          </div>
+
+          <div class="result-card">
+            <div class="result-card__value">3 days</div>
+            <div class="result-card__label">Creative Cycle</div>
+            <p class="result-card__note">From brief to approved asset (was 2-3 weeks)</p>
+          </div>
+
+          <div class="result-card">
+            <div class="result-card__value">24/7</div>
+            <div class="result-card__label">Campaign Operation</div>
+            <p class="result-card__note">Always-on monitoring, optimization, and reporting</p>
+          </div>
+
+          <div class="result-card">
+            <div class="result-card__value">6 lanes</div>
+            <div class="result-card__label">Fully Coordinated</div>
+            <p class="result-card__note">Research, compliance, content, media, reputation, reporting</p>
+          </div>
+
+          <div class="result-card">
+            <div class="result-card__value">50+</div>
+            <div class="result-card__label">Markets Covered</div>
+            <p class="result-card__note">Regional dialects and cultural adaptation at scale</p>
+          </div>
+
+          <div class="result-card">
+            <div class="result-card__value">3 clients</div>
+            <div class="result-card__label">In Production</div>
+            <p class="result-card__note">Regional health systems using the platform</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Governance -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="governance-content">
+          <div class="section-header">
+            <div class="section-header__label">Governance</div>
+            <h2 class="section-header__title">Human-in-the-loop where it matters</h2>
+          </div>
+
+          <div class="governance-grid">
+            <div class="governance-card">
+              <h3 class="governance-card__title">HIPAA-Safe Architecture</h3>
+              <p class="governance-card__description">
+                No patient data enters the agent system. All operations work from de-identified campaign briefs and public market data.
+              </p>
+            </div>
+
+            <div class="governance-card">
+              <h3 class="governance-card__title">Clinical Review Checkpoints</h3>
+              <p class="governance-card__description">
+                Medical claims and clinical messaging require physician sign-off. Agents draft, humans approve.
+              </p>
+            </div>
+
+            <div class="governance-card">
+              <h3 class="governance-card__title">Legal Approval Workflow</h3>
+              <p class="governance-card__description">
+                Every asset routes through the compliance agent first, then to legal counsel for final approval before publishing.
+              </p>
+            </div>
+
+            <div class="governance-card">
+              <h3 class="governance-card__title">Executive Oversight Dashboard</h3>
+              <p class="governance-card__description">
+                The sponsor reviews all campaigns, budgets, and performance weekly. No agent acts without brief approval.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-section">
+          <h2 class="cta-section__title">Building a similar system for your organization?</h2>
+          <p class="cta-section__description">
+            We occasionally work with regional health systems and healthcare enterprises looking to modernize marketing operations. If this sounds like your situation, let's talk.
+          </p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">Schedule a Demo</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Alkymē</div>
+          <p class="footer__description">An AI venture studio in Los Angeles building companies from scratch.</p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="/about.html" class="footer__link">About</a></li>
+            <li><a href="/labs.html" class="footer__link">Labs</a></li>
+            <li><a href="/careers.html" class="footer__link">Careers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="/contact.html" class="footer__link">Contact</a></li>
+            <li><a href="mailto:hello@alkyme.io" class="footer__link">hello@alkyme.io</a></li>
+            <li><a href="tel:+15598255963" class="footer__link">(559) 825-5963</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="/ai.html" class="footer__link">How We Use AI</a></li>
+            <li><a href="/privacy.html" class="footer__link">Privacy</a></li>
+            <li><a href="/terms.html" class="footer__link">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
+        <span>Los Angeles, California</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/site-theme.js"></script>
+  <script src="../../assets/site-lang.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

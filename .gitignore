@@ -1,1 +1,60 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*.backup
+*.deprecated
+
+# Documentation (keep essential docs)
+AUDIT*.md
+*-SUMMARY.md
+*-COMPLETE.md
+*-AUDIT.md
+*-PLAN.md
+REFACTOR*.md
+OVERHAUL*.md
+CLEANUP*.md
+SPRINT*.md
+
+# Development artifacts
+archive/
+ops/
+.venv-pdf/
+__pycache__/
+*.py[cod]
+
+# Testing
+test-output.css
+
+# Claude
+.claude/
+assets/images/solutions/vid_other_ship-port.mp4
+assets/images/solutions/vid_other_retail-shopping.mp4
+assets/videos/homepage-4347878.mp4

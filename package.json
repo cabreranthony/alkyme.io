@@ -1,0 +1,21 @@
+{
+  "name": "alkyme-website",
+  "version": "1.0.0",
+  "description": "Alkymē website with optimized CSS build pipeline",
+  "scripts": {
+    "build:css": "postcss assets/css/main.css -o dist/assets/styles.min.css",
+    "build": "npm run build:css",
+    "watch": "postcss assets/css/main.css -o dist/assets/styles.min.css --watch",
+    "dev": "npm run watch"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
+    "postcss-preset-env": "^9.3.0",
+    "cssnano": "^6.0.3",
+    "autoprefixer": "^10.4.16",
+    "clean-css-cli": "^5.6.3",
+    "critical": "^6.0.0"
+  }
+}

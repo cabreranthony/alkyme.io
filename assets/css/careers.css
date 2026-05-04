@@ -1,0 +1,778 @@
+/* ==========================================================================
+   CAREERS PAGE - Temporary hardcoded values for testing
+   ========================================================================== */
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.careers-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff9f0;
+  padding-top: 72px;
+  padding-bottom: 96px;
+  position: relative;
+  margin-top: -72px;
+  overflow: hidden;
+}
+
+.careers-hero__content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.careers-hero__title {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #040d12;
+  margin-bottom: 24px;
+}
+
+.careers-hero__lead {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #506d5f;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+.careers-hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Dark Mode Hero */
+html[data-theme="dark"] .careers-hero {
+  background: #183d3d;
+}
+
+html[data-theme="dark"] .careers-hero__title {
+  color: #f9f3ec;
+}
+
+html[data-theme="dark"] .careers-hero__lead {
+  color: rgba(249, 243, 236, 0.7);
+}
+
+/* ==========================================================================
+   FEATURE HERO
+   ========================================================================== */
+
+.careers-feature-hero {
+  padding: 96px 0;
+  background: #fff9f0;
+}
+
+.careers-feature-hero__title {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #040d12;
+  margin-bottom: 48px;
+}
+
+.careers-feature-hero__card {
+  background: linear-gradient(135deg, rgba(92, 131, 116, 0.12) 0%, rgba(92, 131, 116, 0.06) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(92, 131, 116, 0.15);
+  border-radius: 24px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(92, 131, 116, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.careers-feature-hero__media {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(92, 131, 116, 0.15);
+}
+
+.careers-feature-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  min-height: 400px;
+}
+
+.careers-feature-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.careers-feature-hero__subtitle {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #040d12;
+  margin-bottom: 16px;
+}
+
+.careers-feature-hero__description {
+  font-size: 18px;
+  font-family: "Source Sans 3", sans-serif;
+  line-height: 1.6;
+  color: #506d5f;
+  margin: 0;
+}
+
+/* Dark Mode Feature Hero */
+html[data-theme="dark"] .careers-feature-hero {
+  background: #183d3d;
+}
+
+html[data-theme="dark"] .careers-feature-hero__title {
+  color: #f9f3ec;
+}
+
+html[data-theme="dark"] .careers-feature-hero__card {
+  background: linear-gradient(135deg, rgba(92, 131, 116, 0.15) 0%, rgba(92, 131, 116, 0.08) 100%);
+}
+
+html[data-theme="dark"] .careers-feature-hero__media {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .careers-feature-hero__subtitle {
+  color: #f9f3ec;
+}
+
+html[data-theme="dark"] .careers-feature-hero__description {
+  color: rgba(249, 243, 236, 0.75);
+}
+
+/* ==========================================================================
+   VALUE PROPS GRID
+   ========================================================================== */
+
+.careers-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.careers-value-item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.3;
+  color: #040d12;
+  margin-bottom: 16px;
+}
+
+.careers-value-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #506d5f;
+  margin: 0;
+}
+
+/* Dark Mode Value Props */
+html[data-theme="dark"] .careers-value-item h3 {
+  color: #f9f3ec;
+}
+
+/* ==========================================================================
+   RECENT WORK SECTION
+   ========================================================================== */
+
+.careers-work {
+  padding: 96px 0;
+  background: rgba(92, 131, 116, 0.03);
+}
+
+.careers-work__layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 96px;
+  align-items: start;
+}
+
+.careers-work__sidebar {
+  position: sticky;
+  top: calc(72px + 48px);
+}
+
+.careers-work__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5c8374;
+  margin-bottom: 16px;
+}
+
+.careers-section-title {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #040d12;
+}
+
+.careers-work__intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #506d5f;
+  margin-top: 24px;
+}
+
+.careers-work__content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.careers-work-item {
+  background: #ffffff;
+  border: 1px solid rgba(92, 131, 116, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.careers-work-item:hover {
+  border-color: rgba(92, 131, 116, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.careers-work-item__media {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.careers-work-item__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.careers-work-item__details {
+  padding: 48px;
+}
+
+.careers-work-item__label {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(92, 131, 116, 0.12);
+  color: #5c8374;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Source Sans 3", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.careers-work-item__title {
+  font-size: 36px;
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #040d12;
+  margin-bottom: 16px;
+}
+
+.careers-work-item__description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #506d5f;
+  margin-bottom: 24px;
+}
+
+.careers-work-item__stats {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.careers-work-item__stats li {
+  color: #506d5f;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.careers-work-item__stats strong {
+  color: #5c8374;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Dark Mode Work Section */
+html[data-theme="dark"] .careers-work {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="dark"] .careers-work__eyebrow {
+  color: #9bb5aa;
+}
+
+html[data-theme="dark"] .careers-section-title {
+  color: #f9f3ec;
+}
+
+html[data-theme="dark"] .careers-work-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(147, 177, 166, 0.12);
+}
+
+html[data-theme="dark"] .careers-work-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(147, 177, 166, 0.2);
+}
+
+html[data-theme="dark"] .careers-work-item__label {
+  background: rgba(217, 186, 140, 0.15);
+  color: #d9ba8c;
+}
+
+html[data-theme="dark"] .careers-work-item__title {
+  color: #f9f3ec;
+}
+
+html[data-theme="dark"] .careers-work-item__stats strong {
+  color: #9bb5aa;
+}
+
+/* ==========================================================================
+   HOW WE WORK
+   ========================================================================== */
+
+.careers-how {
+  padding: 96px 0;
+  background: #fff9f0;
+}
+
+.careers-section-lead {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #506d5f;
+  max-width: 900px;
+  margin-bottom: 80px;
+}
+
+.careers-philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.careers-philosophy-card {
+  background: #ffffff;
+  border: 1px solid rgba(92, 131, 116, 0.2);
+  border-radius: 24px;
+  padding: 48px 32px;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(92, 131, 116, 0.08);
+}
+
+.careers-philosophy-card:hover {
+  background: #ffffff;
+  border-color: #5c8374;
+  box-shadow: 0 8px 24px rgba(92, 131, 116, 0.12), 0 2px 6px rgba(92, 131, 116, 0.08);
+  transform: translateY(-4px);
+}
+
+.careers-philosophy-card__label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5c8374;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+.careers-philosophy-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.3;
+  color: #040d12;
+  margin-bottom: 16px;
+}
+
+.careers-philosophy-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #506d5f;
+  margin: 0;
+}
+
+/* Dark Mode Philosophy Cards */
+html[data-theme="dark"] .careers-how {
+  background: #183d3d;
+}
+
+html[data-theme="dark"] .careers-philosophy-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(147, 177, 166, 0.15);
+}
+
+html[data-theme="dark"] .careers-philosophy-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #9bb5aa;
+}
+
+html[data-theme="dark"] .careers-philosophy-card__label {
+  color: #9bb5aa;
+}
+
+html[data-theme="dark"] .careers-philosophy-card h3 {
+  color: #f9f3ec;
+}
+
+/* ==========================================================================
+   WHAT WE'RE LOOKING FOR
+   ========================================================================== */
+
+.careers-looking {
+  padding: 96px 0;
+  background: rgba(92, 131, 116, 0.03);
+}
+
+.careers-looking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+.careers-looking-item {
+  background: #ffffff;
+  border: 1px solid rgba(92, 131, 116, 0.1);
+  border-radius: 24px;
+  padding: 48px;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.careers-looking-item:hover {
+  border-color: rgba(92, 131, 116, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.careers-looking-item__number {
+  display: block;
+  font-size: 56px;
+  font-weight: 900;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.2;
+  color: rgba(92, 131, 116, 0.15);
+  margin-bottom: 16px;
+  font-feature-settings: 'tnum';
+}
+
+.careers-looking-item h3 {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.3;
+  color: #040d12;
+  margin-bottom: 16px;
+}
+
+.careers-looking-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #506d5f;
+  margin: 0;
+}
+
+/* Dark Mode Looking For */
+html[data-theme="dark"] .careers-looking {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="dark"] .careers-looking-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(147, 177, 166, 0.12);
+}
+
+html[data-theme="dark"] .careers-looking-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(147, 177, 166, 0.2);
+}
+
+html[data-theme="dark"] .careers-looking-item__number {
+  color: rgba(147, 177, 166, 0.2);
+}
+
+html[data-theme="dark"] .careers-looking-item h3 {
+  color: #f9f3ec;
+}
+
+/* ==========================================================================
+   BENEFITS
+   ========================================================================== */
+
+.careers-benefits {
+  padding: 96px 0;
+  background: #fff9f0;
+}
+
+.careers-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.careers-benefit-item {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(92, 131, 116, 0.15);
+  border-radius: 16px;
+  padding: 48px 32px;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(92, 131, 116, 0.08);
+}
+
+.careers-benefit-item:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(92, 131, 116, 0.25);
+  box-shadow: 0 8px 24px rgba(92, 131, 116, 0.12);
+  transform: translateY(-4px);
+}
+
+.careers-benefit-item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.3;
+  color: #040d12;
+  margin-bottom: 16px;
+}
+
+.careers-benefit-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #506d5f;
+  margin: 0;
+}
+
+/* Dark Mode Benefits */
+html[data-theme="dark"] .careers-benefits {
+  background: #183d3d;
+}
+
+html[data-theme="dark"] .careers-benefit-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(147, 177, 166, 0.15);
+}
+
+html[data-theme="dark"] .careers-benefit-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(147, 177, 166, 0.3);
+}
+
+html[data-theme="dark"] .careers-benefit-item h3 {
+  color: #f9f3ec;
+}
+
+/* ==========================================================================
+   CTA HERO
+   ========================================================================== */
+
+.careers-cta {
+  padding: 96px 0;
+  background: #fff9f0;
+}
+
+.careers-cta-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.careers-cta-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.careers-cta-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.careers-cta-hero__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Source Sans 3", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
+}
+
+.careers-cta-hero__title {
+  font-size: 48px;
+  font-weight: 600;
+  font-family: "Libre Baskerville", Georgia, serif;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+  max-width: 640px;
+}
+
+.careers-cta-hero__description {
+  font-size: 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 32px;
+  max-width: 640px;
+}
+
+/* Dark Mode CTA */
+html[data-theme="dark"] .careers-cta {
+  background: #183d3d;
+}
+
+html[data-theme="dark"] .careers-cta-hero__overlay {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .careers-hero {
+    min-height: auto;
+    padding: 80px 0 64px;
+  }
+
+  .careers-hero__title {
+    font-size: clamp(3rem, 8vw, 4rem);
+  }
+
+  .careers-feature-hero__card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .careers-feature-hero__media img {
+    min-height: 300px;
+  }
+
+  .careers-value-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .careers-work__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .careers-work__sidebar {
+    position: static;
+  }
+
+  .careers-philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .careers-looking-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .careers-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .careers-cta-hero {
+    height: 350px;
+  }
+
+  .careers-cta-hero__overlay {
+    padding: 48px 32px;
+  }
+
+  .careers-cta-hero__title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .careers-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .careers-feature-hero__card {
+    padding: 48px 32px;
+  }
+
+  .careers-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .careers-cta-hero {
+    height: 300px;
+  }
+
+  .careers-cta-hero__overlay {
+    padding: 32px 24px;
+  }
+
+  .careers-cta-hero__title {
+    font-size: 32px;
+  }
+}

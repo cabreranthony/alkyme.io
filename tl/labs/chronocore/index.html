@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+  <link rel="alternate" hreflang="en" href="https://alkyme.io/labs/chronocore/">
+  <link rel="alternate" hreflang="es" href="https://alkyme.io/es/labs/chronocore/">
+  <link rel="alternate" hreflang="tl" href="https://alkyme.io/tl/labs/chronocore/">
+  <link rel="alternate" hreflang="x-default" href="https://alkyme.io/labs/chronocore/">
+
+  <title>ChronoCore | Alkymē</title>
+  <meta name="description" content="ChronoCore is a session mutation engine for adaptive strategy games—procedural rules per session, reproducible from a seed. Built with Dominion Eternal as the in-house reference game.">
+  <link rel="canonical" href="https://alkyme.io/tl/labs/chronocore/">
+  <meta name="theme-color" content="#040d12">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Alkymē">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="ChronoCore | Alkymē">
+  <meta property="og:description" content="Session mutation engine for adaptive strategy games. Every session compiles a coherent ruleset from a seed—not just a new map.">
+  <meta property="og:url" content="https://alkyme.io/tl/labs/chronocore/">
+  <meta property="og:image" content="https://alkyme.io/assets/labs/dominion-eternal-poster.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChronoCore | Alkymē">
+  <meta name="twitter:description" content="Session mutation engine for adaptive strategy games. Procedural rules per session, reproducible from a seed.">
+
+  <link rel="icon" type="image/svg+xml" href="../../../assets/logos/logo-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../../assets/marketing-fonts.css">
+  <link rel="stylesheet" href="../../../assets/alkyme-tokens.css">
+  <link rel="stylesheet" href="../../../assets/site-marketing-base.css">
+  <link rel="stylesheet" href="../../../assets/site-chrome.css">
+  <link rel="stylesheet" href="../../../assets/site-lab-chronocore.css">
+  <link rel="stylesheet" href="../../../assets/site-footer.css">
+</head>
+<body class="page-lab-chronocore">
+  <div class="lab-page-ambient" aria-hidden="true">
+    <div class="lab-page-ambient__rotor">
+      <div class="lab-page-ambient__layer lab-page-ambient__layer--a"></div>
+      <div class="lab-page-ambient__layer lab-page-ambient__layer--b"></div>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="topbar" role="banner">
+    <div class="container topbar-inner">
+      <div class="topbar-cluster">
+        <a class="brand" href="../../index.html" aria-label="Alkymē home">
+          <img class="brand-logo" src="../../../assets/logos/alkyme-logo-rt-hzt-black.svg" alt="Alkymē" width="200" height="36" decoding="async">
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="../../about.html">About</a>
+          <a href="../../ai.html">AI</a>
+          <a href="../../careers.html">Careers</a>
+          <a href="../../contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="topbar__end">
+        <div class="topbar__lang">
+          <button type="button" class="topbar__lang-btn alkyme-lang-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="alkyme-lang-dialog">
+            <span class="site-footer__lang-trigger-visual" aria-hidden="true">
+              <svg class="site-footer__lang-globe" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              <span class="site-footer__lang-code" data-alkyme-lang-code>EN</span>
+            </span>
+            <span class="site-footer__sr-only">Language and region</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container container--wide">
+      <nav class="lab-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../../index.html">Home</a></li>
+          <li aria-current="page">ChronoCore</li>
+        </ol>
+      </nav>
+
+      <header class="lab-chronocore-hero">
+        <div class="lab-chronocore-hero__media">
+          <img src="../../../assets/labs/dominion-eternal-poster.jpg" alt="Dominion Eternal — key art poster" width="1920" height="1080" fetchpriority="high" decoding="async">
+          <div class="lab-chronocore-hero__overlay" aria-hidden="true"></div>
+          <a
+            href="#lab-video-banner"
+            class="lab-chronocore-hero__video-play"
+            data-lab-scroll-to-video
+            aria-label="Play overview video"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5z"/></svg>
+          </a>
+          <div class="lab-chronocore-hero__body">
+            <p class="lab-chronocore-hero__eyebrow">Labs</p>
+            <h1 class="lab-chronocore-hero__title">ChronoCore</h1>
+            <p class="lab-chronocore-hero__subtitle">A session mutation engine for adaptive strategy games. No two sessions share the same ruleset—the same seed reproduces it exactly.</p>
+            <p class="lab-chronocore-hero__byline">Active development · Games / engine · Dominion Eternal</p>
+          </div>
+        </div>
+      </header>
+
+      <nav class="lab-chronocore-subnav" aria-label="On this page">
+        <div class="lab-chronocore-subnav__pill">
+          <ul class="lab-chronocore-subnav__list">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#proof">At a glance</a></li>
+            <li><a href="#vessel">Reference game</a></li>
+            <li><a href="#lab-video-banner">In action</a></li>
+            <li><a href="#status">Status</a></li>
+            <li><a href="#licensing">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="lab-section lab-section--lead" id="overview" aria-labelledby="overview-heading">
+        <div class="lab-section__intro">
+          <h2 id="overview-heading">The replayability problem</h2>
+          <div class="lab-prose lab-prose--center">
+            <p>Strategy games hit a replayability cliff: players learn the meta, then novelty fades. New maps and DLC treat symptoms while the core rules stay fixed.</p>
+            <p>ChronoCore asks what changes if the <strong>rules themselves</strong> become a session variable—still deterministic and debuggable, but meaningfully different each time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" id="capabilities" aria-labelledby="capabilities-heading">
+        <h2 id="capabilities-heading">Capabilities</h2>
+        <p class="lab-section__deck">Each session compiles a validated <strong>session genome</strong>—economy, combat, diplomacy, win paths, and manifests that stay mechanically coherent. Three layers you can adopt incrementally.</p>
+        <div class="lab-prose">
+          <p>Use seed and constraints first, add behavior-tree assembly and sandboxed scripting when your team is ready.</p>
+        </div>
+        <ul class="lab-layers lab-layers--cap" role="list">
+          <li class="lab-layer-card lab-layer-card--cap">
+            <div class="lab-layer-card__visual lab-layer-card__visual--1" aria-hidden="true"></div>
+            <div class="lab-layer-card__body">
+              <h3>Layer 1</h3>
+              <p>Procedural seed system and constraint resolution—modules with dependencies and exclusions resolve into a reproducible genome.</p>
+            </div>
+          </li>
+          <li class="lab-layer-card lab-layer-card--cap">
+            <div class="lab-layer-card__visual lab-layer-card__visual--2" aria-hidden="true"></div>
+            <div class="lab-layer-card__body">
+              <h3>Layer 2</h3>
+              <p>Behavior tree generation from a node library—designers author nodes; the engine assembles valid trees per session.</p>
+            </div>
+          </li>
+          <li class="lab-layer-card lab-layer-card--cap">
+            <div class="lab-layer-card__visual lab-layer-card__visual--3" aria-hidden="true"></div>
+            <div class="lab-layer-card__body">
+              <h3>Layer 3</h3>
+              <p>Sandboxed scripting API—session logic through a fixed, validated surface (designer scripts today; safe hooks for generated code later).</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="lab-proof-strip" id="proof" aria-labelledby="proof-heading">
+        <h2 id="proof-heading" class="lab-proof-strip__title">At a glance</h2>
+        <ul class="lab-proof-grid" role="list">
+          <li class="lab-proof-item">
+            <p class="lab-proof-item__kicker">Seed-stable</p>
+            <p class="lab-proof-item__text">The same 64-bit seed reproduces the same ruleset—built for QA, tournaments, and shareable runs.</p>
+          </li>
+          <li class="lab-proof-item">
+            <p class="lab-proof-item__kicker">Constraint-solved</p>
+            <p class="lab-proof-item__text">Genomes resolve from modules with dependencies and exclusions—not decor randomness on a static ruleset.</p>
+          </li>
+          <li class="lab-proof-item">
+            <p class="lab-proof-item__kicker">Incremental</p>
+            <p class="lab-proof-item__text">Ship with Layer 1, opt into behavior trees and scripting when production is ready for them.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="lab-section" id="vessel" aria-labelledby="vessel-heading">
+        <h2 id="vessel-heading">Dominion Eternal</h2>
+        <div class="lab-prose">
+          <p><strong>Dominion Eternal</strong> (internal codename EPOCH) is our reference game: tile-based grand strategy from antiquity through galactic eras, built to stress-test the engine in the browser. The MVP is deliberately text-forward—the engine is the product; graphics are additive.</p>
+          <p>Every session is shareable by seed so teams, players, and tournaments can replay identical rule configurations.</p>
+        </div>
+      </section>
+
+      <section class="lab-video-banner lab-video-banner--split" id="lab-video-banner" aria-labelledby="lab-video-heading" tabindex="-1">
+        <div class="lab-video-banner__split-copy">
+          <p class="lab-video-banner__eyebrow">Watch</p>
+          <h2 id="lab-video-heading" class="lab-video-banner__title">ChronoCore in action</h2>
+          <p class="lab-video-banner__lede">A quick look at ChronoCore and Dominion Eternal—replace this file with your own cut when it is ready.</p>
+          <p class="lab-video-banner__note lab-video-banner__note--inline">Placeholder footage ships with the page so controls work; swap in <code>assets/labs/chronocore-reel.mp4</code> for your lab reel.</p>
+        </div>
+        <div class="lab-video-banner__split-media">
+          <div class="lab-video-banner__frame">
+            <video
+              id="chronocore-lab-video"
+              controls
+              playsinline
+              preload="metadata"
+              poster="../../../assets/labs/dominion-eternal-poster.jpg"
+            >
+              <source src="https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-transcode.mp4" type="video/mp4">
+              <source src="https://cdn.prod.website-files.com/64caa5934379aeac6de84458/653332a517daafaf29402c09_waterfall_pxl_43478-transcode.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="lab-section" id="status" aria-labelledby="status-heading">
+        <h2 id="status-heading">Status</h2>
+        <div class="lab-prose">
+          <p>We are in active development across the seed system, behavior runtime, and sandbox. Open-source release and authoring tooling are on the roadmap alongside studio licensing conversations.</p>
+        </div>
+      </section>
+
+      <div class="lab-cta-band" id="licensing">
+        <h2>Licensing or collaboration</h2>
+        <p>If you are exploring replayability infrastructure for a strategy, 4X, or systemic RPG title, we would like to hear from you.</p>
+        <div class="lab-cta-band__actions">
+          <a class="button button-primary" href="../../contact.html">Contact Alkymē</a>
+          <a class="button button-secondary" href="mailto:hello@alkyme.io">hello@alkyme.io</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="site-footer__logo" href="../../index.html" aria-label="Alkymē home">
+          <img src="../../../assets/logos/alkyme-logo-rt-hzt-black.svg" alt="Alkymē" width="200" height="36" decoding="async">
+        </a>
+        <ul class="site-footer__social" aria-label="Social and email">
+          <li>
+            <a href="mailto:hello@alkyme.io" aria-label="Email hello@alkyme.io">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/alkymelabs" target="_blank" rel="noopener noreferrer" aria-label="Alkymē on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav class="site-footer__nav" aria-label="Site">
+        <div class="site-footer__col">
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Company</h2>
+            <ul class="site-footer__links">
+              <li><a href="../../about.html">About</a></li>
+              <li><a href="../../ai.html">AI</a></li>
+              <li><a href="../../careers.html">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__col">
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Contact</h2>
+            <ul class="site-footer__links">
+              <li><a href="../../contact.html">Contact Us</a></li>
+              <li><a href="mailto:hello@alkyme.io">hello@alkyme.io</a></li>
+              <li><a href="tel:+15598255963">(559) 825-5963</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div id="site-lang-status" class="site-footer__lang-sr" role="status" aria-live="polite" aria-atomic="true"></div>
+      <div class="container site-footer__bottom-inner">
+        <span class="site-footer__copyright">© <span id="year"></span> Alkyme. All rights reserved.</span>
+        <div class="site-footer__bottom-right">
+        <ul class="site-footer__legal" aria-label="Legal and help">
+          <li><a href="../../../help/">Help Center</a></li>
+          <li><a href="../../privacy.html">Privacy</a></li>
+          <li><a href="../../terms.html">Terms</a></li>
+        </ul>
+        <div class="site-footer__utilities">
+          <button type="button" class="site-footer__theme-toggle" id="site-theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+            <svg class="site-footer__theme-icon site-footer__theme-icon--moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="site-footer__theme-icon site-footer__theme-icon--sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m12.02-12.02-1.41-1.41"/></svg>
+          </button>
+          <div class="site-footer__lang-wrap">
+          <button type="button" class="site-footer__lang-trigger alkyme-lang-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="alkyme-lang-dialog">
+            <span class="site-footer__lang-trigger-visual" aria-hidden="true">
+              <svg class="site-footer__lang-globe" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              <span class="site-footer__lang-code" data-alkyme-lang-code>EN</span>
+            </span>
+            <span class="site-footer__sr-only">Language and region</span>
+          </button>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../assets/site-theme.js" defer></script>
+  <script src="../../../assets/site-lang.js" defer></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function () {
+      var playLink = document.querySelector("[data-lab-scroll-to-video]");
+      var video = document.getElementById("chronocore-lab-video");
+      var target = document.getElementById("lab-video-banner");
+      var ambient = document.querySelector(".lab-page-ambient");
+      var reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (playLink && target) {
+        playLink.addEventListener("click", function (e) {
+          var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (!reduce) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          if (video && typeof video.play === "function") {
+            var p = video.play();
+            if (p && typeof p.catch === "function") p.catch(function () {});
+          }
+        });
+      }
+
+      if (ambient && video && !reduceMotion) {
+        function clearVideoHue() {
+          ambient.style.removeProperty("--lab-video-hue");
+        }
+        function syncAmbientHue() {
+          if (video.paused || !video.duration || !isFinite(video.duration)) {
+            clearVideoHue();
+            return;
+          }
+          var p = video.currentTime / video.duration;
+          var deg = Math.sin(p * Math.PI * 2) * 14;
+          ambient.style.setProperty("--lab-video-hue", deg.toFixed(2) + "deg");
+        }
+        video.addEventListener("timeupdate", syncAmbientHue);
+        video.addEventListener("play", syncAmbientHue);
+        video.addEventListener("pause", clearVideoHue);
+        video.addEventListener("ended", clearVideoHue);
+      }
+
+      var subnavPill = document.querySelector(".lab-chronocore-subnav__pill");
+      var subnavList = subnavPill ? subnavPill.querySelector(".lab-chronocore-subnav__list") : null;
+      var subnavLinks = subnavPill ? subnavPill.querySelectorAll(".lab-chronocore-subnav__list a[href^=\"#\"]") : [];
+
+      if (subnavPill && subnavLinks.length) {
+        function subnavAnchorY() {
+          return subnavPill.getBoundingClientRect().bottom + 4;
+        }
+
+        function subnavPickActiveId() {
+          var y = subnavAnchorY();
+          var entries = [];
+          for (var i = 0; i < subnavLinks.length; i++) {
+            var href = subnavLinks[i].getAttribute("href");
+            if (!href || href.charAt(0) !== "#") continue;
+            var id = href.slice(1);
+            entries.push({ id: id, el: document.getElementById(id) });
+          }
+          if (!entries.length) return "";
+
+          for (var j = 0; j < entries.length; j++) {
+            var sec = entries[j].el;
+            if (!sec) continue;
+            var r = sec.getBoundingClientRect();
+            if (r.top <= y && r.bottom > y) return entries[j].id;
+          }
+
+          var fallback = entries[0].id;
+          for (var k = 0; k < entries.length; k++) {
+            var el = entries[k].el;
+            if (!el) continue;
+            if (el.getBoundingClientRect().top <= y) fallback = entries[k].id;
+          }
+          return fallback;
+        }
+
+        function syncLabSubnav() {
+          var activeId = subnavPickActiveId();
+          for (var n = 0; n < subnavLinks.length; n++) {
+            var a = subnavLinks[n];
+            var id = a.getAttribute("href").slice(1);
+            if (id === activeId) {
+              a.classList.add("is-active");
+              a.setAttribute("aria-current", "page");
+            } else {
+              a.classList.remove("is-active");
+              a.removeAttribute("aria-current");
+            }
+          }
+        }
+
+        var subnavRaf = 0;
+        function scheduleSubnavSync() {
+          if (subnavRaf) return;
+          subnavRaf = requestAnimationFrame(function () {
+            subnavRaf = 0;
+            syncLabSubnav();
+          });
+        }
+
+        function syncLabSubnavAfterHash() {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(syncLabSubnav);
+          });
+        }
+
+        window.addEventListener("scroll", scheduleSubnavSync, { passive: true });
+        window.addEventListener("resize", scheduleSubnavSync);
+        window.addEventListener("hashchange", syncLabSubnavAfterHash);
+        if (subnavList) subnavList.addEventListener("scroll", scheduleSubnavSync, { passive: true });
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncLabSubnav);
+        syncLabSubnav();
+      }
+    })();
+  </script>
+</body>
+</html>
