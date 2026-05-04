@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme Detection (before render) -->
+  <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
+
+  <title>Page Not Found | Alkymē</title>
+  <meta name="description" content="The page you're looking for doesn't exist.">
+
+  <!-- Styles -->
+  <link rel="preload" href="dist/assets/styles.min.css" as="style">
+  <link rel="stylesheet" href="dist/assets/styles.min.css">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/logos/alkyme-logo-black.svg">
+  <meta name="theme-color" content="#fff9f0">
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3xl) var(--space-xl);
+      background: linear-gradient(135deg,
+        var(--eggshell-sky) 0%,
+        var(--white) 100%);
+    }
+
+    html[data-theme="dark"] .error-page {
+      background: linear-gradient(135deg,
+        var(--bark) 0%,
+        var(--forest) 100%);
+    }
+
+    .error-content {
+      max-width: 600px;
+      text-align: center;
+      background: var(--glass-marketing-gradient);
+      backdrop-filter: var(--glass-marketing-filter);
+      -webkit-backdrop-filter: var(--glass-marketing-filter);
+      border: var(--glass-marketing-border);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-4xl) var(--space-3xl);
+      box-shadow: var(--glass-marketing-shadow-hover);
+    }
+
+    .error-code {
+      font-family: var(--font-ui);
+      font-size: 6rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--moss);
+      margin: 0 0 var(--space-lg);
+      opacity: 0.6;
+    }
+
+    .error-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 var(--space-md);
+      line-height: 1.2;
+    }
+
+    .error-description {
+      font-family: var(--font-ui);
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      margin: 0 0 var(--space-2xl);
+      line-height: 1.6;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .error-actions .btn {
+      min-width: 140px;
+    }
+
+    @media (max-width: 640px) {
+      .error-code {
+        font-size: 4rem;
+      }
+
+      .error-title {
+        font-size: 1.5rem;
+      }
+
+      .error-description {
+        font-size: 1rem;
+      }
+
+      .error-content {
+        padding: var(--space-3xl) var(--space-xl);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="error-page">
+    <div class="error-content">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page not found</h1>
+      <p class="error-description">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <div class="error-actions">
+        <a href="/" class="btn btn--primary">Go Home</a>
+        <a href="/contact" class="btn btn--secondary">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script src="/assets/js/site-theme.js"></script>
+
+</body>
+</html>
