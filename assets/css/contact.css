@@ -14,10 +14,9 @@
 
 /* Contact section styling */
 .section--contact {
-  background: var(--bark);
+  background: var(--page-bg);
   position: relative;
   overflow: hidden;
-  color: var(--eggshell-sky);
 }
 
 /* Dark background section for contact area */
@@ -77,7 +76,7 @@
   font-family: var(--font-display);
   font-size: var(--type-h2-display-sm-size);
   font-weight: 600;
-  color: var(--eggshell-sky);
+  color: var(--bark);
   margin-bottom: var(--space-2xl);
   text-align: center;
 }
@@ -122,7 +121,7 @@
   /* Premium shadows */
   box-shadow:
     inset 0 1px 0 rgba(var(--rgb-gold), 0.2),
-    0 8px 24px rgba(var(--rgb-black), 0.3),
+    0 8px 24px rgba(var(--rgb-bark), 0.08),
     0 4px 12px rgba(var(--rgb-amber), 0.15);
 
   /* Smooth transitions */
@@ -140,7 +139,7 @@
   border-color: rgba(var(--rgb-gold), 0.5);
   box-shadow:
     inset 0 1px 0 rgba(var(--rgb-gold), 0.3),
-    0 12px 32px rgba(var(--rgb-black), 0.35),
+    0 12px 32px rgba(var(--rgb-bark), 0.12),
     0 6px 16px rgba(var(--rgb-amber), 0.25);
 }
 
@@ -182,7 +181,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--dew);
+  color: var(--forest);
   margin-bottom: var(--space-xs);
   opacity: 0.8;
 }
@@ -190,13 +189,13 @@
 .contact-card__value {
   font-size: var(--type-h3-size);
   font-weight: 600;
-  color: var(--eggshell-sky);
+  color: var(--bark);
   margin-bottom: var(--space-xs);
 }
 
 .contact-card__note {
   font-size: var(--type-caption-size);
-  color: var(--dew);
+  color: var(--forest);
   opacity: 0.7;
 }
 
@@ -239,10 +238,10 @@
   position: relative;
   display: inline-block;
   padding: 0 var(--space-lg);
-  background: var(--bark);
+  background: var(--page-bg);
   font-size: var(--type-body-size);
   font-weight: 500;
-  color: var(--dew);
+  color: var(--forest);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
