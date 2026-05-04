@@ -102,27 +102,20 @@
   align-items: center;
   gap: var(--space-md);
 
-  /* Premium glass effect */
-  background: linear-gradient(
-    135deg,
-    rgba(var(--rgb-amber), 0.1) 0%,
-    rgba(var(--rgb-gold), 0.05) 100%
-  );
+  /* Premium glass effect using design tokens */
+  background: var(--glass-accent-gold-bg);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 
-  /* Visible elegant border */
-  border: 1.5px solid rgba(var(--rgb-amber), 0.3);
+  /* Visible elegant border using design tokens */
+  border: var(--glass-accent-gold-border);
   border-radius: var(--radius-xl);
 
   /* Generous padding */
   padding: var(--space-xl);
 
-  /* Premium shadows */
-  box-shadow:
-    inset 0 1px 0 rgba(var(--rgb-gold), 0.2),
-    0 8px 24px rgba(var(--rgb-bark), 0.08),
-    0 4px 12px rgba(var(--rgb-amber), 0.15);
+  /* Premium shadows using design tokens */
+  box-shadow: var(--glass-accent-gold-shadow);
 
   /* Smooth transitions */
   transition:
@@ -137,10 +130,7 @@
 .contact-card:hover {
   transform: translateY(-3px);
   border-color: rgba(var(--rgb-gold), 0.5);
-  box-shadow:
-    inset 0 1px 0 rgba(var(--rgb-gold), 0.3),
-    0 12px 32px rgba(var(--rgb-bark), 0.12),
-    0 6px 16px rgba(var(--rgb-amber), 0.25);
+  box-shadow: var(--glass-accent-gold-shadow-hover);
 }
 
 .contact-card:active {
@@ -156,12 +146,8 @@
   align-items: center;
   justify-content: center;
 
-  /* Gold gradient background */
-  background: linear-gradient(
-    135deg,
-    var(--gold) 0%,
-    var(--amber) 100%
-  );
+  /* Gold gradient background using design token */
+  background: var(--gradient-accent-gold-reverse);
 
   border-radius: var(--radius-md);
   color: var(--bark);
@@ -387,18 +373,22 @@
   display: block;
 }
 
-/* INPUT FIELDS - Light backgrounds with dark text */
+/* INPUT FIELDS - Liquid glass with readability */
 .form__input,
 .form__textarea,
 .form__select {
-  /* Maximum readability: white background */
-  background: rgb(var(--rgb-white) / 1);
+  /* Liquid glass background - semi-transparent white */
+  background: rgba(var(--rgb-white), 0.85);
+
+  /* Glass blur effect */
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
 
   /* Dark text for high contrast */
   color: var(--bark);
 
-  /* Visible border */
-  border: 1.5px solid rgb(var(--rgb-dew) / 0.4);
+  /* Visible glass border */
+  border: 1.5px solid rgba(var(--rgb-moss), 0.25);
   border-radius: var(--radius-md);
 
   /* Typography */
@@ -409,11 +399,15 @@
   /* Padding for comfortable touch targets */
   padding: 0.875rem 1rem;
 
+  /* Soft inner glow */
+  box-shadow: inset 0 1px 2px rgba(var(--rgb-white), 0.5);
+
   /* Smooth transitions */
   transition:
     border-color var(--duration-fast) var(--ease-soft),
     box-shadow var(--duration-fast) var(--ease-soft),
-    background var(--duration-fast) var(--ease-soft);
+    background var(--duration-fast) var(--ease-soft),
+    backdrop-filter var(--duration-fast) var(--ease-soft);
 
   /* Ensure text is always visible */
   -webkit-text-fill-color: var(--bark);
@@ -448,24 +442,32 @@
   color: var(--bark);
 }
 
-/* HOVER STATE */
+/* HOVER STATE - Enhanced glass */
 .form__input:hover,
 .form__textarea:hover,
 .form__select:hover {
-  border-color: rgb(var(--rgb-moss) / 0.5);
-  background: rgb(var(--rgb-white) / 1);
+  border-color: rgba(var(--rgb-moss), 0.4);
+  background: rgba(var(--rgb-white), 0.92);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow:
+    inset 0 1px 2px rgba(var(--rgb-white), 0.6),
+    0 2px 8px rgba(var(--rgb-moss), 0.08);
 }
 
-/* FOCUS STATE - Premium interaction */
+/* FOCUS STATE - Premium liquid glass interaction */
 .form__input:focus,
 .form__textarea:focus,
 .form__select:focus {
   outline: none;
-  border-color: rgb(var(--rgb-forest) / 0.7);
-  background: rgb(var(--rgb-white) / 1);
+  border-color: rgba(var(--rgb-gold), 0.6);
+  background: rgba(var(--rgb-white), 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   box-shadow:
-    0 0 0 3px rgb(var(--rgb-forest) / 0.12),
-    0 2px 8px rgb(var(--rgb-bark) / 0.04);
+    inset 0 1px 2px rgba(var(--rgb-white), 0.7),
+    0 0 0 3px rgba(var(--rgb-gold), 0.15),
+    0 4px 12px rgba(var(--rgb-amber), 0.12);
 }
 
 /* DISABLED STATE */
@@ -506,12 +508,8 @@
 }
 
 .btn--primary {
-  /* Premium amber/gold gradient */
-  background: linear-gradient(
-    135deg,
-    var(--amber) 0%,
-    var(--gold) 100%
-  );
+  /* Premium amber/gold gradient using design token */
+  background: var(--gradient-accent-gold);
 
   /* Dark text for maximum contrast on gold */
   color: var(--bark);

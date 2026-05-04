@@ -160,7 +160,27 @@
     var(--bark) 100%
   );
 
+  /* PRIMARY ACCENT GRADIENT - Gold/Amber */
+  /* Use this as the primary accent throughout the site for CTAs, icons, and interactive elements */
+  --gradient-accent-gold: linear-gradient(135deg, var(--amber) 0%, var(--gold) 100%);
+  --gradient-accent-gold-reverse: linear-gradient(135deg, var(--gold) 0%, var(--amber) 100%);
+
+  /* Liquid glass with amber/gold tint for premium cards */
+  --glass-accent-gold-bg: linear-gradient(
+    135deg,
+    rgba(var(--rgb-amber), 0.1) 0%,
+    rgba(var(--rgb-gold), 0.05) 100%
+  );
+  --glass-accent-gold-border: 1.5px solid rgba(var(--rgb-amber), 0.3);
+  --glass-accent-gold-shadow: inset 0 1px 0 rgba(var(--rgb-gold), 0.2),
+    0 8px 24px rgba(var(--rgb-bark), 0.08),
+    0 4px 12px rgba(var(--rgb-amber), 0.15);
+  --glass-accent-gold-shadow-hover: inset 0 1px 0 rgba(var(--rgb-gold), 0.3),
+    0 12px 32px rgba(var(--rgb-bark), 0.12),
+    0 6px 16px rgba(var(--rgb-amber), 0.25);
+
   --focus-glow-forest: 0 0 0 3px rgb(var(--rgb-forest) / 0.12);
+  --focus-glow-gold: 0 0 0 3px rgba(var(--rgb-gold), 0.15);
 
   --radius-sm: 0.375rem;
   --radius: 0.5rem;
