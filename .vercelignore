@@ -11,6 +11,13 @@ docs/
 archive/
 ops/
 
+# Not ready for production - DO NOT DEPLOY
+help/
+es/
+tl/
+labs.html
+labs/
+
 # Node modules
 node_modules/
 
