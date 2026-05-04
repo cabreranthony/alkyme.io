@@ -2595,11 +2595,17 @@ html[data-theme="dark"] .texture-overlay::before {
   padding: var(--space-sm) var(--space-md);
   font-family: var(--font-ui);
   font-size: var(--type-body-size);
-  border: 1px solid rgba(var(--rgb-forest), 0.2);
+  border: 1px solid rgba(var(--rgb-bark), 0.15);
   border-radius: var(--radius);
   background: var(--white);
   color: var(--text);
   transition: all var(--duration-fast) var(--ease-soft);
+}
+
+.form__input:hover,
+.form__textarea:hover,
+.form__select:hover {
+  border-color: rgba(var(--rgb-moss), 0.3);
 }
 
 .form__input:focus,
@@ -2700,7 +2706,19 @@ html[data-theme="dark"] .form__input,
 html[data-theme="dark"] .form__textarea,
 html[data-theme="dark"] .form__select {
   background: rgba(var(--rgb-white), 0.03);
-  border-color: rgba(var(--rgb-dew), 0.2);
+  border-color: rgba(var(--rgb-dew), 0.3);
+}
+
+html[data-theme="dark"] .form__input:hover,
+html[data-theme="dark"] .form__textarea:hover,
+html[data-theme="dark"] .form__select:hover {
+  border-color: rgba(var(--rgb-dew), 0.5);
+}
+
+html[data-theme="dark"] .form__input:focus,
+html[data-theme="dark"] .form__textarea:focus,
+html[data-theme="dark"] .form__select:focus {
+  border-color: var(--dew);
 }
 
 html[data-theme="dark"] .footer {

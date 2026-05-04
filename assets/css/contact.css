@@ -30,52 +30,6 @@
   gap: var(--space-lg);
 }
 
-/* Make form inputs more visible */
-.contact-form .form__input,
-.contact-form .form__textarea,
-.contact-form .form__select {
-  background: var(--white);
-  border: 1px solid rgba(var(--rgb-forest), 0.15);
-  border-radius: var(--radius);
-  transition: all var(--duration-fast) var(--ease-soft);
-}
-
-.contact-form .form__input:hover,
-.contact-form .form__textarea:hover,
-.contact-form .form__select:hover {
-  border-color: rgba(var(--rgb-moss), 0.3);
-}
-
-.contact-form .form__input:focus,
-.contact-form .form__textarea:focus,
-.contact-form .form__select:focus {
-  background: var(--white);
-  border-color: var(--moss);
-  box-shadow: 0 0 0 3px rgba(var(--rgb-moss), 0.1);
-}
-
-/* Dark mode form inputs */
-html[data-theme="dark"] .contact-form .form__input,
-html[data-theme="dark"] .contact-form .form__textarea,
-html[data-theme="dark"] .contact-form .form__select {
-  background: rgba(var(--rgb-white), 0.03);
-  border-color: rgba(var(--rgb-dew), 0.25);
-}
-
-html[data-theme="dark"] .contact-form .form__input:hover,
-html[data-theme="dark"] .contact-form .form__textarea:hover,
-html[data-theme="dark"] .contact-form .form__select:hover {
-  border-color: rgba(var(--rgb-dew), 0.4);
-}
-
-html[data-theme="dark"] .contact-form .form__input:focus,
-html[data-theme="dark"] .contact-form .form__textarea:focus,
-html[data-theme="dark"] .contact-form .form__select:focus {
-  background: rgba(var(--rgb-white), 0.05);
-  border-color: var(--dew);
-  box-shadow: 0 0 0 3px rgba(var(--rgb-dew), 0.15);
-}
-
 .contact-info {
   background: var(--glass-marketing-gradient);
   backdrop-filter: var(--glass-marketing-filter);
