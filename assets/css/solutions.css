@@ -262,20 +262,44 @@
 }
 
 /* ==========================================================================
-   CTA SECTION
+   CTA SECTION - FULL WIDTH IMPACT
    ========================================================================== */
 
 .cta-section {
   padding: var(--space-7xl) 0;
-  background: var(--web-wash);
+  background: linear-gradient(
+    135deg,
+    var(--eggshell-sky) 0%,
+    var(--web-wash) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional subtle background pattern */
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(var(--rgb-amber), 0.08) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
 }
 
 .cta-box {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
-  /* Premium glass card */
+  /* Premium glass card - wider and more spacious */
   background: linear-gradient(
     145deg,
     rgba(var(--rgb-white), 0.95) 0%,
@@ -292,7 +316,7 @@
     0 20px 60px rgba(var(--rgb-bark), 0.12),
     0 8px 24px rgba(var(--rgb-bark), 0.08);
 
-  padding: var(--space-5xl) var(--space-4xl);
+  padding: var(--space-6xl) var(--space-5xl);
 }
 
 .cta-box__title {
