@@ -818,13 +818,13 @@ html[data-theme="dark"] .ai-boundaries {
 }
 
 .ai-cta-hero__title {
-  font-size: 48px;
-  font-weight: 600;
-  font-family: "Source Sans 3", sans-serif;
-  line-height: 1.2;
+  font-size: var(--type-h2-display-md-size);
+  font-weight: var(--type-h2-weight);
+  font-family: var(--type-display-family);
+  line-height: var(--type-h2-line-tight);
   color: #ffffff;
-  margin-bottom: 24px;
-  letter-spacing: -0.01em;
+  margin-bottom: var(--space-lg);
+  letter-spacing: var(--type-h2-track);
   max-width: 600px;
 }
 
