@@ -94,21 +94,76 @@
     </section>
 
     <!-- Contact Content -->
-    <section class="section section--dark-bg">
-      <div class="container">
-        <div class="contact-layout">
+    <section class="section section--contact">
+      <div class="container container--narrow">
 
-          <!-- Contact Form -->
-          <div class="contact-form-container">
-            <h2 class="contact-form-container__title">Send us a message</h2>
-            <p class="contact-form-container__description">
+        <!-- Contact Methods (Above Form) -->
+        <div class="contact-methods">
+          <h2 class="contact-methods__title">Reach out directly</h2>
+          <div class="contact-methods__grid">
+
+            <!-- Email Card -->
+            <a href="mailto:hello@alkyme.io" class="contact-card contact-card--email">
+              <div class="contact-card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-card__content">
+                <div class="contact-card__label">Email us</div>
+                <div class="contact-card__value">hello@alkyme.io</div>
+                <div class="contact-card__note">Response within 48 hours</div>
+              </div>
+              <div class="contact-card__arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Phone Card -->
+            <a href="tel:+15598255963" class="contact-card contact-card--phone">
+              <div class="contact-card__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="contact-card__content">
+                <div class="contact-card__label">Call us</div>
+                <div class="contact-card__value">(559) 825-5963</div>
+                <div class="contact-card__note">Mon-Fri 9AM-6PM PT</div>
+              </div>
+              <div class="contact-card__arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="contact-divider">
+          <span class="contact-divider__text">Or send us a message</span>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="contact-form-card">
+          <div class="contact-form-card__header">
+            <h2 class="contact-form-card__title">Send us a message</h2>
+            <p class="contact-form-card__description">
               Fill out the form below and we'll get back to you within 2-3 business days.
             </p>
+          </div>
 
-            <form class="contact-form" action="/api/contact" method="POST">
+          <form class="contact-form" action="/api/contact" method="POST">
 
+            <!-- Name & Email Row -->
+            <div class="form__row">
               <div class="form__field">
-                <label for="name" class="form__label">Name</label>
+                <label for="name" class="form__label">Name *</label>
                 <input
                   type="text"
                   id="name"
@@ -116,11 +171,12 @@
                   class="form__input"
                   required
                   autocomplete="name"
+                  placeholder="John Smith"
                 >
               </div>
 
               <div class="form__field">
-                <label for="email" class="form__label">Email</label>
+                <label for="email" class="form__label">Email *</label>
                 <input
                   type="email"
                   id="email"
@@ -128,86 +184,65 @@
                   class="form__input"
                   required
                   autocomplete="email"
+                  placeholder="john@company.com"
                 >
               </div>
+            </div>
 
-              <div class="form__field">
-                <label for="company" class="form__label">Company (optional)</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  class="form__input"
-                  autocomplete="organization"
-                >
-              </div>
+            <!-- Company Field -->
+            <div class="form__field">
+              <label for="company" class="form__label">Company (optional)</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="form__input"
+                autocomplete="organization"
+                placeholder="Your company name"
+              >
+            </div>
 
-              <div class="form__field">
-                <label for="interest" class="form__label">I'm interested in...</label>
-                <select id="interest" name="interest" class="form__select" required>
-                  <option value="">Select an option</option>
-                  <option value="services">Marketing & digital services</option>
-                  <option value="licensing">Technology licensing</option>
-                  <option value="partnership">Venture partnership</option>
-                  <option value="investment">Investment opportunities</option>
-                  <option value="careers">Joining the team</option>
-                  <option value="general">General inquiry</option>
-                </select>
-              </div>
+            <!-- Interest Dropdown -->
+            <div class="form__field">
+              <label for="interest" class="form__label">I'm interested in... *</label>
+              <select id="interest" name="interest" class="form__select" required>
+                <option value="">Select an option</option>
+                <option value="services">Marketing & digital services</option>
+                <option value="licensing">Technology licensing</option>
+                <option value="partnership">Venture partnership</option>
+                <option value="investment">Investment opportunities</option>
+                <option value="careers">Joining the team</option>
+                <option value="general">General inquiry</option>
+              </select>
+            </div>
 
-              <div class="form__field">
-                <label for="message" class="form__label">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form__textarea"
-                  required
-                  rows="6"
-                  placeholder="Tell us a bit about what you're looking to discuss..."
-                ></textarea>
-              </div>
+            <!-- Message Textarea -->
+            <div class="form__field">
+              <label for="message" class="form__label">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form__textarea"
+                required
+                rows="6"
+                placeholder="Tell us a bit about what you're looking to discuss..."
+              ></textarea>
+            </div>
 
-              <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
-
-            </form>
-          </div>
-
-          <!-- Contact Info Sidebar -->
-          <div class="contact-info">
-            <h3 class="contact-info__title">Other ways to reach us</h3>
-
-            <div class="contact-method">
-              <div class="contact-method__icon">
+            <!-- Submit Button -->
+            <div class="form__actions">
+              <button type="submit" class="btn btn--primary btn--large">
+                Send Message
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
                 </svg>
-              </div>
-              <div class="contact-method__content">
-                <div class="contact-method__label">Email</div>
-                <a href="mailto:hello@alkyme.io" class="contact-method__value">hello@alkyme.io</a>
-              </div>
+              </button>
             </div>
 
-            <div class="contact-method">
-              <div class="contact-method__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-              <div class="contact-method__content">
-                <div class="contact-method__label">Phone</div>
-                <a href="tel:+15598255963" class="contact-method__value">(559) 825-5963</a>
-              </div>
-            </div>
-
-            <div class="contact-info-note">
-              <p>We typically respond within 2-3 business days. For urgent matters, email is fastest.</p>
-            </div>
-
-          </div>
-
+          </form>
         </div>
+
       </div>
     </section>
 
