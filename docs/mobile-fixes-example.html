@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Fixes Example - Alkyme</title>
+
+  <!-- Main CSS Files -->
+  <link rel="stylesheet" href="../dist/assets/styles.min.css">
+  <link rel="stylesheet" href="../assets/css/alkyme-tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+
+  <!-- MOBILE FIXES - Add this line to all pages -->
+  <link rel="stylesheet" href="../assets/css/mobile-fixes.css">
+
+  <style>
+    /* Minimal page-specific styles for this example */
+    .example-section {
+      background: var(--eggshell-sky, #fff9f0);
+      border-radius: 12px;
+      margin-bottom: var(--space-6, 24px);
+    }
+
+    .example-label {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--forest, #183d3d);
+      color: var(--eggshell-sky, #fff9f0);
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .demo-card {
+      background: white;
+      border: 1px solid var(--border, #d1d5db);
+      border-radius: 12px;
+      padding: var(--card-padding, 16px);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .demo-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===================================================================
+       NAVIGATION - Example with all mobile fixes
+       =================================================================== -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <!-- Logo -->
+        <a href="/" class="nav__logo">
+          <img src="../assets/logos/alkyme-logo-lt-hzt-black.svg" alt="Alkyme" class="nav__logo-img nav__logo-img--light">
+          <img src="../assets/logos/alkyme-logo-lt-hzt-cream.svg" alt="Alkyme" class="nav__logo-img nav__logo-img--dark">
+        </a>
+
+        <!-- Desktop Menu (hidden on mobile <640px, shown on tablet+) -->
+        <div class="nav__menu">
+          <a href="#" class="nav__link">About</a>
+          <a href="#" class="nav__link">Solutions</a>
+          <a href="#" class="nav__link">Careers</a>
+          <a href="#" class="nav__link">Contact</a>
+        </div>
+
+        <!-- Hamburger Button (shown on mobile <640px, hidden on tablet+) -->
+        <button type="button" class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Action Buttons (Theme toggle, language, etc.) -->
+        <div class="nav__actions">
+          <button type="button" class="theme-toggle" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (hidden by default, shown when hamburger clicked) -->
+      <div class="nav__mobile-menu" data-open="false">
+        <a href="#" class="nav__link">About</a>
+        <a href="#" class="nav__link">Solutions</a>
+        <a href="#" class="nav__link">Careers</a>
+        <a href="#" class="nav__link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================================================================
+       MAIN CONTENT
+       =================================================================== -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <span class="example-label">Hero Section</span>
+        <h1>Mobile Fixes Example Page</h1>
+        <p>This page demonstrates all the mobile responsiveness fixes. Resize your browser or open on different devices to see the responsive behavior.</p>
+        <div class="button-group">
+          <button class="btn btn--primary">Primary Button</button>
+          <button class="btn btn--secondary">Secondary Button</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Touch Targets Section -->
+    <section class="section">
+      <div class="container">
+        <div class="example-section p-6">
+          <span class="example-label">Touch Targets (48×48px minimum)</span>
+          <h2 class="mt-4">Interactive Elements</h2>
+          <p class="mb-4">All interactive elements meet the 48×48px minimum touch target size requirement.</p>
+
+          <!-- Buttons -->
+          <div class="mb-6">
+            <h3>Buttons</h3>
+            <div class="button-group">
+              <button class="btn btn--primary">Primary</button>
+              <button class="btn btn--secondary">Secondary</button>
+              <button class="btn btn--outline">Outline</button>
+            </div>
+          </div>
+
+          <!-- Icon Buttons -->
+          <div class="mb-6">
+            <h3>Icon Buttons (48×48px)</h3>
+            <div class="button-group">
+              <button class="icon-button" aria-label="Settings">
+                <svg width="20" height="20" fill="currentColor">
+                  <circle cx="10" cy="10" r="8"/>
+                </svg>
+              </button>
+              <button class="icon-button" aria-label="Notifications">
+                <svg width="20" height="20" fill="currentColor">
+                  <rect x="2" y="2" width="16" height="16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h3>Links (48px min height)</h3>
+            <nav>
+              <a href="#" class="nav__link">Link 1</a>
+              <a href="#" class="nav__link">Link 2</a>
+              <a href="#" class="nav__link">Link 3</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="section">
+      <div class="container">
+        <div class="example-section p-6">
+          <span class="example-label">Fluid Typography</span>
+          <h1 class="mt-4">Heading 1 (28px → 72px)</h1>
+          <h2>Heading 2 (24px → 56px)</h2>
+          <h3>Heading 3 (20px → 40px)</h3>
+          <h4>Heading 4 (18px → 20px)</h4>
+          <h5>Heading 5 (16px)</h5>
+          <h6>Heading 6 (16px)</h6>
+          <p>Body text is 16px on mobile (prevents iOS zoom) and scales to 18px on desktop. This ensures optimal readability across all devices.</p>
+          <small class="d-block mt-4">Small text is minimum 14px for readability.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Layouts Section -->
+    <section class="section">
+      <div class="container">
+        <div class="example-section p-6">
+          <span class="example-label">Responsive Grids</span>
+          <h2 class="mt-4 mb-4">Grid Layouts</h2>
+
+          <!-- 2 Column Grid -->
+          <h3 class="mb-4">Two Column (stacks on mobile <640px)</h3>
+          <div class="two-column mb-6">
+            <div class="demo-card">Column 1</div>
+            <div class="demo-card">Column 2</div>
+          </div>
+
+          <!-- 3 Column Grid -->
+          <h3 class="mb-4">Three Column (stacks on mobile, 2 cols at 640px, 3 cols at 768px)</h3>
+          <div class="three-column mb-6">
+            <div class="demo-card">Column 1</div>
+            <div class="demo-card">Column 2</div>
+            <div class="demo-card">Column 3</div>
+          </div>
+
+          <!-- 4 Column Grid -->
+          <h3 class="mb-4">Four Column (stacks progressively)</h3>
+          <div class="four-column">
+            <div class="demo-card">Column 1</div>
+            <div class="demo-card">Column 2</div>
+            <div class="demo-card">Column 3</div>
+            <div class="demo-card">Column 4</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Grid Section -->
+    <section class="section">
+      <div class="container">
+        <div class="example-section p-6">
+          <span class="example-label">Card Grid</span>
+          <h2 class="mt-4 mb-4">Responsive Card Grid</h2>
+          <div class="grid-cards cols-3">
+            <div class="demo-card">
+              <h4>Feature 1</h4>
+              <p>This card is part of a responsive grid that stacks on mobile.</p>
+            </div>
+            <div class="demo-card">
+              <h4>Feature 2</h4>
+              <p>The grid shows 1 column on mobile, 2 on tablet, 3 on desktop.</p>
+            </div>
+            <div class="demo-card">
+              <h4>Feature 3</h4>
+              <p>Card padding and gaps scale with viewport size.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="example-section p-6">
+          <span class="example-label">Mobile-Optimized Form</span>
+          <h2 class="mt-4 mb-4">Contact Form Example</h2>
+
+          <form>
+            <!-- Text Input -->
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+              <span class="form-help">Please enter your full name</span>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+              <span class="form-help">We'll never share your email</span>
+            </div>
+
+            <!-- Phone Input -->
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <!-- Select Dropdown -->
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Support</option>
+                <option value="sales">Sales</option>
+              </select>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <span class="form-help">Minimum 10 characters</span>
+            </div>
+
+            <!-- Checkbox Group -->
+            <div class="form-group">
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="newsletter">
+                  <span>Subscribe to newsletter</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="terms" required>
+                  <span>I agree to the terms and conditions</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button (full width on mobile, auto on tablet+) -->
+            <button type="submit" class="form-submit btn btn--primary">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Utility Classes Section -->
+    <section class="section">
+      <div class="container">
+        <div class="example-section p-6">
+          <span class="example-label">Utility Classes</span>
+          <h2 class="mt-4 mb-4">Responsive Utilities</h2>
+
+          <!-- Visibility Utilities -->
+          <div class="mb-6">
+            <h3 class="mb-3">Visibility</h3>
+            <div class="demo-card mobile-only mb-2">
+              <strong>Mobile Only:</strong> Visible on screens &lt;640px
+            </div>
+            <div class="demo-card tablet-up mb-2">
+              <strong>Tablet Up:</strong> Visible on screens ≥640px
+            </div>
+            <div class="demo-card desktop-only">
+              <strong>Desktop Only:</strong> Visible on screens ≥1280px
+            </div>
+          </div>
+
+          <!-- Flex Utilities -->
+          <div class="mb-6">
+            <h3 class="mb-3">Flex Layout</h3>
+            <div class="demo-card d-flex align-items-center justify-content-between gap-4">
+              <span>Item 1</span>
+              <span>Item 2</span>
+              <span>Item 3</span>
+            </div>
+          </div>
+
+          <!-- Spacing Utilities -->
+          <div class="mb-6">
+            <h3 class="mb-3">Spacing</h3>
+            <div class="demo-card mt-4 mb-6 px-4 py-4">
+              This card has: margin-top (16px), margin-bottom (24px), padding-x (16px), padding-y (16px)
+            </div>
+          </div>
+
+          <!-- Text Alignment -->
+          <div>
+            <h3 class="mb-3">Text Alignment</h3>
+            <div class="demo-card text-left mb-2">Left aligned text</div>
+            <div class="demo-card text-center mb-2">Center aligned text</div>
+            <div class="demo-card text-right">Right aligned text</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing Progression Section -->
+    <section class="section">
+      <div class="container">
+        <div class="example-section p-6">
+          <span class="example-label">Spacing Progression</span>
+          <h2 class="mt-4 mb-4">Responsive Spacing</h2>
+          <p class="mb-4">Container padding, section spacing, and grid gaps all scale progressively based on viewport size.</p>
+
+          <table class="w-100" style="font-size: 14px;">
+            <thead>
+              <tr>
+                <th>Viewport</th>
+                <th>Container Padding</th>
+                <th>Section Spacing</th>
+                <th>Grid Gap</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>320px</td>
+                <td>16px</td>
+                <td>48px</td>
+                <td>16px</td>
+              </tr>
+              <tr>
+                <td>480px</td>
+                <td>20px</td>
+                <td>56px</td>
+                <td>20px</td>
+              </tr>
+              <tr>
+                <td>640px</td>
+                <td>24px</td>
+                <td>64px</td>
+                <td>24px</td>
+              </tr>
+              <tr>
+                <td>768px</td>
+                <td>32px</td>
+                <td>80px</td>
+                <td>28px</td>
+              </tr>
+              <tr>
+                <td>1024px</td>
+                <td>40px</td>
+                <td>96px</td>
+                <td>32px</td>
+              </tr>
+              <tr>
+                <td>1280px+</td>
+                <td>48px</td>
+                <td>128px</td>
+                <td>32px</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessibility Section -->
+    <section class="section">
+      <div class="container">
+        <div class="example-section p-6">
+          <span class="example-label">Accessibility Features</span>
+          <h2 class="mt-4 mb-4">Accessibility</h2>
+
+          <!-- Screen Reader Only -->
+          <div class="mb-6">
+            <h3 class="mb-3">Screen Reader Only Text</h3>
+            <button class="btn btn--primary">
+              <span class="sr-only">Click to</span>
+              Learn More
+            </button>
+            <p class="mt-2"><small>The button says "Click to Learn More" to screen readers, but only shows "Learn More" visually.</small></p>
+          </div>
+
+          <!-- Focus States -->
+          <div class="mb-6">
+            <h3 class="mb-3">Focus States</h3>
+            <p class="mb-2">Tab through these buttons to see keyboard focus indicators:</p>
+            <div class="button-group">
+              <button class="btn btn--primary">Button 1</button>
+              <button class="btn btn--secondary">Button 2</button>
+              <button class="btn btn--outline">Button 3</button>
+            </div>
+          </div>
+
+          <!-- ARIA Labels -->
+          <div>
+            <h3 class="mb-3">ARIA Labels</h3>
+            <p class="mb-2">All icon-only buttons have proper aria-label attributes for screen readers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       JAVASCRIPT - Mobile Menu Functionality
+       =================================================================== -->
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.nav__hamburger');
+    const mobileMenu = document.querySelector('.nav__mobile-menu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+
+        // Toggle ARIA state
+        hamburger.setAttribute('aria-expanded', !isOpen);
+
+        // Toggle menu visibility
+        mobileMenu.setAttribute('data-open', !isOpen);
+
+        // Prevent body scroll when menu is open
+        document.body.classList.toggle('mobile-menu-open', !isOpen);
+      });
+
+      // Close menu when link is clicked
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('data-open', 'false');
+          document.body.classList.remove('mobile-menu-open');
+        });
+      });
+    }
+
+    // Optional: Close mobile menu on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.getAttribute('data-open') === 'true') {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('data-open', 'false');
+        document.body.classList.remove('mobile-menu-open');
+        hamburger.focus(); // Return focus to hamburger
+      }
+    });
+
+    // Theme toggle (basic example)
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('alkyme-theme', newTheme);
+      });
+    }
+  </script>
+
+</body>
+</html>
