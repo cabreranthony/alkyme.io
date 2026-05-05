@@ -509,14 +509,12 @@ html[data-theme="dark"] .ai-showcase__cta:hover {
 }
 
 .ai-section-title {
-  /* Match .ai-feature-hero__title styling */
-  font-size: 56px;
+  /* Use design system tokens instead of hardcoded size */
   font-weight: 400;
   font-family: var(--type-display-family);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: var(--space-3xl);
+  /* Font-size, line-height, letter-spacing inherited from .display-title classes */
 }
 
 html[data-theme="dark"] .ai-section-title {
