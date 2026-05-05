@@ -2175,7 +2175,7 @@ html[data-theme="dark"] .site-footer-logo--dark {
 
 @media (max-width: 640px) {
   .site-footer {
-    padding: var(--space-3xl) 0 0;
+    padding: var(--space-2xl) 0 0; /* More compact padding */
   }
 
   .site-footer .container {
@@ -2183,24 +2183,74 @@ html[data-theme="dark"] .site-footer-logo--dark {
   }
 
   .site-footer-nav {
-    gap: var(--space-xl);
-    padding-bottom: var(--space-xl);
+    gap: var(--space-md); /* Tighter gap */
+    padding-bottom: var(--space-md);
   }
 
   .site-footer-logo-area {
-    padding-bottom: var(--space-2xl);
+    padding-bottom: var(--space-lg); /* Reduced from 2xl */
   }
 
   .site-footer-columns {
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: 0; /* No gap - accordion handles spacing */
+  }
+
+  /* Accordion-style footer columns on mobile */
+  .site-footer-column {
+    border-bottom: 1px solid rgba(var(--rgb-bark), 0.1);
+  }
+
+  html[data-theme="dark"] .site-footer-column {
+    border-bottom-color: rgba(var(--rgb-dew), 0.1);
+  }
+
+  .site-footer-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--space-md) 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Add chevron icon */
+  .site-footer-heading::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    transform: rotate(45deg);
+    transition: transform 200ms ease-out;
+  }
+
+  .site-footer-column.is-open .site-footer-heading::after {
+    transform: rotate(-135deg);
+  }
+
+  .site-footer-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms ease-out, opacity 200ms ease-out;
+    opacity: 0;
+  }
+
+  .site-footer-column.is-open .site-footer-list {
+    max-height: 500px; /* Large enough for content */
+    opacity: 1;
+    margin-bottom: var(--space-md);
   }
 
   .site-footer-legal {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-md);
+    gap: var(--space-xs);
     padding: var(--space-lg) 0 var(--space-xl);
+    font-size: 14px;
   }
 }
 
