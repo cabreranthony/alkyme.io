@@ -857,8 +857,15 @@ html[data-theme="dark"] .ai-cta-hero__overlay {
 
 @media (max-width: 900px) {
   .ai-hero {
-    min-height: 100vh; /* Ensure enough vertical space for pause button */
-    padding: var(--space-5xl) 0 calc(var(--space-4xl) + 80px); /* Extra bottom padding for pause button */
+    min-height: 100vh; /* Full viewport height */
+    padding-top: 64px; /* Just account for navbar, no extra */
+    padding-bottom: 120px; /* Extra bottom space for pause button */
+    align-items: center; /* Center content vertically on mobile */
+    justify-content: center;
+  }
+
+  .ai-hero__content {
+    padding-bottom: 0; /* Reset bottom padding on mobile */
   }
 
   .ai-hero__title {

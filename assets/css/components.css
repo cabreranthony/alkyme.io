@@ -904,15 +904,18 @@ html[data-theme="dark"] .nav--scrolled .nav__logo-img--dark {
 
 @media (max-width: 768px) {
   .hero-video-toggle {
-    bottom: var(--space-lg);
-    right: var(--space-lg);
-    width: var(--touch-target-min);
-    height: var(--touch-target-min);
+    bottom: 24px; /* Fixed position from bottom */
+    right: 20px; /* Fixed position from right */
+    width: 48px; /* Fixed size for touch target */
+    height: 48px;
+    background: rgba(255, 255, 255, 0.18); /* More visible background */
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Add shadow for depth */
   }
 
   .hero-video-toggle__icon {
-    width: 18px;
-    height: 18px;
+    width: 20px; /* Slightly larger icon */
+    height: 20px;
   }
 }
 
