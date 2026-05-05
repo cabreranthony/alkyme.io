@@ -1988,7 +1988,7 @@ html[data-theme="dark"] .footer__trust-badge svg {
 .site-footer {
   background: var(--cloudy-day);
   border-top: var(--border-subtle);
-  padding: var(--space-6xl) 0 0;
+  padding: var(--space-4xl) 0 0; /* Reduced from 6xl to 4xl for more compact desktop footer */
 }
 
 .site-footer .container {
@@ -2001,8 +2001,8 @@ html[data-theme="dark"] .footer__trust-badge svg {
 .site-footer-nav {
   display: grid;
   grid-template-columns: 220px 1fr;
-  gap: var(--space-6xl);
-  padding-bottom: var(--space-5xl);
+  gap: var(--space-4xl); /* Reduced from 6xl to 4xl */
+  padding-bottom: var(--space-3xl); /* Reduced from 5xl to 3xl */
   border-bottom: var(--border-subtle);
 }
 
@@ -2040,7 +2040,7 @@ html[data-theme="dark"] .site-footer-logo--dark {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto;
-  gap: var(--space-3xl);
+  gap: var(--space-xl) var(--space-2xl); /* Reduced from 3xl - tighter row/column gaps */
 }
 
 /* Individual Navigation Column */
@@ -2112,7 +2112,7 @@ html[data-theme="dark"] .site-footer-logo--dark {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-2xl) 0 var(--space-3xl);
+  padding: var(--space-xl) 0 var(--space-2xl); /* Reduced from 2xl/3xl to xl/2xl */
 }
 
 .site-footer-legal-left {
@@ -2140,9 +2140,47 @@ html[data-theme="dark"] .site-footer-logo--dark {
 }
 
 .site-footer-legal-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
   font-size: var(--type-caption-size);
   color: var(--muted);
   font-weight: var(--type-weight-regular);
+}
+
+/* Footer Theme Toggle */
+.theme-toggle--footer {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--muted);
+  transition: background var(--duration-fast) var(--ease-soft),
+              color var(--duration-fast) var(--ease-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle--footer:hover {
+  background: var(--hover-overlay);
+  color: var(--forest);
+}
+
+.theme-toggle--footer svg {
+  width: 18px;
+  height: 18px;
+}
+
+html[data-theme="dark"] .theme-toggle--footer {
+  color: var(--muted);
+}
+
+html[data-theme="dark"] .theme-toggle--footer:hover {
+  background: rgba(var(--rgb-dew), 0.1);
+  color: var(--dew);
 }
 
 /* Responsive Breakpoints */

@@ -318,12 +318,12 @@
             <div class="badge badge--amber">Gaming</div>
             <h2 class="product-showcase__title">Epoch²</h2>
             <p class="product-showcase__description">
-              Indie game studio? Stop burning budget creating content players finish in 10 hours. Our AI engine generates infinite replayable narratives—every playthrough is unique. Already in alpha with studios who needed endless gameplay without endless budgets.
+              Procedural game engine generating infinite replayability. Every session creates unique narratives through adaptive AI systems that respond to player choices in real-time.
             </p>
             <ul class="product-showcase__features">
-              <li>Infinite unique storylines without hand-crafting each one</li>
-              <li>AI that adapts to player choices in real-time</li>
-              <li>Live in alpha—tested by real studios, real players</li>
+              <li>Infinite procedural narratives</li>
+              <li>Adaptive AI storytelling</li>
+              <li>Alpha testing with indie studios</li>
             </ul>
             <div class="product-showcase__actions">
               <a href="/labs/epoch2/" class="btn btn--primary">View Case Study</a>
@@ -345,12 +345,12 @@
             <div class="badge badge--sage">Healthcare AI</div>
             <h2 class="product-showcase__title">Sevā<sup>AI</sup></h2>
             <p class="product-showcase__description">
-              Healthcare marketing burning $100K/year with agencies? Cut costs 85% with AI that actually understands HIPAA compliance. Already serving 3 regional health systems with research, content creation, and campaign automation that doesn't compromise quality.
+              Multi-agent system automating regional healthcare marketing. Reduces costs 85% while maintaining strict compliance and quality standards across 3 health systems.
             </p>
             <ul class="product-showcase__features">
-              <li>Slash agency costs by 85%—proven across 3 health systems</li>
-              <li>HIPAA-compliant from day one, not bolted on later</li>
-              <li>Live in production, managing real campaigns right now</li>
+              <li>85% cost reduction vs. traditional agencies</li>
+              <li>HIPAA-compliant multi-agent workflows</li>
+              <li>Serving 3 health systems</li>
             </ul>
             <div class="product-showcase__actions">
               <a href="/labs/healthcare-ai/" class="btn btn--primary">View Case Study</a>
@@ -366,9 +366,9 @@
         <div class="ai-cta-hero">
           <img src="assets/images/home/img_team-working.jpg" alt="Alkymē team members collaborating on venture development" loading="lazy" class="ai-cta-hero__image">
           <div class="ai-cta-hero__overlay">
-            <p class="ai-cta-hero__eyebrow">NO PROTOTYPES. NO PROMISES.</p>
-            <h2 class="ai-cta-hero__title">Technology that's already working.</h2>
-            <p class="ai-cta-hero__description">Gaming studios using our AI narrative engine right now. Healthcare systems cutting costs 85% with our automation platform. These aren't demos—they're production systems you can license and deploy in weeks.</p>
+            <p class="ai-cta-hero__eyebrow">BATTLE-TESTED PLATFORMS</p>
+            <h2 class="ai-cta-hero__title">Real products. Real traction.</h2>
+            <p class="ai-cta-hero__description">Procedural game engine in alpha. Healthcare AI platform serving 3 health systems. Both tested with paying customers. Both available for your business.</p>
             <a href="/solutions" class="btn btn--primary btn--pill">Explore Solutions</a>
           </div>
         </div>
@@ -444,20 +444,7 @@
           <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
         </div>
         <div class="site-footer-legal-right">
-          <span>Made with ❤️ in Los Angeles</span>
-          <button type="button" class="theme-toggle theme-toggle--footer" aria-label="Toggle theme">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-          </button>
+          <span>Los Angeles, California</span>
         </div>
       </div>
 

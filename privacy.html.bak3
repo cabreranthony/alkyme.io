@@ -7,8 +7,8 @@
   <!-- Theme Detection (before render) -->
   <script>(function(){try{var k="alkyme-theme",s=localStorage.getItem(k);var d=s==="dark"||(s!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
 
-  <title>Terms of Service | Alkymē</title>
-  <meta name="description" content="Terms and conditions for using the Alkymē website and services.">
+  <title>Privacy Policy | Alkymē</title>
+  <meta name="description" content="How Alkymē collects, uses, and protects your information.">
 
   <!-- Styles -->
   <link rel="preload" href="dist/assets/styles.min.css" as="style">
@@ -51,6 +51,19 @@
             </svg>
             <span data-alkyme-lang-code>EN</span>
           </button>
+          <button type="button" class="theme-toggle" aria-label="Toggle theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
         </div>
       </div>
       <div class="nav__mobile-menu">
@@ -69,9 +82,9 @@
     <section class="legal-hero">
       <div class="container">
         <div class="legal-hero__content">
-          <h1 class="legal-hero__title">Terms of Service</h1>
+          <h1 class="legal-hero__title">Privacy Policy</h1>
           <p class="legal-hero__description">
-            Terms and conditions for using our website and services.
+            How we collect, use, and protect your information.
           </p>
           <p class="legal-hero__updated">Last updated: April 21, 2026</p>
         </div>
@@ -84,128 +97,156 @@
         <div class="legal-content">
 
           <div class="legal-section">
-            <h2>Acceptance of Terms</h2>
+            <h2>Overview</h2>
             <p>
-              By accessing or using the Alkymē website ("Site"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Site.
+              Alkymē ("we," "our," or "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you visit our website or interact with our ventures.
             </p>
             <p>
-              We may update these Terms at any time. Continued use of the Site after changes constitutes acceptance of the updated Terms.
+              By using our website, you agree to the practices described in this policy.
             </p>
           </div>
 
           <div class="legal-section">
-            <h2>Use of the Site</h2>
+            <h2>Information We Collect</h2>
 
-            <h3>Permitted Use</h3>
+            <h3>Information You Provide</h3>
             <p>
-              You may use the Site to:
+              When you contact us, apply for a role, or sign up for venture-specific products, you may provide:
             </p>
             <ul>
-              <li>Learn about Alkymē and our ventures</li>
-              <li>Contact us for partnership, investment, or employment inquiries</li>
-              <li>Access publicly available case studies and documentation</li>
+              <li>Name and email address</li>
+              <li>Company name and role</li>
+              <li>Phone number</li>
+              <li>Message content and inquiry details</li>
+              <li>Resume and portfolio links (for job applications)</li>
             </ul>
 
-            <h3>Prohibited Use</h3>
+            <h3>Information We Collect Automatically</h3>
             <p>
-              You may not:
+              When you visit our website, we collect:
             </p>
             <ul>
-              <li>Use the Site for any unlawful purpose</li>
-              <li>Attempt to gain unauthorized access to our systems or networks</li>
-              <li>Scrape, copy, or distribute Site content without permission</li>
-              <li>Interfere with the Site's operation or other users' access</li>
-              <li>Submit false, misleading, or fraudulent information through contact forms</li>
+              <li>IP address and approximate location</li>
+              <li>Browser type and device information</li>
+              <li>Pages visited and time spent on site</li>
+              <li>Referral source (how you found us)</li>
             </ul>
-          </div>
-
-          <div class="legal-section">
-            <h2>Intellectual Property</h2>
-
-            <h3>Our Content</h3>
             <p>
-              All content on the Site—including text, graphics, logos, and code—is owned by Alkymē or our licensors and protected by copyright, trademark, and other intellectual property laws.
-            </p>
-            <p>
-              You may not reproduce, distribute, or create derivative works from Site content without our written permission.
+              We use standard web analytics tools (Google Analytics or similar) to understand how visitors use our site. We do not track you across other websites.
             </p>
 
-            <h3>Venture-Specific IP</h3>
+            <h3>Cookies & Local Storage</h3>
             <p>
-              Products built by our ventures (Epoch², Healthcare AI platform, etc.) have separate terms and licensing. Using those products requires agreeing to their specific terms of service.
-            </p>
-          </div>
-
-          <div class="legal-section">
-            <h2>Third-Party Links</h2>
-            <p>
-              The Site may contain links to third-party websites or services. We do not endorse or assume responsibility for third-party content, privacy practices, or terms of service.
-            </p>
-            <p>
-              Use of third-party websites is at your own risk.
-            </p>
-          </div>
-
-          <div class="legal-section">
-            <h2>Disclaimers</h2>
-
-            <h3>No Warranties</h3>
-            <p>
-              The Site is provided "as is" without warranties of any kind, express or implied. We do not guarantee that:
+              We use cookies and browser local storage to:
             </p>
             <ul>
-              <li>The Site will be available, uninterrupted, or error-free</li>
-              <li>Information on the Site is accurate, complete, or current</li>
-              <li>Defects will be corrected</li>
+              <li>Remember your theme preference (light/dark mode)</li>
+              <li>Remember your language preference</li>
+              <li>Analyze site traffic and usage patterns</li>
             </ul>
-
-            <h3>No Investment Advice</h3>
             <p>
-              Information about our ventures is for informational purposes only and does not constitute investment advice, solicitation, or an offer to sell securities.
+              You can disable cookies in your browser settings, but some features may not work properly.
             </p>
           </div>
 
           <div class="legal-section">
-            <h2>Limitation of Liability</h2>
+            <h2>How We Use Your Information</h2>
             <p>
-              To the fullest extent permitted by law, Alkymē and its affiliates, officers, employees, and agents will not be liable for:
+              We use collected information to:
             </p>
             <ul>
-              <li>Indirect, incidental, consequential, or punitive damages</li>
-              <li>Loss of profits, revenue, data, or business opportunities</li>
-              <li>Damages arising from use or inability to use the Site</li>
+              <li>Respond to your inquiries and contact requests</li>
+              <li>Process job applications and evaluate candidates</li>
+              <li>Improve our website and user experience</li>
+              <li>Understand which ventures and content resonate with visitors</li>
+              <li>Communicate about partnership or investment opportunities (if you've expressed interest)</li>
             </ul>
             <p>
-              Our total liability for any claim related to the Site will not exceed $100.
+              We do not sell, rent, or trade your personal information to third parties.
             </p>
           </div>
 
           <div class="legal-section">
-            <h2>Indemnification</h2>
+            <h2>Data Sharing & Disclosure</h2>
+
+            <h3>Service Providers</h3>
             <p>
-              You agree to indemnify and hold harmless Alkymē from any claims, damages, or expenses (including legal fees) arising from:
+              We may share information with trusted service providers who help us operate our business:
             </p>
             <ul>
-              <li>Your use of the Site</li>
-              <li>Your violation of these Terms</li>
-              <li>Your violation of any third-party rights</li>
+              <li>Email service providers (for contact form submissions)</li>
+              <li>Analytics platforms (Google Analytics, Plausible, or similar)</li>
+              <li>Hosting providers (Vercel, AWS, or similar)</li>
             </ul>
+            <p>
+              These providers are contractually obligated to protect your data and use it only for the services they provide to us.
+            </p>
+
+            <h3>Legal Requirements</h3>
+            <p>
+              We may disclose information if required by law, subpoena, or court order, or to protect our rights, property, or safety.
+            </p>
+
+            <h3>Business Transfers</h3>
+            <p>
+              If we sell or transfer a venture to another company, your information related to that venture may be transferred as part of the transaction.
+            </p>
           </div>
 
           <div class="legal-section">
-            <h2>Governing Law</h2>
+            <h2>Data Security</h2>
             <p>
-              These Terms are governed by the laws of the State of California, without regard to conflict of law principles. Any disputes will be resolved in the state or federal courts located in Los Angeles County, California.
+              We take reasonable measures to protect your information from unauthorized access, loss, or misuse:
+            </p>
+            <ul>
+              <li>HTTPS encryption for all website traffic</li>
+              <li>Secure storage of contact form submissions</li>
+              <li>Access controls limiting who can view personal information</li>
+              <li>Regular security audits and updates</li>
+            </ul>
+            <p>
+              No method of transmission or storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Your Rights</h2>
+            <p>
+              Depending on your location, you may have the right to:
+            </p>
+            <ul>
+              <li><strong>Access:</strong> Request a copy of the personal information we have about you</li>
+              <li><strong>Correction:</strong> Ask us to correct inaccurate information</li>
+              <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+              <li><strong>Opt-out:</strong> Unsubscribe from marketing communications</li>
+              <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
+            </ul>
+            <p>
+              To exercise these rights, contact us at <a href="mailto:privacy@alkyme.io">privacy@alkyme.io</a>. We'll respond within 30 days.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Children's Privacy</h2>
+            <p>
+              Our website is not intended for children under 13. We do not knowingly collect information from children. If you believe we have inadvertently collected information from a child, contact us immediately.
+            </p>
+          </div>
+
+          <div class="legal-section">
+            <h2>Changes to This Policy</h2>
+            <p>
+              We may update this Privacy Policy periodically. When we make significant changes, we'll update the "Last updated" date at the top of this page. Continued use of our website after changes constitutes acceptance of the updated policy.
             </p>
           </div>
 
           <div class="legal-section">
             <h2>Contact Us</h2>
             <p>
-              If you have questions about these Terms, contact us:
+              If you have questions about this Privacy Policy or how we handle your information, contact us:
             </p>
             <p>
-              <strong>Email:</strong> <a href="mailto:legal@alkyme.io">legal@alkyme.io</a><br>
+              <strong>Email:</strong> <a href="mailto:privacy@alkyme.io">privacy@alkyme.io</a><br>
               <strong>Mail:</strong> Alkymē, Los Angeles, CA
             </p>
           </div>
@@ -283,20 +324,7 @@
           <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
         </div>
         <div class="site-footer-legal-right">
-          <span>Made with ❤️ in Los Angeles</span>
-          <button type="button" class="theme-toggle theme-toggle--footer" aria-label="Toggle theme">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-          </button>
+          <span>Los Angeles, California</span>
         </div>
       </div>
 

@@ -132,13 +132,13 @@
             <div class="phase-card__number">02</div>
             <h3 class="phase-card__title">Technology Platforms</h3>
             <p class="phase-card__description">
-              Can't afford 6 months and $200K for custom development? License the exact technology running our ventures. Healthcare AI serving 3 hospital systems. Gaming platforms in production. These aren't prototypes—they're proven systems we deploy for you in weeks. You get technology that's already working without starting from scratch.
+              Battle-tested platforms proven in production. Seva AI for healthcare automation. Procedural narrative systems for gaming. Supply chain intelligence tools. No prototypes—this is technology we built for our own ventures and now license to businesses who need it deployed in weeks, not years.
             </p>
             <ul class="phase-card__list">
-              <li>Deploy in weeks using battle-tested platforms, not prototypes</li>
-              <li>Healthcare AI, gaming tech, automation—all proven with real customers</li>
-              <li>White-label and customize to match your brand</li>
-              <li>Ongoing support from people who built it</li>
+              <li>Production-ready AI platforms (healthcare, logistics, retail)</li>
+              <li>White-label deployment and customization</li>
+              <li>Proven in production, not proof-of-concept</li>
+              <li>Integration support and ongoing updates</li>
             </ul>
           </div>
 
@@ -147,13 +147,13 @@
             <div class="phase-card__number">03</div>
             <h3 class="phase-card__title">Services</h3>
             <p class="phase-card__description">
-              Tired of agencies that talk strategy but can't execute? We're operators who've grown companies from zero to revenue. Marketing, design, brand strategy—from people who know what converts because we've done it ourselves. No pretty decks that go nowhere. Just work that drives results.
+              Marketing, design, and brand strategy from operators who've built companies at scale. We don't just make decks—we shape positioning, design systems, growth strategies, and go-to-market plans using the same methods that took our ventures from zero to market leaders.
             </p>
             <ul class="phase-card__list">
-              <li>Positioning and brand strategy from people who've built real companies</li>
-              <li>Product design and UX that converts, not just looks pretty</li>
-              <li>Growth marketing with playbooks proven across our ventures</li>
-              <li>Go-to-market execution, not just strategy docs that sit on a shelf</li>
+              <li>Brand strategy and positioning for startups and companies</li>
+              <li>Product design and user experience (web, mobile, SaaS)</li>
+              <li>Growth marketing and demand generation</li>
+              <li>Go-to-market strategy and execution</li>
             </ul>
           </div>
 
@@ -169,35 +169,35 @@
             <img src="assets/images/home/img_team-working.jpg" alt="Team collaboration" class="img-rounded" loading="lazy">
           </div>
           <div>
-            <h2 class="split__title">How are you different from dev shops and agencies?</h2>
+            <h2 class="split__title">What makes us different</h2>
             <p class="split__description">
-              Dev shops build what you tell them. Agencies make pretty decks. We're operators who've built companies from scratch—we know the difference between what sounds smart in a meeting and what actually gets customers to pay.
+              We're not a consultancy that hands off prototypes. We're not advisors who give strategy without execution. We're operators who've built venture-backed companies from scratch—and now we apply those same methods to technology deployment and client services.
             </p>
             <p class="split__description">
-              Our ventures are the proof: Epoch² is live in alpha with indie studios. Healthcare AI is serving 3 health systems right now. These aren't case studies—they're businesses we built, launched, and grew to revenue. That's the experience you're hiring when you work with us.
+              Our work gave us a testing ground. Epoch² proved our ability to ship complex AI systems. Healthcare AI validated our deployment model. Now those learnings power everything we do—whether we're launching a new product, deploying a platform for a major healthcare system, or crafting go-to-market strategy for a startup.
             </p>
             <p class="split__description">
-              No handoffs. No "discovery phases" that burn budget. Just operators who've done this before, using technology and playbooks we've already proven. Strategy, design, engineering, growth—one team that ships.
+              Strategy, product, and execution stay in one place. No handoffs between "strategists" and "doers." Just people who've shipped products, grown companies, and understand what actually works.
             </p>
           </div>
         </div>
 
         <div class="differences-list differences-list--spaced">
             <div class="difference-item">
-              <h3 class="difference-item__title">We've launched companies to revenue</h3>
-              <p class="difference-item__description">Built products at Google and Meta. Launched 3 companies from zero to paying customers. When we say "this is how you get to market," we're sharing playbooks from businesses we've grown ourselves.</p>
+              <h3 class="difference-item__title">Operator experience</h3>
+              <p class="difference-item__description">We've built companies from zero to millions in revenue. That experience informs our ventures, platform deployments, and client services.</p>
             </div>
             <div class="difference-item">
-              <h3 class="difference-item__title">Technology that's already proven</h3>
-              <p class="difference-item__description">Not prototypes. Not concepts. Production systems serving real customers right now. Healthcare AI running 3 hospital systems. Gaming tech in alpha. You license what's already working.</p>
+              <h3 class="difference-item__title">Battle-tested technology</h3>
+              <p class="difference-item__description">We don't prototype for clients. We deploy platforms we've proven in production—technology built for our own ventures, now available for your business.</p>
             </div>
             <div class="difference-item">
-              <h3 class="difference-item__title">One team for everything</h3>
-              <p class="difference-item__description">No "strategy team" that hands off to "execution team." Product, design, engineering, marketing—same people, start to finish. You know who's building your business.</p>
+              <h3 class="difference-item__title">Compounding learnings</h3>
+              <p class="difference-item__description">What we learn building ventures informs our platform roadmap. What we deploy for clients shapes our service offering. Everything compounds.</p>
             </div>
             <div class="difference-item">
-              <h3 class="difference-item__title">Speed without shortcuts</h3>
-              <p class="difference-item__description">Ship in 4-8 weeks because we're reusing proven tech, not cutting corners. Fast timelines with battle-tested platforms. Quality without the 6-month wait.</p>
+              <h3 class="difference-item__title">No theater, just results</h3>
+              <p class="difference-item__description">We don't do pitch decks without execution. We build, deploy, and deliver—whether that's a venture, a platform, or a go-to-market strategy.</p>
             </div>
           </div>
         </div>
@@ -212,30 +212,30 @@
           <div class="philosophy-grid">
 
             <div class="philosophy-card">
-              <h3 class="philosophy-card__title">Real credentials that matter to you</h3>
+              <h3 class="philosophy-card__title">Operators from Google, Meta, startups</h3>
               <p class="philosophy-card__description">
-                Built search systems at Google. Growth products at Meta. Launched 3 companies to revenue in Los Angeles. We're not career consultants—we're operators who've shipped products to millions of users and know how to scale businesses.
+                Our team has shipped products at scale—search systems at Google, growth systems at Meta, 0-to-1 products at venture-backed startups. We bring that experience to everything we build, deploy, and deliver.
               </p>
             </div>
 
             <div class="philosophy-card">
-              <h3 class="philosophy-card__title">We know what actually works</h3>
+              <h3 class="philosophy-card__title">We understand what works</h3>
               <p class="philosophy-card__description">
-                Launched a game engine that's live in alpha. Healthcare AI serving 3 hospital systems. Not case studies from other people's companies—these are businesses we built ourselves. That's the playbook you're getting.
+                We've built companies that hit revenue, scaled platforms that serve millions, and grown products from zero to market leaders. That's the knowledge base we apply to ventures, technology deployments, and client services.
               </p>
             </div>
 
             <div class="philosophy-card">
-              <h3 class="philosophy-card__title">Everyone can do everything</h3>
+              <h3 class="philosophy-card__title">Full-stack capabilities</h3>
               <p class="philosophy-card__description">
-                No "strategy people" versus "execution people." Engineers who understand business. Designers who can code. Marketers who know product. You work with people who ship, not people who delegate.
+                Product, design, engineering, growth, and go-to-market—all under one roof. Whether we're building a venture, deploying a platform, or delivering strategy for a client, the same team owns the full loop.
               </p>
             </div>
 
             <div class="philosophy-card">
-              <h3 class="philosophy-card__title">Small team, big results</h3>
+              <h3 class="philosophy-card__title">No credentials, just results</h3>
               <p class="philosophy-card__description">
-                10 people running multiple ventures and client projects. No bureaucracy. No account managers who've never built anything. Just senior operators who've been there, done that, and can help you do it faster.
+                We don't care about titles or pedigrees. We care about whether you've shipped products, grown companies, and made things people actually use. That's the standard across ventures, platforms, and services.
               </p>
             </div>
 
@@ -248,23 +248,23 @@
     <section class="section">
       <div class="container">
         <div class="focus-section">
-          <h2 class="focus-section__title">What we've actually built</h2>
+          <h2 class="focus-section__title">Proven track record</h2>
           <p class="focus-section__description">
-            These aren't portfolio pieces or case studies. They're real businesses we launched from scratch, grew to revenue, and still operate today. This is the proof we know how to build companies—and the technology you can license right now.
+            We built these platforms from scratch. They started as internal projects, became proven products, and now power our offerings and inform everything we do. Real products with real revenue—not prototypes.
           </p>
           <div class="focus-cards">
 
             <div class="focus-card">
-              <h3 class="focus-card__title">Epoch² (Gaming)</h3>
+              <h3 class="focus-card__title">Epoch²</h3>
               <p class="focus-card__description">
-                AI-powered game engine creating infinite replayable narratives. Live in alpha with indie studios who needed endless gameplay without endless content budgets. Built from scratch by our team, now available to license for your studio.
+                A game engine with AI-driven procedural narrative systems. Built internally, now deployed as a platform for studios who need infinite replayability without infinite content budgets.
               </p>
             </div>
 
             <div class="focus-card">
               <h3 class="focus-card__title">Seva AI (Healthcare)</h3>
               <p class="focus-card__description">
-                Multi-agent AI automating healthcare marketing at 85% less cost than traditional agencies. Serving 3 regional health systems right now with HIPAA-compliant research, content creation, and campaign orchestration. Proven in production, ready to deploy for your organization.
+                Multi-agent AI systems for healthcare marketing. Started internally serving hospital systems, now available as a platform for automated research, compliance, and campaign orchestration.
               </p>
             </div>
 
@@ -277,12 +277,12 @@
     <section class="section section--gray">
       <div class="container">
         <div class="cta-section">
-          <h2 class="cta-section__title">Ready to work with operators who've done this before?</h2>
+          <h2 class="cta-section__title">Let's work together</h2>
           <p class="cta-section__description">
-            Got an idea but no team to build it? We've launched 3 companies to revenue—we'll be your co-founders. Need technology deployed fast? License platforms already serving real customers. Want marketing from people who actually understand product? We've grown businesses from zero to market leaders.
+            Building a venture and want operators who've done it before? Need battle-tested technology deployed fast? Looking for marketing and design from people who've scaled companies? We do all three.
           </p>
           <p class="cta-section__description">
-            We're also hiring senior operators. If you've shipped products at scale and want to build ventures, deploy platforms, and shape how companies go to market—let's talk.
+            We're also hiring. If you're a senior operator who wants to build ventures, deploy platforms, and shape how companies go to market—let's talk.
           </p>
           <div class="cta-section__actions">
             <a href="/contact" class="btn btn--primary btn--lg">Start a Conversation</a>
@@ -362,20 +362,7 @@
           <span>© <span id="year"></span> Alkymē. All rights reserved.</span>
         </div>
         <div class="site-footer-legal-right">
-          <span>Made with ❤️ in Los Angeles</span>
-          <button type="button" class="theme-toggle theme-toggle--footer" aria-label="Toggle theme">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-          </button>
+          <span>Los Angeles, California</span>
         </div>
       </div>
 
