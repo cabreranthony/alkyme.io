@@ -857,8 +857,8 @@ html[data-theme="dark"] .ai-cta-hero__overlay {
 
 @media (max-width: 900px) {
   .ai-hero {
-    min-height: auto;
-    padding: var(--space-5xl) 0 var(--space-4xl);
+    min-height: 100vh; /* Ensure enough vertical space for pause button */
+    padding: var(--space-5xl) 0 calc(var(--space-4xl) + 80px); /* Extra bottom padding for pause button */
   }
 
   .ai-hero__title {

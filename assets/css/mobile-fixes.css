@@ -1,0 +1,1207 @@
+/* =============================================================================
+   MOBILE-FIRST RESPONSIVE FIXES
+   Comprehensive mobile responsiveness improvements following industry standards
+
+   Viewport Breakpoints (Mobile-First):
+   - Base: 320px (iPhone SE, oldest supported)
+   - Small: 375px (iPhone 8, X, 12 mini)
+   - Medium: 480px (Large phones)
+   - Large: 640px (Phablets)
+   - XL: 768px (Tablets portrait)
+   - 2XL: 1024px (Tablets landscape)
+   - 3XL: 1280px+ (Desktop)
+
+   Touch Targets: Material Design & Apple HIG
+   - Minimum: 48px × 48px (not 44px)
+   - Recommended spacing: 8px
+
+   Created: 2026-05-04
+   ============================================================================= */
+
+/* =============================================================================
+   1. RESET AND BASE STYLES
+   Mobile-first foundation with proper box-sizing and overflow protection
+   ============================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Remove iOS tap highlight */
+}
+
+html {
+  /* Prevent horizontal scroll on all devices */
+  overflow-x: hidden;
+  width: 100%;
+
+  /* Optimize touch scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+
+  /* Prevent text size adjustment on iOS */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 320px; /* Minimum supported width */
+
+  /* Ensure minimum touch target size for body text */
+  font-size: 16px; /* Prevents iOS zoom on focus */
+  line-height: 1.5;
+}
+
+/* Prevent layout shift from scrollbar */
+html.no-scroll {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0);
+}
+
+/* =============================================================================
+   2. TYPOGRAPHY SYSTEM - MOBILE-FIRST
+   Fluid typography with proper minimum sizes and accessibility
+   ============================================================================= */
+
+/* Mobile Base Typography (320px+) */
+:root {
+  /* Body text - minimum 16px to prevent iOS zoom */
+  --mobile-body-size: 16px;
+  --mobile-body-line: 1.5;
+
+  /* Small text - minimum 14px for readability */
+  --mobile-small-size: 14px;
+  --mobile-small-line: 1.4;
+
+  /* Display headings with fluid scaling */
+  --mobile-h1: clamp(28px, 8vw, 36px);
+  --mobile-h2: clamp(24px, 6vw, 32px);
+  --mobile-h3: clamp(20px, 5vw, 24px);
+  --mobile-h4: clamp(18px, 4vw, 20px);
+  --mobile-h5: 16px;
+  --mobile-h6: 16px;
+
+  /* Line heights for headings */
+  --mobile-heading-line-tight: 1.2;
+  --mobile-heading-line-normal: 1.3;
+
+  /* Letter spacing */
+  --mobile-heading-tracking: -0.02em;
+}
+
+/* Apply fluid typography to all text elements */
+body {
+  font-size: var(--mobile-body-size);
+  line-height: var(--mobile-body-line);
+}
+
+h1,
+.h1 {
+  font-size: var(--mobile-h1);
+  line-height: var(--mobile-heading-line-tight);
+  letter-spacing: var(--mobile-heading-tracking);
+  margin: 0 0 1rem;
+}
+
+h2,
+.h2 {
+  font-size: var(--mobile-h2);
+  line-height: var(--mobile-heading-line-tight);
+  letter-spacing: var(--mobile-heading-tracking);
+  margin: 0 0 0.875rem;
+}
+
+h3,
+.h3 {
+  font-size: var(--mobile-h3);
+  line-height: var(--mobile-heading-line-normal);
+  letter-spacing: var(--mobile-heading-tracking);
+  margin: 0 0 0.75rem;
+}
+
+h4,
+.h4 {
+  font-size: var(--mobile-h4);
+  line-height: var(--mobile-heading-line-normal);
+  margin: 0 0 0.625rem;
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+  font-size: var(--mobile-h5);
+  line-height: var(--mobile-heading-line-normal);
+  margin: 0 0 0.5rem;
+}
+
+p {
+  font-size: var(--mobile-body-size);
+  line-height: var(--mobile-body-line);
+  margin: 0 0 1rem;
+}
+
+small,
+.text-small {
+  font-size: var(--mobile-small-size);
+  line-height: var(--mobile-small-line);
+}
+
+/* Improve readability for long-form content */
+.prose,
+.content,
+article {
+  font-size: var(--mobile-body-size);
+  line-height: 1.6;
+}
+
+.prose p + p,
+.content p + p,
+article p + p {
+  margin-top: 1rem;
+}
+
+/* =============================================================================
+   3. SPACING SYSTEM - MOBILE-FIRST (8px base unit)
+   Progressive spacing that scales with viewport size
+   ============================================================================= */
+
+:root {
+  /* Base spacing scale (mobile) */
+  --space-0: 0;
+  --space-1: 4px;   /* 0.25rem */
+  --space-2: 8px;   /* 0.5rem */
+  --space-3: 12px;  /* 0.75rem */
+  --space-4: 16px;  /* 1rem - base unit */
+  --space-5: 20px;  /* 1.25rem */
+  --space-6: 24px;  /* 1.5rem */
+  --space-8: 32px;  /* 2rem */
+  --space-10: 40px; /* 2.5rem */
+  --space-12: 48px; /* 3rem */
+  --space-16: 64px; /* 4rem */
+  --space-20: 80px; /* 5rem */
+  --space-24: 96px; /* 6rem */
+
+  /* Container padding (mobile-first) */
+  --container-padding: 16px;
+
+  /* Section spacing (mobile-first) */
+  --section-spacing-y: 48px;
+
+  /* Card padding (mobile-first) */
+  --card-padding: 16px;
+
+  /* Grid gaps (mobile-first) */
+  --grid-gap: 16px;
+}
+
+/* Container with proper mobile padding */
+.container,
+.container-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Section spacing */
+.section,
+section {
+  padding-top: var(--section-spacing-y);
+  padding-bottom: var(--section-spacing-y);
+}
+
+/* Card spacing */
+.card,
+.glass-card,
+.marketing-card {
+  padding: var(--card-padding);
+}
+
+/* Grid layouts */
+.grid,
+.grid-cards,
+.grid-features {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+/* =============================================================================
+   4. TOUCH TARGETS - MATERIAL DESIGN & APPLE HIG COMPLIANCE
+   Minimum 48px × 48px with proper spacing
+   ============================================================================= */
+
+/* Ensure all interactive elements meet minimum touch target size */
+button,
+[role="button"],
+a.button,
+a.btn,
+.btn,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 24px; /* Ensures content doesn't crowd edges */
+
+  /* Ensure text is properly sized */
+  font-size: 16px;
+  line-height: 1.5;
+
+  /* Improve tap accuracy */
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+
+  /* Proper spacing for adjacent buttons */
+  margin: 4px;
+}
+
+/* Links in navigation or menus */
+nav a,
+.nav__link,
+.menu-item,
+[role="menuitem"] {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px;
+  touch-action: manipulation;
+}
+
+/* Icon-only buttons need special attention */
+button:not([aria-label]):not([title]),
+.icon-button,
+.theme-toggle,
+.menu-toggle,
+.hamburger,
+.nav__hamburger {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form inputs must meet touch target requirements */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 16px; /* Prevents iOS zoom */
+  line-height: 1.5;
+  width: 100%; /* Full width on mobile */
+  touch-action: manipulation;
+}
+
+/* Checkbox and radio buttons */
+input[type="checkbox"],
+input[type="radio"] {
+  min-width: 24px;
+  min-height: 24px;
+  margin: 12px; /* Adds padding to meet 48px touch target */
+  cursor: pointer;
+}
+
+/* Labels for checkboxes/radios should include the touch target */
+label:has(input[type="checkbox"]),
+label:has(input[type="radio"]) {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* Ensure proper spacing between touch targets */
+.button-group > *,
+.btn-group > * {
+  margin: 4px;
+}
+
+.button-group,
+.btn-group {
+  margin: -4px; /* Compensate for button margins */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* =============================================================================
+   5. NAVIGATION FIXES - MOBILE-FIRST
+   Hamburger menu, mobile navigation, and accessibility improvements
+   ============================================================================= */
+
+/* Navigation container */
+.nav,
+nav[role="navigation"],
+header nav {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Navigation inner wrapper */
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px; /* Slightly taller than minimum for visual balance */
+  padding: 8px 0;
+}
+
+/* Logo sizing for mobile */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 8px 0;
+}
+
+.nav__logo img,
+.nav__logo svg {
+  max-height: 32px;
+  width: auto;
+}
+
+/* Desktop navigation - hidden on mobile */
+.nav__menu {
+  display: none;
+}
+
+/* Hamburger menu button - properly styled */
+.nav__hamburger,
+.menu-toggle,
+.mobile-menu-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 150ms ease-out;
+  position: relative;
+  z-index: 1001;
+}
+
+.nav__hamburger:hover,
+.menu-toggle:hover {
+  transform: scale(1.05);
+}
+
+.nav__hamburger:active,
+.menu-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Hamburger icon lines */
+.nav__hamburger span,
+.menu-toggle span,
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 250ms ease-out, opacity 150ms ease-out;
+  transform-origin: center;
+}
+
+/* Hamburger animation to X */
+.nav__hamburger[aria-expanded="true"] span:nth-child(1),
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav__hamburger[aria-expanded="true"] span:nth-child(2),
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__hamburger[aria-expanded="true"] span:nth-child(3),
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile menu panel */
+.nav__mobile-menu,
+.mobile-menu,
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 64px; /* Below nav bar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--page-bg, #ffffff);
+  padding: var(--space-6, 24px) var(--container-padding, 16px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 250ms ease-out, transform 250ms ease-out;
+}
+
+/* Mobile menu open state */
+.nav__mobile-menu[data-open="true"],
+.mobile-menu[data-open="true"],
+.nav__mobile-menu.is-open,
+.mobile-menu.is-open,
+body.mobile-menu-open .nav__mobile-menu,
+body.mobile-menu-open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile menu links */
+.nav__mobile-menu a,
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.1));
+  transition: background-color 150ms ease-out;
+}
+
+.nav__mobile-menu a:hover,
+.mobile-menu a:hover {
+  background-color: var(--hover-bg, rgba(0, 0, 0, 0.05));
+}
+
+.nav__mobile-menu a:active,
+.mobile-menu a:active {
+  background-color: var(--active-bg, rgba(0, 0, 0, 0.1));
+}
+
+/* Action buttons in navigation */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.nav__actions > button,
+.nav__actions > a {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* =============================================================================
+   6. FORM FIXES - MOBILE-OPTIMIZED INPUTS
+   Proper sizing, touch targets, and iOS compatibility
+   ============================================================================= */
+
+/* Form wrapper */
+form {
+  width: 100%;
+}
+
+/* Form groups with proper spacing */
+.form-group,
+.input-group {
+  margin-bottom: var(--space-6, 24px);
+  width: 100%;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: var(--space-2, 8px);
+  color: var(--text, #000000);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 16px; /* Prevents iOS zoom */
+  line-height: 1.5;
+  font-family: inherit;
+  color: var(--text, #000000);
+  background-color: var(--input-bg, #ffffff);
+  border: 1px solid var(--border, #d1d5db);
+  border-radius: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+
+/* Textarea specific */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Select specific */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Focus states */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--focus-color, #3b82f6);
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(59, 130, 246, 0.1));
+}
+
+/* Disabled state */
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--disabled-bg, #f3f4f6);
+}
+
+/* Error state */
+input:invalid,
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--error-color, #ef4444);
+}
+
+input:invalid:focus,
+input.error:focus,
+select.error:focus,
+textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Helper text */
+.form-help,
+.input-help {
+  display: block;
+  margin-top: var(--space-2, 8px);
+  font-size: 14px;
+  color: var(--muted-text, #6b7280);
+}
+
+/* Error message */
+.form-error,
+.input-error {
+  display: block;
+  margin-top: var(--space-2, 8px);
+  font-size: 14px;
+  color: var(--error-color, #ef4444);
+}
+
+/* Checkbox and radio groups */
+.checkbox-group,
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+}
+
+.checkbox-label,
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  min-height: 48px;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.checkbox-label input,
+.radio-label input {
+  margin: 0;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px; /* Align with first line of text */
+}
+
+.checkbox-label span,
+.radio-label span {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Form buttons */
+.form-submit,
+.form-button {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: var(--space-6, 24px);
+}
+
+/* =============================================================================
+   7. LAYOUT FIXES - RESPONSIVE GRIDS AND CONTAINERS
+   Mobile-first layouts with proper stacking and spacing
+   ============================================================================= */
+
+/* Ensure all containers respect overflow */
+.container,
+.section,
+.wrapper,
+.content {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Hero sections */
+.hero,
+.hero-section,
+.page-hero {
+  padding: var(--space-12, 48px) var(--container-padding, 16px);
+  text-align: center;
+}
+
+/* Two-column layouts stack on mobile */
+.two-column,
+.split,
+.cols-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap, 16px);
+}
+
+/* Three-column layouts stack on mobile */
+.three-column,
+.cols-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap, 16px);
+}
+
+/* Four-column layouts stack on mobile */
+.four-column,
+.cols-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap, 16px);
+}
+
+/* Card grids */
+.card-grid,
+.grid-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap, 16px);
+}
+
+/* Feature grids */
+.feature-grid,
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8, 32px);
+}
+
+/* Flex containers default to column on mobile */
+.flex-row,
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+}
+
+/* Cards with proper padding */
+.card {
+  padding: var(--card-padding, 16px);
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Images should be responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Video embeds */
+.video-wrapper,
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-wrapper iframe,
+.video-container iframe,
+.video-wrapper video,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tables should scroll on mobile */
+.table-wrapper,
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--space-4, 16px) 0;
+}
+
+table {
+  min-width: 600px; /* Ensure table doesn't get too compressed */
+  width: 100%;
+}
+
+/* =============================================================================
+   8. RESPONSIVE HELPERS AND UTILITIES
+   Show/hide elements, spacing utilities, and accessibility
+   ============================================================================= */
+
+/* Visibility utilities */
+.mobile-only {
+  display: block !important;
+}
+
+.tablet-up {
+  display: none !important;
+}
+
+.desktop-only {
+  display: none !important;
+}
+
+/* Text alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Display utilities */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+
+/* Flex utilities */
+.flex-column { flex-direction: column !important; }
+.flex-row { flex-direction: row !important; }
+.align-items-center { align-items: center !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.gap-1 { gap: var(--space-1, 4px) !important; }
+.gap-2 { gap: var(--space-2, 8px) !important; }
+.gap-3 { gap: var(--space-3, 12px) !important; }
+.gap-4 { gap: var(--space-4, 16px) !important; }
+.gap-6 { gap: var(--space-6, 24px) !important; }
+
+/* Width utilities */
+.w-100 { width: 100% !important; }
+.w-auto { width: auto !important; }
+
+/* Margin utilities */
+.m-0 { margin: 0 !important; }
+.mt-2 { margin-top: var(--space-2, 8px) !important; }
+.mt-4 { margin-top: var(--space-4, 16px) !important; }
+.mt-6 { margin-top: var(--space-6, 24px) !important; }
+.mb-2 { margin-bottom: var(--space-2, 8px) !important; }
+.mb-4 { margin-bottom: var(--space-4, 16px) !important; }
+.mb-6 { margin-bottom: var(--space-6, 24px) !important; }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+/* Padding utilities */
+.p-0 { padding: 0 !important; }
+.p-2 { padding: var(--space-2, 8px) !important; }
+.p-4 { padding: var(--space-4, 16px) !important; }
+.p-6 { padding: var(--space-6, 24px) !important; }
+.px-4 { padding-left: var(--space-4, 16px) !important; padding-right: var(--space-4, 16px) !important; }
+.py-4 { padding-top: var(--space-4, 16px) !important; padding-bottom: var(--space-4, 16px) !important; }
+
+/* Overflow utilities */
+.overflow-hidden { overflow: hidden !important; }
+.overflow-x-hidden { overflow-x: hidden !important; }
+.overflow-y-auto { overflow-y: auto !important; }
+
+/* Accessibility - screen reader only */
+.sr-only,
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--focus-color, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* =============================================================================
+   9. VIEWPORT BREAKPOINTS - PROGRESSIVE ENHANCEMENT
+   Mobile-first media queries for larger screens
+   ============================================================================= */
+
+/* Small mobile (375px+) - iPhone 8, X, 12 mini */
+@media (min-width: 375px) {
+  :root {
+    --mobile-h1: clamp(32px, 8vw, 40px);
+    --mobile-h2: clamp(26px, 6vw, 34px);
+  }
+}
+
+/* Medium mobile (480px+) - Large phones */
+@media (min-width: 480px) {
+  :root {
+    --container-padding: 20px;
+    --section-spacing-y: 56px;
+    --card-padding: 20px;
+    --grid-gap: 20px;
+
+    --mobile-h1: clamp(36px, 7vw, 44px);
+    --mobile-h2: clamp(28px, 6vw, 36px);
+    --mobile-h3: clamp(22px, 5vw, 28px);
+  }
+
+  /* Allow 2-column grids on larger phones for cards */
+  .card-grid.cols-2-mobile,
+  .grid-cards.cols-2-mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large mobile / Phablet (640px+) */
+@media (min-width: 640px) {
+  :root {
+    --container-padding: 24px;
+    --section-spacing-y: 64px;
+    --card-padding: 24px;
+    --grid-gap: 24px;
+  }
+
+  /* Show desktop menu, hide hamburger */
+  .nav__menu {
+    display: flex;
+    gap: var(--space-6, 24px);
+    align-items: center;
+  }
+
+  .nav__hamburger,
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav__mobile-menu,
+  .mobile-menu {
+    display: none !important;
+  }
+
+  /* Two-column layouts */
+  .two-column,
+  .split,
+  .cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Card grids can be 2 columns */
+  .card-grid,
+  .grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Form buttons can be inline */
+  .form-submit,
+  .form-button {
+    width: auto;
+    min-width: 200px;
+  }
+
+  .button-group {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+/* Tablet portrait (768px+) */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 32px;
+    --section-spacing-y: 80px;
+    --card-padding: 28px;
+    --grid-gap: 28px;
+
+    /* Tablet typography */
+    --mobile-body-size: 17px;
+    --mobile-h1: clamp(44px, 6vw, 56px);
+    --mobile-h2: clamp(36px, 5vw, 48px);
+    --mobile-h3: clamp(28px, 4vw, 36px);
+  }
+
+  /* Three-column layouts */
+  .three-column,
+  .cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Card grids can be 3 columns */
+  .card-grid.cols-3,
+  .grid-cards.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Visibility utilities */
+  .mobile-only {
+    display: none !important;
+  }
+
+  .tablet-up {
+    display: block !important;
+  }
+
+  /* Flex containers can be row */
+  .flex-row {
+    flex-direction: row;
+  }
+
+  /* Hero sections */
+  .hero,
+  .hero-section,
+  .page-hero {
+    padding: var(--space-20, 80px) var(--container-padding, 32px);
+  }
+}
+
+/* Tablet landscape (1024px+) */
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 40px;
+    --section-spacing-y: 96px;
+    --card-padding: 32px;
+    --grid-gap: 32px;
+
+    /* Desktop typography */
+    --mobile-body-size: 18px;
+    --mobile-h1: clamp(56px, 5vw, 72px);
+    --mobile-h2: clamp(44px, 4vw, 56px);
+    --mobile-h3: clamp(32px, 3vw, 40px);
+  }
+
+  /* Four-column layouts */
+  .four-column,
+  .cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Card grids can be 4 columns */
+  .card-grid.cols-4,
+  .grid-cards.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Container max-width */
+  .container {
+    max-width: 1280px;
+  }
+
+  .container--wide {
+    max-width: 1440px;
+  }
+
+  .container--narrow {
+    max-width: 960px;
+  }
+}
+
+/* Desktop (1280px+) */
+@media (min-width: 1280px) {
+  :root {
+    --container-padding: 48px;
+    --section-spacing-y: 128px;
+  }
+
+  .desktop-only {
+    display: block !important;
+  }
+
+  /* Container max-width */
+  .container {
+    max-width: 1440px;
+  }
+
+  .container--wide {
+    max-width: 1600px;
+  }
+}
+
+/* Wide desktop (1536px+) */
+@media (min-width: 1536px) {
+  :root {
+    --container-padding: 64px;
+  }
+
+  .container {
+    max-width: 1536px;
+  }
+
+  .container--wide {
+    max-width: 1920px;
+  }
+}
+
+/* =============================================================================
+   10. PRINT STYLES
+   Optimize for printing
+   ============================================================================= */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  nav,
+  .nav,
+  footer,
+  .footer,
+  .no-print {
+    display: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+}
+
+/* =============================================================================
+   11. PERFORMANCE OPTIMIZATIONS
+   Reduce repaints and improve scroll performance
+   ============================================================================= */
+
+/* GPU acceleration for smooth animations */
+.nav,
+.nav__mobile-menu,
+.modal,
+.dropdown,
+.card {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize animations for mobile */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .nav__mobile-menu {
+    transition: none;
+  }
+}
+
+/* =============================================================================
+   12. DARK MODE SUPPORT
+   Ensure mobile fixes work in dark mode
+   ============================================================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --input-bg: #1a1a1a;
+    --border: #404040;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --active-bg: rgba(255, 255, 255, 0.15);
+    --focus-color: #60a5fa;
+    --focus-ring: rgba(96, 165, 250, 0.2);
+  }
+}
+
+[data-theme="dark"] {
+  --input-bg: #1a1a1a;
+  --border: #404040;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --active-bg: rgba(255, 255, 255, 0.15);
+  --focus-color: #60a5fa;
+  --focus-ring: rgba(96, 165, 250, 0.2);
+}
