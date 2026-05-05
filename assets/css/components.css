@@ -522,7 +522,7 @@ html[data-theme="dark"] .nav--scrolled .nav__logo-img--dark {
   width: 48px;
   height: 48px;
   padding: 0;
-  margin-right: var(--space-md);
+  margin-right: 12px; /* Fixed spacing between hamburger and logo */
   background: rgba(255, 255, 255, 0.15); /* Visible background for video overlay */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -3381,7 +3381,6 @@ html[data-theme="dark"] .feature-card--amber .feature-card__icon {
 
 /* Mobile Menu */
 .nav__mobile-menu {
-  display: none;
   position: fixed;
   top: var(--nav-height);
   left: 0;
@@ -3394,17 +3393,30 @@ html[data-theme="dark"] .feature-card--amber .feature-card__icon {
   -webkit-backdrop-filter: blur(20px);
   z-index: var(--z-nav-menu);
   padding: var(--space-2xl) var(--space-xl);
+
+  /* Use visibility and opacity for better transitions */
+  visibility: hidden;
   opacity: 0;
   transform: translateY(-20px);
+  pointer-events: none;
+
+  /* Always flex, control visibility with opacity/visibility */
+  display: flex;
+  flex-direction: column;
+
   transition: opacity var(--duration-medium) var(--ease-soft),
-              transform var(--duration-medium) var(--ease-soft);
+              transform var(--duration-medium) var(--ease-soft),
+              visibility 0s var(--duration-medium);
 }
 
 .nav__mobile-menu--active {
-  display: flex;
-  flex-direction: column;
+  visibility: visible;
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity var(--duration-medium) var(--ease-soft),
+              transform var(--duration-medium) var(--ease-soft),
+              visibility 0s 0s;
 }
 
 .nav__mobile-menu .nav__link {
