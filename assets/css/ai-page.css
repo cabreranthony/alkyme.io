@@ -991,16 +991,30 @@ html[data-theme="dark"] .ai-cta-hero__overlay {
     justify-content: center;
   }
 
+  /* Real products CTA - more breathing room on mobile */
   .ai-cta-hero {
-    height: 300px;
+    height: 450px; /* Increased from 300px */
+    min-height: 450px;
   }
 
   .ai-cta-hero__overlay {
-    padding: 32px 24px;
+    padding: 48px 32px; /* Increased from 32px 24px */
+    text-align: center; /* Center align on mobile for better balance */
+    align-items: center; /* Center content */
   }
 
   .ai-cta-hero__title {
-    font-size: 32px;
+    font-size: clamp(28px, 7vw, 36px); /* More fluid sizing */
+    max-width: 100%; /* Allow full width on mobile */
+  }
+
+  .ai-cta-hero__description {
+    max-width: 100%; /* Allow full width on mobile */
+    font-size: 16px;
+  }
+
+  .ai-cta-hero__eyebrow {
+    font-size: 12px;
   }
 }
 
