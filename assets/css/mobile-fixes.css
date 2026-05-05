@@ -278,8 +278,7 @@ button:not([aria-label]):not([title]),
 .icon-button,
 .theme-toggle,
 .menu-toggle,
-.hamburger,
-.nav__hamburger {
+.hamburger {
   min-width: 48px;
   min-height: 48px;
   padding: 12px;
@@ -287,6 +286,8 @@ button:not([aria-label]):not([title]),
   align-items: center;
   justify-content: center;
 }
+
+/* Note: .nav__hamburger display is controlled by responsive media queries in components.css */
 
 /* Form inputs must meet touch target requirements */
 input:not([type="checkbox"]):not([type="radio"]),

@@ -904,10 +904,17 @@ html[data-theme="dark"] .nav--scrolled .nav__logo-img--dark {
 .hero-video-toggle__icon {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
 }
 
 .hero-video-toggle__icon[hidden] {
   display: none;
+}
+
+/* Ensure both play and pause icons are visible */
+.hero-video-toggle__icon--play,
+.hero-video-toggle__icon--pause {
+  fill: currentColor;
 }
 
 @media (max-width: 768px) {
