@@ -270,3 +270,127 @@ html[data-theme="dark"] .phase-card:hover .phase-card__number {
 html[data-theme="dark"] .phase-card__list li::before {
   color: var(--dew);
 }
+
+/* ==========================================================================
+   CTA SECTION
+   ========================================================================== */
+
+.cta-section {
+  padding: var(--space-7xl) 0;
+  background: linear-gradient(
+    135deg,
+    var(--eggshell-sky) 0%,
+    var(--web-wash) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(var(--rgb-amber), 0.08) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.cta-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  /* Premium glass card - wider and more spacious */
+  background: linear-gradient(
+    145deg,
+    rgba(var(--rgb-white), 0.95) 0%,
+    rgba(var(--rgb-white), 0.9) 100%
+  );
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(var(--rgb-white), 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(var(--rgb-white), 0.9),
+    0 20px 60px rgba(var(--rgb-moss), 0.08),
+    0 8px 24px rgba(var(--rgb-moss), 0.06);
+  padding: var(--space-6xl) var(--space-4xl);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.cta-box__title {
+  font-family: var(--font-display);
+  font-size: var(--type-h2-display-lg-size);
+  font-weight: var(--type-h2-display-lg-weight);
+  line-height: var(--type-h2-line-display);
+  letter-spacing: -0.02em;
+  color: var(--bark);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.cta-box__description {
+  font-size: var(--type-lead-size);
+  line-height: var(--type-lead-line);
+  color: var(--forest);
+  margin: 0 0 var(--space-2xl) 0;
+}
+
+.cta-box__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Dark Mode */
+html[data-theme="dark"] .cta-section {
+  background: var(--bark-deep);
+}
+
+html[data-theme="dark"] .cta-box {
+  background: linear-gradient(
+    145deg,
+    rgba(var(--rgb-white), 0.1) 0%,
+    rgba(var(--rgb-white), 0.08) 100%
+  );
+  border-color: rgba(var(--rgb-dew), 0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(var(--rgb-dew), 0.15),
+    0 20px 60px rgba(var(--rgb-black), 0.4),
+    0 8px 24px rgba(var(--rgb-black), 0.3);
+}
+
+html[data-theme="dark"] .cta-box__title {
+  color: var(--eggshell-sky);
+}
+
+html[data-theme="dark"] .cta-box__description {
+  color: rgba(var(--rgb-eggshell), 0.8);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cta-box {
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+
+  .cta-box__title {
+    font-size: var(--type-h2-display-sm-size);
+  }
+
+  .cta-box__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-box__actions .btn {
+    width: 100%;
+  }
+}
