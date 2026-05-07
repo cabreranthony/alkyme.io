@@ -809,7 +809,7 @@ html[data-theme="dark"] .ai-boundaries {
   right: 0;
   bottom: 0;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
-  padding: var(--space-5xl);
+  padding: var(--space-6xl) var(--space-5xl); /* More vertical breathing room */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -928,7 +928,7 @@ html[data-theme="dark"] .ai-cta-hero__overlay {
   }
 
   .ai-cta-hero__overlay {
-    padding: 48px 40px;
+    padding: 64px 40px; /* More vertical space on tablet */
   }
 
   .ai-cta-hero__title {
@@ -1005,7 +1005,7 @@ html[data-theme="dark"] .ai-cta-hero__overlay {
   }
 
   .ai-cta-hero__overlay {
-    padding: 48px 32px; /* Increased from 32px 24px */
+    padding: 64px 32px; /* More vertical breathing room on mobile */
     text-align: center; /* Center align on mobile for better balance */
     align-items: center; /* Center content */
   }
