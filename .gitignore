@@ -46,6 +46,10 @@ REFACTOR*.md
 OVERHAUL*.md
 CLEANUP*.md
 SPRINT*.md
+PRODUCTION*.md
+*FINDINGS*.md
+*FIXES*.md
+*REPORT*.md
 
 # Development artifacts
 archive/
