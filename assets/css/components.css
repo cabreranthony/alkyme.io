@@ -218,13 +218,17 @@ html[data-theme="dark"] .section-header__title {
 
 .cta-section {
   text-align: center;
-  max-width: 800px; /* Wider for better text flow */
+  max-width: 100%; /* Full width */
+  padding: 0 var(--space-2xl); /* Breathing room on sides */
   margin: 0 auto;
 }
 
 .cta-section__title {
   margin-bottom: var(--space-xl);
   line-height: 1.3; /* Tighter for long titles */
+  max-width: 900px; /* Comfortable reading width for title */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-section__description {
@@ -232,7 +236,7 @@ html[data-theme="dark"] .section-header__title {
   font-size: var(--type-lead-size);
   line-height: var(--type-lead-line);
   margin-bottom: var(--space-xl);
-  max-width: 720px; /* Constrain body text */
+  max-width: 800px; /* Comfortable reading width for body */
   margin-left: auto;
   margin-right: auto;
 }
