@@ -218,8 +218,7 @@ html[data-theme="dark"] .section-header__title {
 
 .cta-section {
   text-align: center;
-  max-width: 100%; /* Full width */
-  padding: 0 var(--space-2xl); /* Breathing room on sides */
+  max-width: 100%; /* Full width within container */
   margin: 0 auto;
 }
 
